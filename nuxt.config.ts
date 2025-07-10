@@ -21,6 +21,26 @@ export default defineNuxtConfig({
 
     css: ['~/assets/css/main.css'],
 
+    // Nuxt Fonts setup
+    fonts: {
+        defaults: {
+            weights: [300, 400, 500, 600, 700],
+        },
+        provider: 'local',
+        families: [
+            {
+                name: 'Jetbrains Mono',
+                provider: 'local',
+                weights: [300, 400, 500, 600, 700],
+            },
+            {
+                name: 'Inter',
+                provider: 'local',
+                weights: [300, 400, 500, 600, 700],
+            }
+        ]
+    },
+
     app: {
         head: {
             title: 'Startseite',
