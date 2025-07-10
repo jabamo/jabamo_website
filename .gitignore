@@ -11,9 +11,6 @@
 # IntelliJ project
 *.iml
 
-# User local IDEA run configurations
-.run/
-
 # Build output & caches for IntelliJ plugin development
 build/
 idea-sandbox/
@@ -47,7 +44,6 @@ src/main/resources/dist/*
 /src/main/kotlin/com/sourcegraph/cody/agent/protocol_generated/*
 
 # Folder view configuration files
-.DS_Store
 *.DS_Store
 
 # Thumbnail cache files
