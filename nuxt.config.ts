@@ -2,7 +2,7 @@ export default defineNuxtConfig({
     compatibilityDate: '2025-05-15',
     devtools: {enabled: true},
 
-    modules: ['@nuxt/content', '@nuxt/eslint', '@nuxt/test-utils', '@nuxt/fonts', '@nuxt/icon', '@nuxtjs/tailwindcss'],
+    modules: ['@nuxt/content', '@nuxt/eslint', '@nuxt/test-utils', '@nuxt/fonts', '@nuxt/icon', '@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@nuxtjs/sitemap'],
 
     // TailwindCSS config
     tailwindcss: {
@@ -10,14 +10,51 @@ export default defineNuxtConfig({
           theme: {
               extend: {
                   colors: {
-                      primary: '#000000',
-                      secondary: '#ffffff',
-                      accent: '#000000',
-                      accent2: '#ffffff',
+                      primary: {
+                          50: '#f8fafc',
+                          100: '#f1f5f9',
+                          500: '#64748b',
+                          900: '#0f172a',
+                      },
+                      secondary: {
+                          50: '#f9fafb',
+                          900: '#111827',
+                      },
+                      accent: {
+                          500: '#3b82f6',
+                          600: '#2563eb',
+                      }
+                  },
+                  fontFamily: {
+                      'title': ['Jetbrains Mono', 'monospace'],
+                      'content': ['Inter', 'sans-serif'],
+                  },
+                  typography: {
+                      DEFAULT: {
+                          css: {
+                              '--tw-prose-body': 'rgb(75 85 99)',
+                              '--tw-prose-headings': 'rgb(17 24 39)',
+                              '--tw-prose-links': 'rgb(59 130 246)',
+                              '--tw-prose-code': 'rgb(17 24 39)',
+                              '--tw-prose-pre-bg': 'rgb(31 41 55)',
+                          }
+                      }
                   }
               }
           }
       }
+    },
+
+    // color mode config
+    colorMode: {
+        preference: 'system',
+        fallback: 'light',
+        hid: 'nuxt-color-mode-script',
+        globalName: '__NUXT_COLOR_MODE__',
+        componentName: 'ColorScheme',
+        classPrefix: '',
+        classSuffix: '',
+        storageKey: 'nuxt-color-mode',
     },
 
     // Nuxt Fonts setup
