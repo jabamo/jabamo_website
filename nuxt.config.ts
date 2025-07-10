@@ -1,25 +1,24 @@
-import tailwindcss from '@tailwindcss/vite';
-
 export default defineNuxtConfig({
     compatibilityDate: '2025-05-15',
     devtools: {enabled: true},
 
-    modules: [
-        '@nuxt/content',
-        '@nuxt/eslint',
-        '@nuxt/test-utils',
-        '@nuxt/fonts',
-        '@nuxt/icon'
-    ],
+    modules: ['@nuxt/content', '@nuxt/eslint', '@nuxt/test-utils', '@nuxt/fonts', '@nuxt/icon', '@nuxtjs/tailwindcss'],
 
-    //import tailwindCSS
-    vite: {
-        plugins: [
-            tailwindcss(),
-        ],
+    // TailwindCSS config
+    tailwindcss: {
+      config: {
+          theme: {
+              extend: {
+                  colors: {
+                      primary: '#000000',
+                      secondary: '#ffffff',
+                      accent: '#000000',
+                      accent2: '#ffffff',
+                  }
+              }
+          }
+      }
     },
-
-    css: ['~/assets/css/main.css'],
 
     // Nuxt Fonts setup
     fonts: {
