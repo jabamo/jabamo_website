@@ -78,7 +78,7 @@ defineProps({
   }
 })
 
-const formatDate = (dateString) => {
+const formatDate = (dateString: string) => {
   return new Date(dateString).toLocaleDateString('de-DE', {
     year: 'numeric',
     month: 'long',

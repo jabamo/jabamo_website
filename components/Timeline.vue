@@ -72,7 +72,7 @@
 <script lang="ts" setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 
-const progressLine = ref(null)
+const progressLine = ref<HTMLElement | null>(null)
 const scrollProgress = ref(0)
 
 const timelineItems = [
@@ -127,22 +127,23 @@ const updateScrollProgress = () => {
   if (!progressLine.value) return
 
   const element = progressLine.value.parentElement
+  if (!element) return
+
   const rect = element.getBoundingClientRect()
-  const elementTop = rect.top + window.pageYOffset
+  const elementTop = rect.top + window.scrollY
   const elementHeight = element.offsetHeight
   const windowHeight = window.innerHeight
-  const scrollTop = window.pageYOffset
+  const scrollTop = window.scrollY
 
   const start = elementTop - windowHeight
   const end = elementTop + elementHeight
-  const progress = Math.max(0, Math.min(100, ((scrollTop - start) / (end - start)) * 100))
 
-  scrollProgress.value = progress
+  scrollProgress.value = Math.max(0, Math.min(100, ((scrollTop - start) / (end - start)) * 100))
 }
 
 onMounted(() => {
   window.addEventListener('scroll', updateScrollProgress)
-  updateScrollProgress() // Initial calculation
+  updateScrollProgress()
 })
 
 onUnmounted(() => {
