@@ -91,9 +91,9 @@
 <script lang="ts" setup>
 // SEO Meta Tags
 useHead({
-  title: 'Impressum - Jona David Bastian',
+  title: 'Impressum - Jona-David Bastian',
   meta: [
-    { name: 'description', content: 'Impressum und Kontaktdaten von Jona David Bastian - Fullstack Developer aus Mengerskirchen.' },
+    { name: 'description', content: 'Impressum und Kontaktdaten von Jona-David Bastian - Fullstack Developer aus Mengerskirchen.' },
     { name: 'robots', content: 'noindex, nofollow' } // Impressum soll nicht in Suchmaschinen indexiert werden
   ]
 })

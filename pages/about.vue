@@ -90,7 +90,7 @@
 
 <script lang="ts" setup>
 useHead({
-  title: 'Über mich - Jona David Bastian',
+  title: 'Über mich - Jona-David Bastian',
   meta: [
     { name: 'description', content: 'Erfahre mehr über meinen Werdegang als Fullstack Developer und Informatik-Student. Von den ersten Programmierschritten bis heute.' }
   ]

@@ -251,9 +251,9 @@
 <script lang="ts" setup>
 // SEO Meta Tags
 useHead({
-  title: 'Datenschutzerklärung - Jona David Bastian',
+  title: 'Datenschutzerklärung - Jona-David Bastian',
   meta: [
-    { name: 'description', content: 'Datenschutzerklärung der Website von Jona David Bastian. Informationen zum Umgang mit personenbezogenen Daten.' },
+    { name: 'description', content: 'Datenschutzerklärung der Website von Jona-David Bastian. Informationen zum Umgang mit personenbezogenen Daten.' },
     { name: 'robots', content: 'noindex, nofollow' } // Datenschutzerklärung soll nicht in Suchmaschinen indexiert werden
   ]
 })

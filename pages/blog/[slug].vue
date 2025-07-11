@@ -108,7 +108,7 @@
       </div>
     </article>
 
-    <section v-if="relatedArticles.length > 0" class="max-w-4xl mx-auto px-6 py-16">
+    <section v-if="relatedArticles && relatedArticles.length > 0" class="max-w-4xl mx-auto px-6 py-16">
       <h2 class="font-title text-3xl font-bold text-center mb-12">Ähnliche Artikel</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <BlogCard
@@ -161,9 +161,7 @@
 <script lang="ts" setup>
 const route = useRoute()
 const {data: article} = await useAsyncData(route.path, () => {
-  return queryCollection('blog').path(route.path)
-      .where('blog', '=', true)
-      .first()
+  return queryCollection('blog').path(route.path).first()
 })
 
 if (!article.value) {
@@ -176,14 +174,14 @@ if (!article.value) {
 const { data: relatedArticles } = await useAsyncData('blog', () => {
       return queryCollection('blog').path(route.path)
           .where('published', '=', true)
-          .andWhere(query => query.where('category', '=', article.value.category).orWhere('tags', 'IN', article.value.tags))
+          .andWhere(query => query.where('category', '=', article.value?.category).where('tags', 'IN', article.value?.tags))
           .limit(3)
           .all()
     }
 )
 
 useHead({
-  title: `${article.value.title} - Jona David Bastian`,
+  title: `${article.value.title} - Jona-David Bastian`,
   meta: [
     {name: 'description', content: article.value.description},
     {name: 'author', content: article.value.author},
@@ -198,7 +196,7 @@ useHead({
   ]
 })
 
-const formatDate = (dateString) => {
+const formatDate = (dateString: string) => {
   return new Date(dateString).toLocaleDateString('de-DE', {
     year: 'numeric',
     month: 'long',

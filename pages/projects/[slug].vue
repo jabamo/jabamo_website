@@ -162,10 +162,8 @@
 
 <script setup lang="ts">
 const route = useRoute()
-const { data: project } = await useAsyncData(route.path, () => {
-  return queryCollection('projects').path(route.path)
-      .where('published', '=', true)
-      .first()
+const {data: project} = await useAsyncData(route.path, () => {
+  return queryCollection('projects').path(route.path).first()
 })
 
 if (!project.value) {
@@ -176,7 +174,7 @@ if (!project.value) {
 }
 
 useHead({
-  title: `${project.value.title} - Jona David Bastian`,
+  title: `${project.value.title} - Jona-David Bastian`,
   meta: [
     { name: 'description', content: project.value.description },
     { property: 'og:title', content: project.value.title },

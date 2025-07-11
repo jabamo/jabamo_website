@@ -159,7 +159,7 @@
 <script lang="ts" setup>
 // SEO Meta Tags
 useHead({
-  title: 'Blog - Jona David Bastian',
+  title: 'Blog - Jona-David Bastian',
   meta: [
     {
       name: 'description',

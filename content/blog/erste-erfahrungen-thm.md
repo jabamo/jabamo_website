@@ -4,7 +4,7 @@ description: "Einblicke in das Informatik-Studium an der Technischen Hochschule 
 image: "/assets/img/blog/thm-studium.jpg"
 tags: ["Studium", "THM", "Informatik", "Personal"]
 category: "Studium"
-author: "Jona David Bastian"
+author: "Jona-David Bastian"
 date: "2023-12-15"
 readTime: "6 min"
 featured: false
