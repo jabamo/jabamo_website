@@ -6,7 +6,7 @@
   </div>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 useHead({
   title: 'Jona David Bastian - Fullstack Developer',
   meta: [

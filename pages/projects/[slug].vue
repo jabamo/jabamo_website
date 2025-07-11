@@ -160,13 +160,13 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const route = useRoute()
-const slug = route.params.slug
-
-const { data: project } = await useAsyncData(`project-${slug}`, () =>
-    queryContent(`/projects/${slug}`).findOne()
-)
+const { data: project } = await useAsyncData(route.path, () => {
+  return queryCollection('projects').path(route.path)
+      .where('published', '=', true)
+      .first()
+})
 
 if (!project.value) {
   throw createError({
@@ -186,7 +186,7 @@ useHead({
   ]
 })
 
-const formatDate = (dateString) => {
+const formatDate = (dateString: string) => {
   return new Date(dateString).toLocaleDateString('de-DE', {
     year: 'numeric',
     month: 'long',

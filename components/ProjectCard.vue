@@ -82,7 +82,7 @@
 
       <div class="flex flex-col sm:flex-row gap-3 pt-4">
         <NuxtLink
-            :to="`/projects/${project._path.split('/').pop()}`"
+            :to="`/projects/${project.path.split('/').pop()}`"
             class="inline-flex items-center justify-center px-6 py-3 bg-accent-500 hover:bg-accent-600 text-white font-medium rounded-lg transition-colors"
         >
           Details ansehen
@@ -108,7 +108,7 @@
   </div>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 defineProps({
   project: {
     type: Object,

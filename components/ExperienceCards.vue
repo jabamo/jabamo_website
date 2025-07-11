@@ -57,7 +57,7 @@
   </section>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 const frontendTechs = [
   'Vue.js', 'Nuxt.js', 'TypeScript', 'Tailwind CSS', 'JavaScript', 'HTML/CSS'
 ]

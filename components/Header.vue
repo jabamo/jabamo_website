@@ -62,7 +62,7 @@
   </header>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 const mobileMenuOpen = ref(false)
 
 const route = useRoute()

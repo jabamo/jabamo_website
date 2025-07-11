@@ -65,6 +65,6 @@
   </footer>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 const currentYear = new Date().getFullYear()
 </script>

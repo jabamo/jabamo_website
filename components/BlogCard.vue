@@ -59,7 +59,7 @@
         </div>
 
         <NuxtLink
-            :to="`/blog/${article._path.split('/').pop()}`"
+            :to="`/blog/${article.path.split('/').pop()}`"
             class="inline-flex items-center px-4 py-2 text-accent-500 hover:text-accent-600 font-medium text-sm transition-colors"
         >
           Lesen
@@ -70,7 +70,7 @@
   </article>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 defineProps({
   article: {
     type: Object,

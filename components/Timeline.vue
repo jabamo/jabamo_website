@@ -69,7 +69,7 @@
   </section>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const progressLine = ref(null)

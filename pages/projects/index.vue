@@ -24,7 +24,7 @@
         <button
             v-for="category in categories"
             :key="category"
-            @click="selectedCategory = category"
+            @click="selectedCategory == category"
             class="px-4 py-2 rounded-lg transition-colors font-medium"
             :class="selectedCategory === category ?
             'bg-accent-500 text-white' :
@@ -49,7 +49,7 @@
       <div v-else class="space-y-20">
         <ProjectCard
             v-for="(project, index) in filteredProjects"
-            :key="project._path"
+            :key="project.path"
             :project="project"
             :reverse="index % 2 === 1"
         />
@@ -85,7 +85,7 @@
   </div>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 useHead({
   title: 'Projekte - Jona David Bastian',
   meta: [
@@ -93,11 +93,13 @@ useHead({
   ]
 })
 
-const { data: projects } = await useAsyncData('projects', () =>
-    queryContent('/projects')
-        .sort({ date: -1, featured: -1 })
-        .find()
-)
+const route = useRoute()
+const { data: projects } = await useAsyncData(route.path, () => {
+  return queryCollection('projects')
+      .order('date', 'DESC')
+      .order('featured', 'DESC')
+      .all();
+})
 
 const selectedCategory = ref(null)
 

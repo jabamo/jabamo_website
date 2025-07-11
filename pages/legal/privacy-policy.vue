@@ -248,7 +248,7 @@
   </div>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 // SEO Meta Tags
 useHead({
   title: 'Datenschutzerklärung - Jona David Bastian',

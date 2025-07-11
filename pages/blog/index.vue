@@ -18,7 +18,7 @@
         <!-- Kategorien Filter -->
         <div class="flex flex-wrap gap-3">
           <button
-              @click="selectedCategory = null"
+              @click="selectedCategory == null"
               class="px-4 py-2 rounded-lg transition-colors font-medium"
               :class="selectedCategory === null ?
               'bg-accent-500 text-white' :
@@ -29,7 +29,7 @@
           <button
               v-for="category in categories"
               :key="category"
-              @click="selectedCategory = category"
+              @click="selectedCategory == category"
               class="px-4 py-2 rounded-lg transition-colors font-medium"
               :class="selectedCategory === category ?
               'bg-accent-500 text-white' :
@@ -41,7 +41,8 @@
 
         <!-- Suchfeld -->
         <div class="relative">
-          <Icon name="tabler:search" size="20" class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+          <Icon name="tabler:search" size="20"
+                class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"/>
           <input
               v-model="searchQuery"
               type="text"
@@ -58,7 +59,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <BlogCard
             v-for="article in featuredArticles"
-            :key="article._path"
+            :key="article.path"
             :article="article"
         />
       </div>
@@ -77,7 +78,7 @@
 
       <!-- Artikel Grid -->
       <div v-if="filteredArticles.length === 0" class="text-center py-16">
-        <Icon name="tabler:article" size="64" class="text-gray-400 mx-auto mb-4" />
+        <Icon name="tabler:article" size="64" class="text-gray-400 mx-auto mb-4"/>
         <h3 class="font-title text-xl font-semibold text-gray-500 dark:text-gray-400 mb-2">
           Keine Artikel gefunden
         </h3>
@@ -89,7 +90,7 @@
       <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <BlogCard
             v-for="article in paginatedArticles"
-            :key="article._path"
+            :key="article.path"
             :article="article"
         />
       </div>
@@ -102,7 +103,7 @@
               :disabled="currentPage === 1"
               class="px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
           >
-            <Icon name="tabler:chevron-left" size="20" />
+            <Icon name="tabler:chevron-left" size="20"/>
           </button>
 
           <span
@@ -122,7 +123,7 @@
               :disabled="currentPage === totalPages"
               class="px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
           >
-            <Icon name="tabler:chevron-right" size="20" />
+            <Icon name="tabler:chevron-right" size="20"/>
           </button>
         </nav>
       </div>
@@ -130,7 +131,8 @@
 
     <!-- Newsletter Signup -->
     <section class="max-w-4xl mx-auto px-6 py-16">
-      <div class="bg-gradient-to-r from-accent-500/10 to-accent-600/10 rounded-2xl p-8 md:p-12 text-center border border-accent-500/20">
+      <div
+          class="bg-gradient-to-r from-accent-500/10 to-accent-600/10 rounded-2xl p-8 md:p-12 text-center border border-accent-500/20">
         <h2 class="font-title text-3xl font-bold mb-4">
           Verpasse keine neuen Artikel
         </h2>
@@ -144,7 +146,8 @@
               placeholder="deine@email.com"
               class="flex-1 px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 bg-white dark:bg-gray-800 transition-colors"
           />
-          <button class="px-6 py-3 bg-accent-500 hover:bg-accent-600 text-white font-medium rounded-lg transition-colors">
+          <button
+              class="px-6 py-3 bg-accent-500 hover:bg-accent-600 text-white font-medium rounded-lg transition-colors">
             Abonnieren
           </button>
         </div>
@@ -153,21 +156,23 @@
   </div>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 // SEO Meta Tags
 useHead({
   title: 'Blog - Jona David Bastian',
   meta: [
-    { name: 'description', content: 'Meine Gedanken und Erfahrungen zu Webentwicklung, Studium und Technologie. Tutorials, Tipps und persönliche Einblicke.' }
+    {
+      name: 'description',
+      content: 'Meine Gedanken und Erfahrungen zu Webentwicklung, Studium und Technologie. Tutorials, Tipps und persönliche Einblicke.'
+    }
   ]
 })
 
-const { data: articles } = await useAsyncData('blog-articles', () =>
-    queryContent('/blog')
-        .where({ published: true })
-        .sort({ featured: -1, date: -1 })
-        .find()
-)
+const route = useRoute()
+const { data: articles } = await useAsyncData(route.path, () => {
+  return queryCollection('blog').all();
+})
+
 
 const selectedCategory = ref(null)
 const searchQuery = ref('')
@@ -232,7 +237,7 @@ const visiblePages = computed(() => {
     }
   }
 
-  return Array.from({ length: end - start + 1 }, (_, i) => start + i)
+  return Array.from({length: end - start + 1}, (_, i) => start + i)
 })
 
 watch([selectedCategory, searchQuery], () => {
