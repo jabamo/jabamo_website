@@ -110,7 +110,7 @@ const skillCategories = [
   },
   {
     name: 'Frontend',
-    icon: 'tabler:web',
+    icon: 'tabler:device-desktop',
     skills: [
       { name: 'Vue.js', level: 4 },
       { name: 'Nuxt.js', level: 4 },

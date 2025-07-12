@@ -17,10 +17,14 @@
     <Footer />
   </div>
 </template>
-<script lang="ts" setup>
-useHead({
-  bodyAttrs: {
-    class: 'bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300'
-  }
-})
-</script>
+<style>
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.4s;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  filter: blur(1rem);
+}
+</style>
