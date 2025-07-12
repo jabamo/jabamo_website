@@ -39,7 +39,8 @@ export default defineNuxtConfig({
                               '--tw-prose-pre-bg': 'rgb(31 41 55)',
                           }
                       }
-                  }
+                  },
+                  cssPath: '~/assets/css/tailwind.css'
               }
           }
       }
