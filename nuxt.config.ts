@@ -2,7 +2,7 @@ export default defineNuxtConfig({
     compatibilityDate: '2025-05-15',
     devtools: {enabled: true},
 
-    modules: ['@nuxt/content', '@nuxt/eslint', '@nuxt/test-utils', '@nuxt/fonts', '@nuxt/icon', '@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@nuxtjs/sitemap'],
+    modules: ['@nuxt/content', '@nuxt/eslint', '@nuxt/test-utils', '@nuxt/fonts', '@nuxt/icon', '@nuxtjs/color-mode', '@nuxtjs/sitemap', '@nuxtjs/tailwindcss'],
 
     // TailwindCSS config
     tailwindcss: {

@@ -4,7 +4,8 @@
 
       <div class="order-1">
         <div class="relative">
-          <div class="w-64 h-64 mx-auto lg:mx-0 rounded-full overflow-hidden bg-gradient-to-br from-accent-500 to-accent-600 p-1">
+          <div
+              class="w-64 h-64 mx-auto lg:mx-0 rounded-full overflow-hidden bg-gradient-to-br from-accent-500 to-accent-600 p-1">
             <img
                 src="/assets/img/profile.jpg"
                 alt="Jona-David Bastian"
@@ -18,9 +19,9 @@
 
       <div class="order-2 text-center lg:text-left">
         <div class="mb-6">
-          <h1 class="font-title text-4xl lg:text-6xl font-bold mb-4">
+          <h1 ref="titleElement" class="font-title text-4xl lg:text-6xl font-bold mb-4">
             Hey, ich bin
-            <span class="text-accent-500">Jona</span>
+            <span class="text-accent-500">Jona</span>...
           </h1>
           <h2 class="font-title text-xl lg:text-2xl text-gray-600 dark:text-gray-400 mb-6">
             Fullstack Developer & Student
@@ -39,7 +40,7 @@
               class="inline-flex items-center px-6 py-3 bg-accent-500 hover:bg-accent-600 text-white font-medium rounded-lg transition-colors"
           >
             Meine Projekte
-            <Icon name="tabler:arrow-right" class="ml-2" size="20" />
+            <Icon name="tabler:arrow-right" class="ml-2" size="20"/>
           </NuxtLink>
           <NuxtLink
               to="/about"
@@ -52,3 +53,89 @@
     </div>
   </section>
 </template>
+<script setup lang="ts">
+import { ref, onMounted } from 'vue'
+
+const titleElement = ref<HTMLElement | null>(null)
+const typewriterSpeed = 100
+
+onMounted(() => {
+  if (titleElement.value) {
+    const fullText = titleElement.value.innerHTML
+    typeText(fullText)
+  }
+})
+
+function typeText(fullText: string): void {
+  if (!titleElement.value) return
+
+  // clear element initially
+  titleElement.value.innerHTML = ''
+
+  // parse text to segments
+  const segments: string[] = []
+  let currentSegment = ''
+  let inTag = false
+
+  for (let i = 0; i < fullText.length; i++) {
+    const char = fullText[i]
+
+    // if html tag begins, add everything to segment until '>'
+    if (char === '<') {
+      if (currentSegment) {
+        segments.push(currentSegment)
+        currentSegment = ''
+      }
+      inTag = true
+      currentSegment = char
+    } else if (char === '>') {
+      currentSegment += char
+      segments.push(currentSegment)
+      currentSegment = ''
+      inTag = false
+    } else if (inTag) {
+      currentSegment += char
+    } else {
+      if (currentSegment) {
+        segments.push(currentSegment)
+        currentSegment = ''
+      }
+      segments.push(char)
+    }
+  }
+
+  if (currentSegment) {
+    segments.push(currentSegment)
+  }
+
+  let segmentIndex = 0
+  let displayedText = ''
+
+  const interval = setInterval(() => {
+    if (segmentIndex < segments.length) {
+      displayedText += segments[segmentIndex]
+      titleElement.value!.innerHTML = displayedText + '<span class="caret absolute ml-[-1.25rem]">|</span>'
+      segmentIndex++
+    } else {
+      titleElement.value!.innerHTML = displayedText + '<span class="caret absolute ml-[-1.25rem]">|</span>'
+      clearInterval(interval)
+    }
+  }, typewriterSpeed)
+}
+</script>
+<style scoped>
+:deep(.caret) {
+  animation: blink 1s infinite;
+  font-weight: normal;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+</style>
+

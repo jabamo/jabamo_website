@@ -71,7 +71,7 @@
         <div class="space-y-8">
 
           <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
-            <h3 class="font-title font-semibold text-lg mb-4">Projekt Details</h3>
+            <h3 class="font-title font-semibold text-lg mb-4">Projektdetails</h3>
             <div class="space-y-3 text-sm">
               <div class="flex justify-between">
                 <span class="font-title font-medium text-gray-500 dark:text-gray-400">Datum:</span>
