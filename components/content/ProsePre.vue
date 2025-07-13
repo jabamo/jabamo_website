@@ -29,7 +29,7 @@
           ref="codeElement"
           :class="[
         $props.class,
-        '!mt-[-0.75rem] !pr-[1rem] !pl-[1rem] !rounded-t-none !rounded-b-xl !border-t-0 overflow-x-scroll'
+        '!mt-[1rem] !pl-[1rem] !rounded-t-none !rounded-b-xl !border-t-0 overflow-x-scroll'
       ]"
       >
       <slot />
@@ -70,12 +70,12 @@ defineProps({
 })
 
 const copied = ref(false)
-const codeElement = ref(null)
+const codeElement = ref<HTMLElement | null>(null)
 
 const copyCode = async () => {
   try {
     if (codeElement.value) {
-      await navigator.clipboard.writeText(codeElement.value.textContent)
+      await navigator.clipboard.writeText(codeElement.value.textContent || '')
       copied.value = true
       setTimeout(() => {
         copied.value = false
