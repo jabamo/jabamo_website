@@ -8,13 +8,21 @@
     </div>
 
     <div class="relative">
-      <div class="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gray-200 dark:bg-gray-700 h-full"></div>
-
+      <div
+          class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 bg-gray-200 dark:bg-gray-700 h-full"></div>
       <div
           ref="progressLine"
-          class="absolute left-1/2 transform -translate-x-1/2 w-1 bg-accent-500 transition-all duration-300 ease-out"
+          class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 bg-accent-500 transition-all duration-300 ease-out"
           :style="{ height: `${scrollProgress}%` }"
       ></div>
+
+      <div class="md:hidden absolute left-6 w-1 bg-gray-200 dark:bg-gray-700 h-full"></div>
+      <div
+          ref="progressLineMobile"
+          class="md:hidden absolute left-6 w-1 bg-accent-500 transition-all duration-300 ease-out"
+          :style="{ height: `${scrollProgress}%` }"
+      ></div>
+
 
       <div class="space-y-16">
         <div
@@ -22,36 +30,57 @@
             :key="index"
             :ref="el => timelineItemRefs[index] = el as HTMLElement"
             class="relative flex items-center"
-            :class="index % 2 === 0 ? 'justify-start' : 'justify-end'"
+            :class="[
+              'md:' + (index % 2 === 0 ? 'justify-start' : 'justify-end'),
+              'justify-start'
+            ]"
         >
-          <div class="absolute left-1/2 transform -translate-x-1/2 z-10">
+          <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 z-10">
             <div
                 :class="[
-      'bg-accent-500 rounded-full border-4 border-white dark:border-gray-900 shadow-lg transition-all duration-300 ease-out',
-      isPointActive(index) ? 'w-8 h-8' : 'w-6 h-6'
-    ]"
+                  'bg-accent-500 rounded-full border-4 border-white dark:border-gray-900 shadow-lg transition-all duration-300 ease-out',
+                  isPointActive(index) ? 'w-8 h-8' : 'w-6 h-6'
+                ]"
+            ></div>
+          </div>
+          <div class="md:hidden absolute left-[1.625rem] transform -translate-x-1/2 z-10">
+            <div
+                :class="[
+                  'bg-accent-500 rounded-full border-4 border-white dark:border-gray-900 shadow-lg transition-all duration-300 ease-out',
+                  isPointActive(index) ? 'w-6 h-6' : 'w-4 h-4'
+                ]"
             ></div>
           </div>
 
+
           <div
-              class="w-5/12 group"
-              :class="index % 2 === 0 ? 'mr-auto pr-8' : 'ml-auto pl-8'"
+              :class="[
+      'group',
+      'md:w-5/12',
+      index % 2 === 0 ? 'md:mr-auto xs:pr-8 md:pr-0' : 'md:ml-auto xs:pl-8 md:pl-0',
+      'w-full pl-16 sm:pl-16 md:pl-0'
+    ]"
           >
-            <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+
+
+            <div
+                class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105">
 
               <div class="flex items-center mb-4">
                 <div class="w-10 h-10 bg-accent-500/10 rounded-lg flex items-center justify-center mr-3">
-                  <Icon :name="item.icon" size="20" class="text-accent-500" />
+                  <Icon :name="item.icon" size="20" class="text-accent-500"/>
                 </div>
                 <div>
                   <span class="font-title text-sm text-accent-500 font-semibold">{{ item.period }}</span>
-                  <h3 class="font-title text-lg font-bold">{{ item.title }}</h3>
+                  <h3 class="font-title text-lg font-bold break-words hyphens-auto">{{ item.title }}</h3>
                 </div>
               </div>
 
               <div class="mb-3">
                 <p class="font-content text-gray-600 dark:text-gray-400 font-medium">{{ item.institution }}</p>
-                <p v-if="item.location" class="font-content text-sm text-gray-500 dark:text-gray-500">{{ item.location }}</p>
+                <p v-if="item.location" class="font-content text-sm text-gray-500 dark:text-gray-500">{{
+                    item.location
+                  }}</p>
               </div>
 
               <p class="font-content text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-4">
@@ -76,7 +105,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import {ref, onMounted, onUnmounted} from 'vue'
 
 const progressLine = ref<HTMLElement | null>(null)
 const scrollProgress = ref(0)
@@ -84,31 +113,13 @@ const timelineItemRefs = ref<HTMLElement[]>([])
 
 const timelineItems = [
   {
-    period: '2024 - Heute',
-    title: 'Backend Developer',
-    institution: 'Deine Firma/Praktikum',
+    period: '2020',
+    title: 'Abitur',
+    institution: 'Deine Schule',
     location: 'Stadt, Deutschland',
-    icon: 'tabler:code',
-    description: 'Entwicklung von REST APIs mit Spring Boot und Microservices-Architektur. Arbeit mit PostgreSQL und Docker für Container-basierte Deployments.',
-    skills: ['Java', 'Spring Boot', 'PostgreSQL', 'Docker', 'Microservices']
-  },
-  {
-    period: '2022 - Heute',
-    title: 'Informatik Studium',
-    institution: 'Technische Hochschule Mittelhessen',
-    location: 'Gießen, Deutschland',
-    icon: 'tabler:school',
-    description: 'Bachelor-Studium mit Fokus auf Softwareentwicklung, Algorithmen und Datenstrukturen. Praktische Projekte in Java, Python und Webentwicklung.',
-    skills: ['Java', 'Python', 'Algorithmen', 'Datenstrukturen', 'Software Engineering']
-  },
-  {
-    period: '2023',
-    title: 'Frontend Developer',
-    institution: 'Freelance/Projekterfahrung',
-    location: 'Remote',
-    icon: 'tabler:world-www',
-    description: 'Entwicklung moderner Webanwendungen mit Vue.js und Nuxt. Responsive Design und Performance-Optimierung standen im Fokus.',
-    skills: ['Vue.js', 'Nuxt.js', 'TypeScript', 'Tailwind CSS', 'Responsive Design']
+    icon: 'tabler:certificate',
+    description: 'Erfolgreicher Abschluss mit Schwerpunkt in Mathematik und Informatik. Erste Berührung mit Programmierung im Informatikunterricht.',
+    skills: ['Mathematik', 'Informatik', 'Grundlagen Programmierung']
   },
   {
     period: '2021 - 2022',
@@ -120,13 +131,31 @@ const timelineItems = [
     skills: ['Python', 'JavaScript', 'HTML/CSS', 'Git']
   },
   {
-    period: '2020',
-    title: 'Abitur',
-    institution: 'Deine Schule',
+    period: '2023',
+    title: 'Frontend Developer',
+    institution: 'Freelance/Projekterfahrung',
+    location: 'Remote',
+    icon: 'tabler:world-www',
+    description: 'Entwicklung moderner Webanwendungen mit Vue.js und Nuxt. Responsive Design und Performance-Optimierung standen im Fokus.',
+    skills: ['Vue.js', 'Nuxt.js', 'TypeScript', 'Tailwind CSS', 'Responsive Design']
+  },
+  {
+    period: '2022 - Heute',
+    title: 'Informatik Studium',
+    institution: 'Technische Hochschule Mittelhessen',
+    location: 'Gießen, Deutschland',
+    icon: 'tabler:school',
+    description: 'Bachelor-Studium mit Fokus auf Softwareentwicklung, Algorithmen und Datenstrukturen. Praktische Projekte in Java, Python und Webentwicklung.',
+    skills: ['Java', 'Python', 'Algorithmen', 'Datenstrukturen', 'Software Engineering']
+  },
+  {
+    period: '2024 - Heute',
+    title: 'Backend Developer',
+    institution: 'Deine Firma/Praktikum',
     location: 'Stadt, Deutschland',
-    icon: 'tabler:certificate',
-    description: 'Erfolgreicher Abschluss mit Schwerpunkt in Mathematik und Informatik. Erste Berührung mit Programmierung im Informatikunterricht.',
-    skills: ['Mathematik', 'Informatik', 'Grundlagen Programmierung']
+    icon: 'tabler:code',
+    description: 'Entwicklung von REST APIs mit Spring Boot und Microservices-Architektur. Arbeit mit PostgreSQL und Docker für Container-basierte Deployments.',
+    skills: ['Java', 'Spring Boot', 'PostgreSQL', 'Docker', 'Microservices']
   }
 ]
 
@@ -167,7 +196,6 @@ const isPointActive = (index: number) => {
 
   return linePosition >= pointPosition
 }
-
 
 
 onMounted(() => {
