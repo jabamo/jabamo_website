@@ -7,7 +7,7 @@
           <li>
             <NuxtLink to="/blog" class="text-accent-500 hover:text-accent-600">Blog</NuxtLink>
           </li>
-          <li>
+          <li class="flex">
             <Icon name="tabler:chevron-right" size="16" class="text-gray-400"/>
           </li>
           <li class="text-gray-600 dark:text-gray-400">{{ article.title }}</li>
@@ -26,7 +26,7 @@
           </span>
         </div>
 
-        <h1 class="font-title text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+        <h1 class="font-title text-4xl lg:text-5xl font-bold mb-6 leading-tight break-words hyphens-auto">
           {{ article.title }}
         </h1>
 
@@ -35,7 +35,7 @@
         </p>
 
         <div
-            class="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-gray-500 dark:text-gray-400">
+            class="flex flex-col sm:flex-row items-center justify-center gap-y-3 gap-x-6 text-sm text-gray-500 dark:text-gray-400">
           <div class="flex items-center space-x-2">
             <Icon name="tabler:user" size="20"/>
             <span class="font-content">{{ article.author }}</span>

@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- Hero Section -->
     <section class="max-w-4xl mx-auto px-6 py-20">
       <div class="text-center mb-16">
         <h1 class="font-title text-4xl lg:text-5xl font-bold mb-6">
@@ -8,14 +7,12 @@
         </h1>
         <p class="font-content text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
           Gedanken, Erfahrungen und Tutorials zu Webentwicklung, Studium und allem,
-          was mich als Developer beschäftigt.
+          was mich als angehender Informatiker beschäftigt.
         </p>
       </div>
 
-      <!-- Filter und Suche -->
       <div class="flex flex-col md:flex-row gap-4 justify-between items-center mb-12">
 
-        <!-- Kategorien Filter -->
         <div class="flex flex-wrap gap-3">
           <button
               @click="selectedCategory == null"
@@ -39,7 +36,6 @@
           </button>
         </div>
 
-        <!-- Suchfeld -->
         <div class="relative">
           <Icon name="tabler:search" size="20"
                 class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"/>
@@ -53,10 +49,9 @@
       </div>
     </section>
 
-    <!-- Featured Artikel -->
     <section v-if="featuredArticles.length > 0" class="max-w-4xl mx-auto px-6 mb-16">
       <h2 class="font-title text-2xl font-bold mb-8">Featured Artikel</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
         <BlogCard
             v-for="article in featuredArticles"
             :key="article.path"
@@ -65,7 +60,6 @@
       </div>
     </section>
 
-    <!-- Alle Artikel -->
     <section class="max-w-4xl mx-auto px-6 pb-20">
       <div class="flex items-center justify-between mb-8">
         <h2 class="font-title text-2xl font-bold">
@@ -76,7 +70,6 @@
         </span>
       </div>
 
-      <!-- Artikel Grid -->
       <div v-if="filteredArticles.length === 0" class="text-center py-16">
         <Icon name="tabler:article" size="64" class="text-gray-400 mx-auto mb-4"/>
         <h3 class="font-title text-xl font-semibold text-gray-500 dark:text-gray-400 mb-2">
@@ -87,7 +80,7 @@
         </p>
       </div>
 
-      <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
         <BlogCard
             v-for="article in paginatedArticles"
             :key="article.path"
@@ -95,7 +88,6 @@
         />
       </div>
 
-      <!-- Pagination -->
       <div v-if="totalPages > 1" class="flex justify-center mt-12">
         <nav class="flex items-center space-x-2">
           <button
@@ -129,7 +121,6 @@
       </div>
     </section>
 
-    <!-- Newsletter Signup -->
     <section class="max-w-4xl mx-auto px-6 py-16">
       <div
           class="bg-gradient-to-r from-accent-500/10 to-accent-600/10 rounded-2xl p-8 md:p-12 text-center border border-accent-500/20">
