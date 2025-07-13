@@ -174,7 +174,7 @@ if (!article.value) {
 const { data: relatedArticles } = await useAsyncData('blog', () => {
       return queryCollection('blog').path(route.path)
           .where('published', '=', true)
-          .andWhere(query => query.where('category', '=', article.value?.category).where('tags', 'IN', article.value?.tags))
+          .orWhere(query => query.where('category', '=', article.value?.category).where('tags', 'IN', article.value?.tags))
           .limit(3)
           .all()
     }

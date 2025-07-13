@@ -24,13 +24,15 @@
             <span class="text-accent-500">Jona</span>...
           </h1>
           <h2 class="font-title text-xl lg:text-2xl text-gray-600 dark:text-gray-400 mb-6">
-            Fullstack Developer & Student
+            Werkstudent IT & DMS-Student an der THM
           </h2>
           <p class="font-content text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-            Ich entwickle moderne Webanwendungen mit Fokus auf Backend-Technologien wie
-            <span class="font-semibold text-accent-500">Java Spring</span> und
-            <span class="font-semibold text-accent-500">Vue.js</span>.
-            Aktuell studiere ich Informatik an der THM und sammle praktische Erfahrungen in der Softwareentwicklung.
+            Ich arbeite als Werkstudent in der IT mit <span class="font-semibold text-accent-500">PHP</span>,
+            <span class="font-semibold text-accent-500">Symfony</span> und <span class="font-semibold text-accent-500">Vue.js</span>
+            und entwickle privat sowie im Studium mit <span class="font-semibold text-accent-500">Node.js</span> und
+            <span class="font-semibold text-accent-500">Express</span>.
+            Während meines Digital Media Systems Studiums an der THM lerne ich zusätzlich
+            <span class="font-semibold text-accent-500">Java Spring</span> und weitere Technologien.
           </p>
         </div>
 

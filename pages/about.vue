@@ -135,24 +135,24 @@ const skillCategories = [
 
 const interests = [
   {
-    name: 'Gaming',
-    icon: 'tabler:device-gamepad-2',
-    description: 'Strategiespiele und Indie-Games'
+    name: 'Reisen',
+    icon: 'tabler:luggage',
+    description: 'Den eigenen Horizont erweitern'
   },
   {
-    name: 'Musik',
-    icon: 'tabler:music',
-    description: 'Electronic, Ambient, Lo-Fi'
+    name: 'Wandern',
+    icon: 'tabler:mountain',
+    description: 'Insbesondere in den Alpen'
   },
   {
-    name: 'Lesen',
-    icon: 'tabler:book-2',
-    description: 'Tech-Blogs, Sci-Fi, Sachbücher'
+    name: 'Handwerken',
+    icon: 'tabler:tools',
+    description: 'Haushalt, Motorräder, Autos'
   },
   {
-    name: 'Sport',
-    icon: 'tabler:barbell',
-    description: 'Fitness, Radfahren, Wandern'
+    name: 'Motorrad',
+    icon: 'tabler:motorbike',
+    description: 'Motorradreisen, soziale Kontakte pflegen'
   }
 ]
 </script>

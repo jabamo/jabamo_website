@@ -117,8 +117,8 @@ const timelineItems = [
     title: 'Erste Webseite',
     institution: 'Selbststudium',
     location: 'Zuhause',
-    icon: 'tabler:certificate',
-    description: 'Mit elf Jahren habe ich mich zum ersten Mal aus Interesse mit HTML und CSS beschäftigt, und meine eigene Webseite (damals erreichbar unter jd-bastian.de) erstellt.',
+    icon: 'tabler:rosette-number-1',
+    description: 'Mit elf Jahren habe ich mich zum ersten Mal aus Eigeninteresse mit HTML und CSS beschäftigt, und meine eigene Webseite (damals erreichbar unter jd-bastian.de) erstellt.',
     skills: ['Grundlagen HTML', 'Grundlagen CSS']
   },
   {
@@ -144,7 +144,7 @@ const timelineItems = [
     title: 'IT-Support & IT-Systemintegration',
     institution: 'Nanoris GmbH',
     location: 'Home',
-    icon: 'tabler:bulb',
+    icon: 'tabler:network',
     description: 'Planung und Konzeption von Netzwerkarchitekturen (vorwiegend Ubiquiti), Durchführung kleinerer Projekte (z.B. auf RasPis)',
     skills: ['Raspberry Pi', 'Ubiquiti']
   },
@@ -153,18 +153,9 @@ const timelineItems = [
     title: 'Netzwerkaufbau und -wartung',
     institution: 'zederbaum development GmbH',
     location: 'Wiesbaden, Deutschland',
-    icon: 'tabler:bulb',
+    icon: 'tabler:cloud-network',
     description: 'Planung, Wartung und Aufbau von firmeninternen Netzwerken mit Windows Server 2019',
     skills: ['Windows Server 2019', 'MS Azure', 'Active Directory', 'Microsoft Sharepoint']
-  },
-  {
-    period: '2023',
-    title: 'Frontend Developer',
-    institution: 'Freelance/Projekterfahrung',
-    location: 'Remote',
-    icon: 'tabler:world-www',
-    description: 'Entwicklung moderner Webanwendungen mit Vue.js und Nuxt. Responsive Design und Performance-Optimierung standen im Fokus.',
-    skills: ['Vue.js', 'Nuxt.js', 'TypeScript', 'Tailwind CSS', 'Responsive Design']
   },
   {
     period: '2023 - Heute',
@@ -181,8 +172,8 @@ const timelineItems = [
     institution: 'Jeuck Software',
     location: 'Mengerskirchen, Deutschland',
     icon: 'tabler:code',
-    description: 'Umsetzung diverser Softwareprojekte (z.B. JTL-Shop-Plugins), Bearbeitung von Issues in bestehenden Projekten, z.B. Oktoo.',
-    skills: ['PHP', 'Symfony', 'Twig', 'JTL Shop + WaWi', 'Smarty TPL Engine', 'Docker', 'CI/CD']
+    description: 'Umsetzung diverser Softwareprojekte (z.B. JTL Shop, PHP-Backends, usw.), Bearbeitung von Issues in bestehenden Projekten, z.B. Oktoo.',
+    skills: ['PHP', 'Symfony', 'Twig', 'JTL Shop + WaWi', 'Smarty', 'Docker', 'CI/CD']
   }
 ]
 

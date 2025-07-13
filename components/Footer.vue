@@ -26,7 +26,7 @@
 
         <div class="flex items-center space-x-4">
           <a 
-            href="https://github.com/jonadavidbastian" 
+            href="https://github.com/jabamo"
             target="_blank" 
             rel="noopener noreferrer"
             class="text-gray-600 dark:text-gray-400 hover:text-accent-500 transition-colors"
@@ -35,7 +35,7 @@
             <Icon name="tabler:brand-github" size="20" />
           </a>
           <a 
-            href="https://linkedin.com/in/jonadavidbastian" 
+            href="https://linkedin.com/in/jona-david-bastian-6664b3333/"
             target="_blank" 
             rel="noopener noreferrer"
             class="text-gray-600 dark:text-gray-400 hover:text-accent-500 transition-colors"
@@ -51,7 +51,7 @@
             <Icon name="tabler:mail" size="20" />
           </a>
           <a 
-            href="https://discord.com/users/yourdiscordid" 
+            href="https://discord.com/users/_jabamo_"
             target="_blank" 
             rel="noopener noreferrer"
             class="text-gray-600 dark:text-gray-400 hover:text-accent-500 transition-colors"
