@@ -100,5 +100,20 @@ export default defineNuxtConfig({
             ],
         },
         pageTransition: { name: 'page', mode: 'out-in' },
+    },
+
+    content: {
+        build: {
+            markdown: {
+                highlight: {
+                    theme: {
+                        default: 'github-light',
+                        dark: 'github-dark',
+                        sepia: 'monokai'
+                    },
+                    langs: ['java', 'sql', 'javascript', 'typescript', 'python', 'bash', 'json', 'yaml']
+                }
+            }
+        }
     }
 })

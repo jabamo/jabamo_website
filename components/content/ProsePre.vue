@@ -12,33 +12,74 @@
         </div>
         <button
             @click="copyCode"
-            class="text-gray-400 hover:text-white transition-colors p-1 rounded"
+            class="text-gray-400 hover:text-white transition-colors p-1 rounded copy-button"
             title="Code kopieren"
         >
-          <Icon name="tabler:copy" size="16" />
+          <svg v-if="!copied" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          <svg v-else-if="copied" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20,6 9,17 4,12"></polyline>
+          </svg>
         </button>
       </div>
 
-      <div class="relative">
-        <pre class="p-4 overflow-x-auto text-sm leading-relaxed"><code class="font-title text-gray-100"><slot /></code></pre>
-      </div>
+      <pre
+          ref="codeElement"
+          :class="[
+        $props.class,
+        '!mt-[-0.75rem] !pr-[1rem] !pl-[1rem] !rounded-t-none !rounded-b-xl !border-t-0 overflow-x-scroll'
+      ]"
+      >
+      <slot />
+    </pre>
     </div>
   </div>
 </template>
 
-<script setup>
-const props = defineProps({
-  language: {
+<script lang="ts" setup>
+import { ref } from 'vue'
+
+// we need to use all props from original ProsePre component for Shiki to work
+defineProps({
+  code: {
     type: String,
     default: ''
+  },
+  language: {
+    type: String,
+    default: null
+  },
+  filename: {
+    type: String,
+    default: null
+  },
+  highlights: {
+    type: Array as () => number[],
+    default: () => []
+  },
+  meta: {
+    type: String,
+    default: null
+  },
+  class: {
+    type: String,
+    default: null
   }
 })
 
+const copied = ref(false)
+const codeElement = ref(null)
+
 const copyCode = async () => {
   try {
-    const codeElement = document.querySelector('pre code')
-    if (codeElement) {
-      await navigator.clipboard.writeText(codeElement.textContent)
+    if (codeElement.value) {
+      await navigator.clipboard.writeText(codeElement.value.textContent)
+      copied.value = true
+      setTimeout(() => {
+        copied.value = false
+      }, 1500)
     }
   } catch (err) {
     console.error('Fehler beim Kopieren:', err)
