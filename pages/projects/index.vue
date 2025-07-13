@@ -36,7 +36,7 @@
     </section>
 
     <section class="max-w-4xl mx-auto px-6 pb-20">
-      <div v-if="filteredProjects.length === 0" class="text-center py-16">
+      <div v-if="filteredProjects.length === 0" class="text-center py-0">
         <Icon name="tabler:folder-open" size="64" class="text-gray-400 mx-auto mb-4" />
         <h3 class="font-title text-xl font-semibold text-gray-500 dark:text-gray-400 mb-2">
           Keine Projekte gefunden
@@ -63,7 +63,7 @@
         </h2>
         <p class="font-content text-gray-600 dark:text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
           Ich bin immer offen für spannende Projekte und neue Herausforderungen.
-          Lass uns gemeinsam etwas Großartiges erschaffen!
+          Schreib mich gerne an, wenn Du Kontakt mit mir aufnehmen möchtest!
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a
