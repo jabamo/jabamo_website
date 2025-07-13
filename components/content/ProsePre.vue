@@ -1,21 +1,21 @@
 <template>
   <div class="not-prose my-8">
-    <div class="bg-gray-900 dark:bg-gray-950 rounded-xl border border-gray-700 overflow-hidden shadow-2xl">
-      <div class="bg-gray-800 dark:bg-gray-900 px-4 py-3 border-b border-gray-700 flex items-center justify-between">
+    <div class="bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-2xl">
+      <div class="bg-gray-50 dark:bg-gray-800 px-4 py-3 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between">
         <div class="flex items-center space-x-3">
           <div class="flex space-x-2">
             <div class="w-3 h-3 bg-red-500 rounded-full"></div>
             <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
             <div class="w-3 h-3 bg-green-500 rounded-full"></div>
           </div>
-          <span v-if="language" class="text-gray-400 text-sm font-title">{{ language }}</span>
+          <span v-if="language" class="text-gray-500 dark:text-gray-400 text-sm font-title">{{ language }}</span>
         </div>
         <button
             @click="copyCode"
-            class="text-gray-400 hover:text-white transition-colors p-1 rounded copy-button"
+            class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-white transition-colors p-1 rounded copy-button"
             title="Code kopieren"
         >
-          <svg v-if="!copied" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg v-if="!copied" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
             <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
           </svg>
