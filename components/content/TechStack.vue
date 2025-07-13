@@ -19,14 +19,8 @@
 </template>
 
 <script lang="ts" setup>
-defineProps({
-  title: {
-    type: String,
-    required: true
-  },
-  technologies: {
-    type: Array,
-    required: true
-  }
-})
+defineProps<{
+  title: string
+  technologies: string[]
+}>()
 </script>

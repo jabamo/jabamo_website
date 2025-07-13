@@ -40,15 +40,12 @@
 </template>
 
 <script lang="ts" setup>
-defineProps({
+defineProps<{
   title: {
     type: String,
     required: true
   },
-  technologies: {
-    type: Array,
-    default: () => []
-  },
+  technologies: string[],
   team: {
     type: String,
     default: ''
@@ -61,5 +58,5 @@ defineProps({
     type: String,
     default: ''
   }
-})
+}>()
 </script>

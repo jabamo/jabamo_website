@@ -6,7 +6,7 @@
         <h4 class="font-title text-xl font-semibold text-green-700 dark:text-green-300">{{ title }}</h4>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
         <div v-for="skill in skills" :key="skill.name" class="flex items-start">
           <div class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
           <div>
@@ -20,14 +20,12 @@
 </template>
 
 <script lang="ts" setup>
-defineProps({
-  title: {
-    type: String,
-    required: true
-  },
-  skills: {
-    type: Array,
-    required: true
-  }
-})
+interface Skill {
+  name: string
+  description: string
+}
+defineProps<{
+  title: string
+  skills: Skill[]
+}>()
 </script>
