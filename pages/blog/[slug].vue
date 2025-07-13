@@ -98,12 +98,20 @@
             <Icon name="tabler:brand-linkedin" size="20"/>
           </a>
           <button
+              v-if="!isCopied"
               @click="copyToClipboard"
               class="flex items-center justify-center w-12 h-12 bg-gray-500 hover:bg-gray-600 text-white rounded-lg transition-colors"
               aria-label="Link kopieren"
           >
             <Icon name="tabler:link" size="20"/>
           </button>
+          <span
+              v-else-if="isCopied"
+              class="flex items-center justify-center w-12 h-12 bg-gray-500 hover:bg-gray-600 text-white rounded-lg transition-colors"
+              aria-label="Link wurde kopiert"
+              >
+            <Icon name="tabler:checks" size="20"/>
+          </span>
         </div>
       </div>
     </article>
@@ -159,10 +167,14 @@
 </template>
 
 <script lang="ts" setup>
+import { ref } from 'vue';
+
 const route = useRoute()
 const {data: article} = await useAsyncData(route.path, () => {
   return queryCollection('blog').path(route.path).first()
 })
+
+const isCopied = ref(false)
 
 if (!article.value) {
   throw createError({
@@ -214,7 +226,10 @@ const fullUrl = computed(() => {
 const copyToClipboard = async () => {
   try {
     await navigator.clipboard.writeText(fullUrl.value)
-    alert('Link in die Zwischenablage kopiert!')
+    isCopied.value = true;
+    setTimeout(() => {
+      isCopied.value = false
+    }, 1500)
   } catch (err) {
     console.error('Fehler beim Kopieren:', err)
   }
