@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="max-w-4xl mx-auto px-6 py-20">
+    <section class="max-w-4xl mx-auto px-6 pt-20 pb-0">
       <div class="text-center mb-16">
         <h1 class="font-title text-4xl lg:text-5xl font-bold mb-6">
           Meine <span class="text-accent-500">Projekte</span>

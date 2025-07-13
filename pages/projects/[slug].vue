@@ -1,6 +1,6 @@
 <template>
   <div v-if="project">
-    <section class="max-w-4xl mx-auto px-6 py-20">
+    <section class="max-w-4xl mx-auto px-6 pt-20 pb-0">
       <div class="text-center mb-12">
         <nav class="flex justify-center mb-8">
           <ol class="flex items-center space-x-2 text-sm font-content">
@@ -59,7 +59,7 @@
       </div>
     </section>
 
-    <section class="max-w-4xl mx-auto px-6 py-12">
+    <section class="max-w-4xl mx-auto px-6 pb-12 pt-0">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
 
         <div class="lg:col-span-2">
