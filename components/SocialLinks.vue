@@ -29,13 +29,13 @@
 const socialLinks = [
   {
     name: 'GitHub',
-    url: 'https://github.com/jonadavidbastian',
+    url: 'https://github.com/jabamo',
     icon: 'tabler:brand-github',
     external: true
   },
   {
     name: 'LinkedIn',
-    url: 'https://linkedin.com/in/jonadavidbastian',
+    url: 'https://linkedin.com/in/jona-david-bastian-6664b3333/',
     icon: 'tabler:brand-linkedin',
     external: true
   },
@@ -47,7 +47,7 @@ const socialLinks = [
   },
   {
     name: 'Discord',
-    url: 'https://discord.com/users/yourdiscordid',
+    url: 'https://discord.com/users/_jabamo_',
     icon: 'tabler:brand-discord',
     external: true
   }

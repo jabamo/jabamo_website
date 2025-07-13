@@ -20,11 +20,17 @@
         <div
             v-for="(item, index) in timelineItems"
             :key="index"
+            :ref="el => timelineItemRefs[index] = el as HTMLElement"
             class="relative flex items-center"
             :class="index % 2 === 0 ? 'justify-start' : 'justify-end'"
         >
           <div class="absolute left-1/2 transform -translate-x-1/2 z-10">
-            <div class="w-6 h-6 bg-accent-500 rounded-full border-4 border-white dark:border-gray-900 shadow-lg"></div>
+            <div
+                :class="[
+      'bg-accent-500 rounded-full border-4 border-white dark:border-gray-900 shadow-lg transition-all duration-300 ease-out',
+      isPointActive(index) ? 'w-8 h-8' : 'w-6 h-6'
+    ]"
+            ></div>
           </div>
 
           <div
@@ -74,6 +80,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 
 const progressLine = ref<HTMLElement | null>(null)
 const scrollProgress = ref(0)
+const timelineItemRefs = ref<HTMLElement[]>([])
 
 const timelineItems = [
   {
@@ -135,11 +142,33 @@ const updateScrollProgress = () => {
   const windowHeight = window.innerHeight
   const scrollTop = window.scrollY
 
-  const start = elementTop - windowHeight
-  const end = elementTop + elementHeight
+  const start = elementTop - windowHeight * 0.5
+  const end = elementTop + elementHeight - windowHeight * 0.5
 
   scrollProgress.value = Math.max(0, Math.min(100, ((scrollTop - start) / (end - start)) * 100))
 }
+
+const isPointActive = (index: number) => {
+  const element = progressLine.value?.parentElement
+  const timelineItem = timelineItemRefs.value[index]
+
+  if (!element || !timelineItem) return false
+
+  const containerRect = element.getBoundingClientRect()
+  const itemRect = timelineItem.getBoundingClientRect()
+
+  const containerTop = containerRect.top + window.scrollY
+  const itemTop = itemRect.top + window.scrollY
+  const itemHeight = itemRect.height
+
+  const pointPosition = (itemTop + itemHeight / 2) - containerTop
+
+  const linePosition = element.offsetHeight * scrollProgress.value / 100
+
+  return linePosition >= pointPosition
+}
+
+
 
 onMounted(() => {
   window.addEventListener('scroll', updateScrollProgress)

@@ -1,5 +1,5 @@
 <template>
-  <section class="max-w-4xl mx-auto px-6 py-20">
+  <section class="max-w-4xl mx-auto px-6 pt-20 pb-10">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
       <div class="order-1">
