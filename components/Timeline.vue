@@ -1,5 +1,5 @@
 <template>
-  <section class="max-w-4xl mx-auto px-6 py-16">
+  <section class="max-w-4xl mx-auto px-6 py-0">
     <div class="text-center mb-16">
       <h2 class="font-title text-3xl font-bold mb-4">Mein Werdegang</h2>
       <p class="font-content text-gray-600 dark:text-gray-400 text-lg">
@@ -113,22 +113,49 @@ const timelineItemRefs = ref<HTMLElement[]>([])
 
 const timelineItems = [
   {
-    period: '2020',
-    title: 'Abitur',
-    institution: 'Deine Schule',
-    location: 'Stadt, Deutschland',
+    period: '2011',
+    title: 'Erste Webseite',
+    institution: 'Selbststudium',
+    location: 'Zuhause',
     icon: 'tabler:certificate',
-    description: 'Erfolgreicher Abschluss mit Schwerpunkt in Mathematik und Informatik. Erste Berührung mit Programmierung im Informatikunterricht.',
+    description: 'Mit elf Jahren habe ich mich zum ersten Mal aus Interesse mit HTML und CSS beschäftigt, und meine eigene Webseite (damals erreichbar unter jd-bastian.de) erstellt.',
+    skills: ['Grundlagen HTML', 'Grundlagen CSS']
+  },
+  {
+    period: '2015',
+    title: 'Praktikum Softwareentwicklung',
+    institution: 'SETEX GmbH',
+    location: 'Mengerskirchen, Deutschland',
+    icon: 'tabler:bulb',
+    description: 'Schülerpraktikum bei SETEX. Dort durfte ich in die Abteilung der Anwendungsentwicklung reinschnuppern.',
+    skills: ['Python', 'JavaScript', 'HTML/CSS', 'Git']
+  },
+  {
+    period: '2019',
+    title: 'Abitur',
+    institution: 'Gymnasium Philippinum Weilburg',
+    location: 'Weilburg, Deutschland',
+    icon: 'tabler:certificate',
+    description: 'Erfolgreicher Abschluss mit den Leistungskursen Englisch und Politik/Wirtschaft.',
     skills: ['Mathematik', 'Informatik', 'Grundlagen Programmierung']
   },
   {
-    period: '2021 - 2022',
-    title: 'Erste Programmiererfahrungen',
-    institution: 'Selbststudium',
+    period: '2019-2023',
+    title: 'IT-Support & IT-Systemintegration',
+    institution: 'Nanoris GmbH',
     location: 'Home',
     icon: 'tabler:bulb',
-    description: 'Beginn meiner Programmierreise mit Python und JavaScript. Erste kleine Projekte und Teilnahme an Online-Kursen.',
-    skills: ['Python', 'JavaScript', 'HTML/CSS', 'Git']
+    description: 'Planung und Konzeption von Netzwerkarchitekturen (vorwiegend Ubiquiti), Durchführung kleinerer Projekte (z.B. auf RasPis)',
+    skills: ['Raspberry Pi', 'Ubiquiti']
+  },
+  {
+    period: '2019-2024',
+    title: 'Netzwerkaufbau und -wartung',
+    institution: 'zederbaum development GmbH',
+    location: 'Wiesbaden, Deutschland',
+    icon: 'tabler:bulb',
+    description: 'Planung, Wartung und Aufbau von firmeninternen Netzwerken mit Windows Server 2019',
+    skills: ['Windows Server 2019', 'MS Azure', 'Active Directory', 'Microsoft Sharepoint']
   },
   {
     period: '2023',
@@ -140,22 +167,22 @@ const timelineItems = [
     skills: ['Vue.js', 'Nuxt.js', 'TypeScript', 'Tailwind CSS', 'Responsive Design']
   },
   {
-    period: '2022 - Heute',
-    title: 'Informatik Studium',
+    period: '2023 - Heute',
+    title: 'Digital Media Systems-Studium',
     institution: 'Technische Hochschule Mittelhessen',
     location: 'Gießen, Deutschland',
     icon: 'tabler:school',
-    description: 'Bachelor-Studium mit Fokus auf Softwareentwicklung, Algorithmen und Datenstrukturen. Praktische Projekte in Java, Python und Webentwicklung.',
-    skills: ['Java', 'Python', 'Algorithmen', 'Datenstrukturen', 'Software Engineering']
+    description: 'Bachelor-Studium mit Vertiefung in Informatik. Orientierungsphase mit Grundlagen der BWL und des Mediendesigns.',
+    skills: ['TypeScript', 'Node.js', 'Express', 'Java', 'Spring', 'OOP', 'Vue.js', 'Ionic', 'Capacitor']
   },
   {
     period: '2024 - Heute',
-    title: 'Backend Developer',
-    institution: 'Deine Firma/Praktikum',
-    location: 'Stadt, Deutschland',
+    title: 'Werkstudent Softwareentwicklung',
+    institution: 'Jeuck Software',
+    location: 'Mengerskirchen, Deutschland',
     icon: 'tabler:code',
-    description: 'Entwicklung von REST APIs mit Spring Boot und Microservices-Architektur. Arbeit mit PostgreSQL und Docker für Container-basierte Deployments.',
-    skills: ['Java', 'Spring Boot', 'PostgreSQL', 'Docker', 'Microservices']
+    description: 'Umsetzung diverser Softwareprojekte (z.B. JTL-Shop-Plugins), Bearbeitung von Issues in bestehenden Projekten, z.B. Oktoo.',
+    skills: ['PHP', 'Symfony', 'Twig', 'JTL Shop + WaWi', 'Smarty TPL Engine', 'Docker', 'CI/CD']
   }
 ]
 

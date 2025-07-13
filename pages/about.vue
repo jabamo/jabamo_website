@@ -1,23 +1,24 @@
 <template>
   <div>
-    <section class="max-w-4xl mx-auto px-6 py-20">
+    <section class="max-w-4xl mx-auto px-6 pt-20 pb-0">
       <div class="text-center mb-16">
         <h1 class="font-title text-4xl lg:text-5xl font-bold mb-6">
           Über <span class="text-accent-500">mich</span>
         </h1>
         <p class="font-content text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
-          Hi! Ich bin Jona, ein leidenschaftlicher Fullstack-Developer und Informatik-Student.
-          Meine Reise in die Welt der Programmierung begann vor einigen Jahren und hat mich
-          zu spannenden Projekten und wertvollen Erfahrungen geführt.
+          Hi! Ich bin Jona, ein leidenschaftlicher Developer, der vor allem Interesse an allen Aspekten rund um die Backend-Entwicklung hat.
+          Ich studiere zur Zeit Digital Media Systems an der THM in Gießen in der Vertiefungsrichtung Informatik.
+          Meine Reise in die Welt der Nullen und Einsen begann bereits in frühem Kindesalter
+          und hat mich seitdem durch einige Bereiche der Informatik geführt.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
         <div class="text-center p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
           <Icon name="tabler:code" size="32" class="text-accent-500 mx-auto mb-4" />
-          <h3 class="font-title font-semibold text-lg mb-2">Backend Focus</h3>
+          <h3 class="font-title font-semibold text-lg mb-2">Backend-Fokus</h3>
           <p class="font-content text-gray-600 dark:text-gray-400 text-sm">
-            Java Spring Boot, REST APIs, Microservices
+            Node.js + Express, PostgreSQL, MariaDB, PHP + Symfony
           </p>
         </div>
 
@@ -25,7 +26,7 @@
           <Icon name="tabler:school" size="32" class="text-accent-500 mx-auto mb-4" />
           <h3 class="font-title font-semibold text-lg mb-2">Student</h3>
           <p class="font-content text-gray-600 dark:text-gray-400 text-sm">
-            Informatik B.Sc. an der THM
+            Digital Media Systems B.Sc. an der THM
           </p>
         </div>
 
@@ -33,7 +34,7 @@
           <Icon name="tabler:rocket" size="32" class="text-accent-500 mx-auto mb-4" />
           <h3 class="font-title font-semibold text-lg mb-2">Ambitioniert</h3>
           <p class="font-content text-gray-600 dark:text-gray-400 text-sm">
-            Immer auf der Suche nach neuen Herausforderungen
+            Ich lerne nie aus und bin immer motiviert, mich weiterzuentwickeln.
           </p>
         </div>
       </div>
@@ -101,33 +102,33 @@ const skillCategories = [
     name: 'Backend',
     icon: 'tabler:server',
     skills: [
-      { name: 'Java', level: 4 },
-      { name: 'Spring Boot', level: 4 },
-      { name: 'PostgreSQL', level: 3 },
-      { name: 'Docker', level: 3 },
-      { name: 'REST APIs', level: 4 }
+      { name: 'Express.js', level: 5 },
+      { name: 'REST APIs', level: 4 },
+      { name: 'GraphQL APIs', level: 2 },
+      { name: 'Symfony', level: 3 },
+      { name: 'Java Spring', level: 1 }
     ]
   },
   {
     name: 'Frontend',
     icon: 'tabler:device-desktop',
     skills: [
-      { name: 'Vue.js', level: 4 },
-      { name: 'Nuxt.js', level: 4 },
-      { name: 'TypeScript', level: 3 },
+      { name: 'Vue.js', level: 5 },
+      { name: 'TypeScript', level: 4 },
+      { name: 'Nuxt.js', level: 3 },
       { name: 'Tailwind CSS', level: 4 },
-      { name: 'JavaScript', level: 4 }
+      { name: 'Bootstrap', level: 3 }
     ]
   },
   {
-    name: 'Tools & Sonstiges',
+    name: 'Sonstiges',
     icon: 'tabler:tools',
     skills: [
       { name: 'Git', level: 4 },
-      { name: 'Linux', level: 3 },
-      { name: 'Python', level: 3 },
-      { name: 'Node.js', level: 3 },
-      { name: 'Figma', level: 2 }
+      { name: 'Node.js', level: 4 },
+      { name: 'Docker', level: 4 },
+      { name: 'Composer', level: 3 },
+      { name: 'Twig', level: 2 }
     ]
   }
 ]
