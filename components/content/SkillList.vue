@@ -24,8 +24,12 @@ interface Skill {
   name: string
   description: string
 }
-defineProps<{
-  title: string
-  skills: Skill[]
-}>()
+interface Props {
+  title?: string
+  skills?: Skill[]
+}
+const props = withDefaults(defineProps<Props>(), {
+  title: '',
+  skills: () => []
+})
 </script>

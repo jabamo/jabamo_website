@@ -183,7 +183,7 @@ Nachdem dann bereits knapp drei Wochen vergangen sind, fing der für mich schön
 praktische Umsetzung der Prototypen aus dem Medien-Teil in eine echte Webseite ging. Zunächst einmal haben wir in YouTrack alle Anforderungen mit User Stories und Epics nochmals verschriftlicht und
 dann konkrete Tasks für unser Team abgeleitet. Die Vorgabe war, strikt nach Scrum zu arbeiten, und dafür standen uns drei Sprints mit je einigen Tagen Zeit zur Verfügung
 Zusammen mit meinem Kommilitonen Niklas habe ich den Backend-Teil übernommen, da mir das schon immer am meisten Spaß gemacht hat. Es gab für uns als Team bestimmte Vorgaben, was je Sprint umgesetzt werden musste (z.B. ein vollständiges CRUD usw.).
-Grundsätzlich durften wir uns die Architektur nach Absprache aussuchen, angesichts der begrenzten Zeit haben wir uns aber - auch durch die Erfahrung, die wir bereits gesammelt haben - wieder für ein Backend mit Express.js entschieden - die SQL-Datenbank wurde
+Grundsätzlich durften wir uns die Architektur *nach Absprache* aussuchen, angesichts der begrenzten Zeit haben wir uns aber - auch durch die Erfahrung, die wir bereits gesammelt haben - wieder für ein Backend mit Express.js entschieden - die SQL-Datenbank wurde
 uns von der THM zur Verfügung gestellt. Wir konnten während des ersten Sprint schon unzählige CRUDs und Features implementieren, und haben in den anderen beiden Sprints dann noch weitere Gimmicks verbaut, inkl. der Einbindung einer Schnittstelle zur
 Prüfung von Bankdaten, oder einen Bildupload über Multer.
 
@@ -199,20 +199,34 @@ const storage = multer.diskStorage({
 });
 ```
 
-Auch das Frontend von den anderen Teammitgliedern sah am Ende identisch zum Prototypen aus und entsprach unseren Erwartungen. Im Gegensatz zu einem großen Onepager, also einer riesigen HTML-Datei, in der alle Sachen des Shops dynamisch mit TypeScript gerendet werden, haben wir uns für eine feature-basierte Struktur
+Auch das Frontend von den anderen Teammitgliedern sah am Ende identisch zum Prototypen aus und entsprach unseren Erwartungen.
+
+::ProseImg{src="/assets/img/blog/erfahrungen-dms-thm/natures_shield_frontend.png" alt="Startseite unseres Projektes" caption="Die Startseite unseres Projektes" size="small"}
+::
+
+
+::ContentSlider{:autoplay="false" :autoplayDelay="4000" title="Meine Projektbilder" :slides='[{"src": "/assets/img/blog/erfahrungen-dms-thm/natures_shield_frontend.png", "alt": "Erstes Bild", "caption": "Das ist das erste Bild"}, {"src": "/assets/img/blog/erfahrungen-dms-thm/natures_shield_frontend-2.png", "alt": "Zweites Bild", "caption": "Das ist das zweite Bild"}, {"src": "/assets/img/blog/erfahrungen-dms-thm/natures_shield_frontend-3.png", "alt": "Drittes Bild", "caption": "Das ist das dritte Bild"}]'}
+::
+
+Im Gegensatz zu einem großen Onepager, also einer riesigen HTML-Datei, in der alle Sachen des Shops dynamisch mit TypeScript gerendet werden, haben wir uns für eine feature-basierte Struktur
 entschieden, und dementsprechend eine ordentliche Struktur der Seite (zumindest nach unserem damaligen Wissensstand) ;)
 
 ::ProseImg{src="/assets/img/blog/erfahrungen-dms-thm/ordnerstruktur_frontend_ip1.png" alt="Ordnerstruktur des Frontends" caption="Die Ordnerstruktur des Frontends" size="small"}
+::
 
-Während des IT-Teils hatten wir zwei-drei mündliche Abfragen 
+Während des IT-Teils hatten wir zwei mündliche Abfragen, in denen wir unseren geschriebenen Code erklären mussten, damit auch klar wird, dass wir die Express.js bzw. TypeScript im Allgemeinen verstanden haben. Auch gab es zwischen den drei Sprints Sprint-Reviews, in denen
+wir mit dem Product Owner (also dem Auftraggeber) die umgesetzten User Stories nach Definition of Done durchgegangen sind und auch die Scrum-Planung überprüft wurde mitsamt Burndown-Chart, und wir dann eine Note dafür erhalten haben.
+Nachdem wir dann soweit mit allen drei Teilen durch waren und unser Endprodukt stand, war das IP1 kurz vor dem Abschluss, und es kam zur Abschlusspräsentation, bei der alle Professoren und Dozenten anwesend waren, die uns in den Wochen zuvor begleitet haben. Insgesamt waren wir
+mit dem Resultat mehr als zufrieden, die Wochen des IP1 vergingen sehr schnell und wir hatten eine sehr schöne Zeit zusammen als Team.
+
+::ProjectInfo{title="Nature's Shield - IP1" :technologies='["Node.js", "Express.js", "MySQL"]' team="5 Studierende" duration="Fünf Wochen"}
+::
 
 
 ## Projekte im Studium
 
 ### Semester-Projekt: Bibliotheksverwaltung
 
-::ProjectInfo{title="Bibliotheksverwaltung" :technologies='["Java", "JavaFX", "SQLite", "Maven"]' team="3 Studierende" duration="Ein ganzes Semester"}
-::
 
 Das Projekt lehrte mich wichtige **Soft Skills**:
 

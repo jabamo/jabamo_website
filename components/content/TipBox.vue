@@ -14,10 +14,10 @@
 </template>
 
 <script lang="ts" setup>
-defineProps({
-  title: {
-    type: String,
-    default: 'Tipp'
-  }
+interface Props {
+  title?: string
+}
+const props = withDefaults(defineProps<Props>(), {
+  title: 'Tipp'
 })
 </script>

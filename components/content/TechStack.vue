@@ -19,8 +19,12 @@
 </template>
 
 <script lang="ts" setup>
-defineProps<{
-  title: string
-  technologies: string[]
-}>()
+interface Props {
+  title?: string
+  technologies?: string[]
+}
+const props = withDefaults(defineProps<Props>(), {
+  title: '',
+  technologies: () => []
+})
 </script>

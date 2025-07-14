@@ -105,7 +105,7 @@
 </template>
 
 <script lang="ts" setup>
-import {ref, onMounted, onUnmounted} from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 const progressLine = ref<HTMLElement | null>(null)
 const scrollProgress = ref(0)

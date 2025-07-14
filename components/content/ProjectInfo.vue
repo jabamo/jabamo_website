@@ -40,23 +40,18 @@
 </template>
 
 <script lang="ts" setup>
-defineProps<{
-  title: {
-    type: String,
-    required: true
-  },
-  technologies: string[],
-  team: {
-    type: String,
-    default: ''
-  },
-  duration: {
-    type: String,
-    default: ''
-  },
-  result: {
-    type: String,
-    default: ''
-  }
-}>()
+interface Props {
+  title: string
+  technologies?: string[]
+  team?: string
+  duration?: string
+  result?: string
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  technologies: () => [],
+  team: '',
+  duration: '',
+  result: ''
+})
 </script>
