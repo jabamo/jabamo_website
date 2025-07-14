@@ -1,7 +1,7 @@
 ---
 title: "Digital Media Systems an der THM - ein Zwischenfazit"
-description: "Einblicke in das DMS-Studium an der Technischen Hochschule Mittelhessen und was ich in den ersten Semestern gelernt habe."
-image: "/assets/img/blog/thm-studium.jpg"
+description: "Einblicke in das DMS-Studium an der Technischen Hochschule Mittelhessen, und was ich in den ersten Semestern gelernt habe."
+image: "/assets/img/blog/erfahrungen-dms-thm/thm-studium.jpg"
 tags: ["Studium", "THM", "DMS", "Digital Media Systems"]
 category: "Studium"
 author: "Jona-David Bastian"
@@ -46,9 +46,9 @@ und man circa sechs Wochen Zeit hat und sich nur darauf fokussiert.
 
 ## Highlights der ersten beiden Semester
 
-### Grundlagen und Anwendung Social Media 1+2
+### Digitale Medien + Kommunikation 1+2
 
-In GASM 1 und 2 haben wir grundlegende Medien- und Kommunikationstheorien gelernt. Das erste Semester war dabei noch sehr theoretisch (aber keinesfalls langweilig!),
+In DMK 1 und 2 haben wir grundlegende Medien- und Kommunikationstheorien gelernt. Das erste Semester war dabei noch sehr theoretisch (aber keinesfalls langweilig!),
 wohingegen das zweite Semester schon deutlich praxisbezogener war.
 
 Im ersten Semester haben wir überwiegend Definitionen, Kommunikationsmodelle und grundlegende Informationen rund um das Thema soziale Medien, Social Media (übrigens nicht gleichbedeutend ;)) & Co.
@@ -58,7 +58,7 @@ Im zweiten Semester haben wir auch gelernt, Wireframes zu gestalten, Low- und Hi
 Persönlich möchte ich noch gerne hinzufügen, dass mir beide Module sehr viel Spaß gemacht haben und ich auch die Vorlesungen sowohl von Herrn Prof. Dr. Gust und Herrn Prof. Dr. Qyll sehr gut verstehen konnte. Beide hatten einen sehr gut verständlichen Stil,
 ihre Vorlesungen zu halten. Man konnte jederzeit Nachfragen stellen und die Erklärungen haben immer gut gepasst. Auch auf persönlicher Ebene fand ich beide sehr sympathisch!
 
-### BWL und Informationssysteme 1+2
+### BWL1: Grundlagen und Unternehmenssoftware & BWL2: Grundlagen des Marketing
 
 Wie sich beim Begriff BWL bereits denken kann, erwarten einen in BWL und Informationssysteme eins und zwei die Grundlagen der Betriebswirtschaftslehre, dazu gehören
 internes und externes Rechnungswesen, Unternehmensformen, aber auch in den Praktika der Umgang mit MS Excel und grundlegendes Verständnis für SAP.
@@ -117,7 +117,7 @@ function loginUser(event: Event): void {
             logoutButton.style.display = "block";
             renderPetList();
             fetchUserData();
-            hideEditForms(); // Formulare ausblenden
+            hideEditForms();
             (document.querySelector("#formLogin") as HTMLFormElement).reset();
         } else {
             showAlert("Die Anmeldung ist leider fehlgeschlagen!");
@@ -161,6 +161,51 @@ es aber zwei sehr gelungene Module, die auch vorher noch komplett fachfremde seh
 ::
 
 ### Integrationsprojekt 1 (IP1)
+Das Integrationsprojekt 1 (IP1) war das Abschlussprojekt beider Semester und ist mit 15 Credit Points auch sehr umfangreich.
+Bereits während des zweiten Semesters wird man in wöchentlichen Vorlesungen in das Thema agiles Projektmanagement (nach Scrum)
+eingeführt, was einen essentiellen Bestandteil im IP1 darstellt.
+
+Nachdem wir dann bereits in BWLIS2 und DMK2 die Klausuren geschrieben haben, ging es Anfang Juni letzten Jahres los. In Gruppen von
+um die fünf Student:innen findet man sich dann in der Kick-Off-Veranstaltung zusammen und entwickelt zunächst basierend auf ein
+Überbegriff, welcher jedes Jahr neu vorgegeben wird, eine Geschäftsidee. In unserem Fall war der Überbegriff **nachhaltige Verpackungsmaterialien* und
+unser daraus abgeleitetes Thema eine nachhaltige Lebensmittelverpackung aus Algen mit intelligenter Frischeanzeige.
+
+Nachdem wir für unser Thema das Go bekommen haben, ging es direkt in der ersten Woche in den BWL-Teil rein. Dort musste dann ein Businessplan entwickelt
+werden, welcher unter anderem die **Geschäftsidee**, **SWOT- und PESTEL-Analyse**, **Business Model Canvas** usw. enthielt. Zum Ende des BWL-Teils
+hielten wir dann noch einen Pitch mit abschließender Fragerunde, in der wir unseren Businessplan verteidigt haben.
+
+Weiter ging es dann direkt in den Medien-Teil des IP1, in dem wir das Gelernte aus den beiden Semestern sehr gut anwenden konnten.
+Unter anderem stand die Entwicklung von Anforderungen, User Stories und Story Mapping, und im weiteren Verlauf die Entwicklung von Wireframes, Prototypen und zum Schluss einem Moodboard im Vordergrund.
+Es gab fast jeden Tag sehr gute Feedbackrunden, in denen wir eine gute und faire Rückmeldung über unser bisher Geleistetes erhalten haben. Am Ende stand also
+der Prototyp eines Online-Shops für unser Produkt, mit Profilbereichen und allem drumherum.
+
+Nachdem dann bereits knapp drei Wochen vergangen sind, fing der für mich schönste (und zeitintensivste) Abschnitt des IP1 an: der IT-Teil, bei dem es um die
+praktische Umsetzung der Prototypen aus dem Medien-Teil in eine echte Webseite ging. Zunächst einmal haben wir in YouTrack alle Anforderungen mit User Stories und Epics nochmals verschriftlicht und
+dann konkrete Tasks für unser Team abgeleitet. Die Vorgabe war, strikt nach Scrum zu arbeiten, und dafür standen uns drei Sprints mit je einigen Tagen Zeit zur Verfügung
+Zusammen mit meinem Kommilitonen Niklas habe ich den Backend-Teil übernommen, da mir das schon immer am meisten Spaß gemacht hat. Es gab für uns als Team bestimmte Vorgaben, was je Sprint umgesetzt werden musste (z.B. ein vollständiges CRUD usw.).
+Grundsätzlich durften wir uns die Architektur nach Absprache aussuchen, angesichts der begrenzten Zeit haben wir uns aber - auch durch die Erfahrung, die wir bereits gesammelt haben - wieder für ein Backend mit Express.js entschieden - die SQL-Datenbank wurde
+uns von der THM zur Verfügung gestellt. Wir konnten während des ersten Sprint schon unzählige CRUDs und Features implementieren, und haben in den anderen beiden Sprints dann noch weitere Gimmicks verbaut, inkl. der Einbindung einer Schnittstelle zur
+Prüfung von Bankdaten, oder einen Bildupload über Multer.
+
+```typescript
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, 'public/global/uploads/');
+    },
+    filename: (req, file, cb) => {
+        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+        cb(null, file.fieldname + '-' + uniqueSuffix + Path.extname(file.originalname));
+    }
+});
+```
+
+Auch das Frontend von den anderen Teammitgliedern sah am Ende identisch zum Prototypen aus und entsprach unseren Erwartungen. Im Gegensatz zu einem großen Onepager, also einer riesigen HTML-Datei, in der alle Sachen des Shops dynamisch mit TypeScript gerendet werden, haben wir uns für eine feature-basierte Struktur
+entschieden, und dementsprechend eine ordentliche Struktur der Seite (zumindest nach unserem damaligen Wissensstand) ;)
+
+::ProseImg{src="/assets/img/blog/erfahrungen-dms-thm/ordnerstruktur_frontend_ip1.png" alt="Ordnerstruktur des Frontends" caption="Die Ordnerstruktur des Frontends" size="small"}
+
+Während des IT-Teils hatten wir zwei-drei mündliche Abfragen 
+
 
 ## Projekte im Studium
 
