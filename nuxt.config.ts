@@ -111,7 +111,7 @@ export default defineNuxtConfig({
                         dark: 'github-dark',
                         sepia: 'monokai'
                     },
-                    langs: ['java', 'sql', 'javascript', 'typescript', 'python', 'bash', 'json', 'yaml']
+                    langs: ['java', 'kotlin', 'sql', 'javascript', 'typescript', 'python', 'bash', 'json', 'yaml']
                 }
             }
         }

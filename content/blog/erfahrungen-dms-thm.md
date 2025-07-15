@@ -1,6 +1,6 @@
 ---
 title: "Digital Media Systems an der THM - ein Zwischenfazit"
-description: "Einblicke in das DMS-Studium an der Technischen Hochschule Mittelhessen, und was ich in den ersten Semestern gelernt habe."
+description: "Einblicke in die ersten Semester des DMS-Studiums an der Technischen Hochschule Mittelhessen, und was ich in den ersten Semestern gelernt habe."
 image: "/assets/img/blog/erfahrungen-dms-thm/thm-studium.jpg"
 tags: ["Studium", "THM", "DMS", "Digital Media Systems"]
 category: "Studium"
@@ -205,7 +205,7 @@ Auch das Frontend von den anderen Teammitgliedern sah am Ende identisch zum Prot
 ::
 
 
-::ContentSlider{:autoplay="false" :autoplayDelay="4000" title="Meine Projektbilder" :slides='[{"src": "/assets/img/blog/erfahrungen-dms-thm/natures_shield_frontend.png", "alt": "Erstes Bild", "caption": "Das ist das erste Bild"}, {"src": "/assets/img/blog/erfahrungen-dms-thm/natures_shield_frontend-2.png", "alt": "Zweites Bild", "caption": "Das ist das zweite Bild"}, {"src": "/assets/img/blog/erfahrungen-dms-thm/natures_shield_frontend-3.png", "alt": "Drittes Bild", "caption": "Das ist das dritte Bild"}]'}
+::ContentSlider{:autoplay="false" :autoplayDelay="4000" title="Eindrücke unseres IP1-Projektes" :slides='[{"src": "/assets/img/blog/erfahrungen-dms-thm/natures_shield_frontend.png", "alt": "Erstes Bild", "caption": "Das ist das erste Bild"}, {"src": "/assets/img/blog/erfahrungen-dms-thm/natures_shield_frontend.png", "alt": "Zweites Bild", "caption": "Das ist das zweite Bild"}, {"src": "/assets/img/blog/erfahrungen-dms-thm/natures_shield_frontend.png", "alt": "Drittes Bild", "caption": "Das ist das dritte Bild"}]'}
 ::
 
 Im Gegensatz zu einem großen Onepager, also einer riesigen HTML-Datei, in der alle Sachen des Shops dynamisch mit TypeScript gerendet werden, haben wir uns für eine feature-basierte Struktur
@@ -222,44 +222,67 @@ mit dem Resultat mehr als zufrieden, die Wochen des IP1 vergingen sehr schnell u
 ::ProjectInfo{title="Nature's Shield - IP1" :technologies='["Node.js", "Express.js", "MySQL"]' team="5 Studierende" duration="Fünf Wochen"}
 ::
 
+Kurz nach Ende des IP1 ging es auf die Veranstaltung für die Vertiefungsphase, in der wir dann alle Informationen für die verschiedenen Vertiefungsrichtungen erhalte haben.
+Unter anderem gab es dort bestimmte *Tracks* mit Modulauswahlen, mit denen man einen groben Überblick darüber bekam, welche Module man auswählen sollte für welchen Weg (z.B. Frontendentwicklung in der Informatik, Backendentwicklung, usw.).
+In einem abschließendem Reflexionsgespräch hat man das alles nochmal besprochen und dann das Go für die Vertiefungsphase bekommen.
+
+## Module der restlichen Semester
+
+Ab dem dritten Semester heißt es dann, selbstständig Module auswählen! In drei Pools hat man eine große Auswahl an Modulen, die natürlich je nach Vertiefungsrichtung variiere. Da ich Informatik vertiefe, stehen mir Module
+aus dem Vertiefungspool IT, aus dem Wahl-Pflicht-Pool sowie dem überfachlichen Pool zur Verfügung. In jedem Pool muss am Ende eine bestimmte Anzahl an Credit Points erreicht sein.
+
+Ich habe mich in dem dritten und vierten Semester vorrangig natürlich für praktische IT-Module entschieden, zum Beispiel **Webtechnologien** (mit Einblick in Java Spring, Frontend-Frameworks wie Angular & Co.),
+**Konzepte und Realisierung objektorientierter Programmierung** (Grundlagen und tiefgründigeres Wissen zu OOP), in diesem Semester **Entwicklung mobiler Applikationen** (auf Basis von Ionic und Capacitor) sowie
+**Konzepte moderner Softwareentwicklung** (alles rund um Entwicklungsstandards, Git-Workflows, Projektmanagement). Diese Module sind zumeist am Ende mit einer Projektarbeit versehen, manchmal noch mit einer kleinen Kurzklausur oder einer mündlichen Prüfung.
+Das mag zunächst einmal einfacher klingen, aber es ist oft so, dass man gerade bei aufwändigen Projektarbeiten einen viel höheren Arbeitsaufwand hat und teilweise Nächte an dem Fixen von Bugs verbringt. Der schöne Nebeneffekt ist da natürlich,
+dass man am Ende meist etwas Schönes von Grund auf aufgebaut hat, und man weiß, worin die Arbeit geflossen ist.
 
 ## Projekte im Studium
 
-### Semester-Projekt: Bibliotheksverwaltung
+### WebTechnologien-Projekt: Notizen-System
 
+Dieses Projekt führte mich zwei neue Bereiche der Softwareentwicklung hinein:
 
-Das Projekt lehrte mich wichtige **Soft Skills**:
+- Kotlin Spring als Backend mit MVC-Pattern
+- GraphQL statt Rest als Schnittstelle
 
-- Projektmanagement
-- Teamarbeit
-- Zeitplanung
-- Dokumentation
+Ein Ausschnitt zum Beispiel aus dem UserController, der ein User-Data Transfer Object annimmt.
 
-Ein Ausschnitt aus unserem Code für die Buchsuche:
-
-```java
-public List<Book> searchBooks(String query) {
-    String sql = "SELECT * FROM books WHERE title LIKE ? OR author LIKE ?";
-    List<Book> results = new ArrayList<>();
-    
-    try (PreparedStatement stmt = connection.prepareStatement(sql)) {
-        String searchPattern = "%" + query + "%";
-        stmt.setString(1, searchPattern);
-        stmt.setString(2, searchPattern);
-        
-        ResultSet rs = stmt.executeQuery();
-        while (rs.next()) {
-            results.add(new Book(
-                rs.getInt("id"),
-                rs.getString("title"),
-                rs.getString("author"),
-                rs.getString("isbn")
-            ));
+```kotlin UserController.kt
+    @GetMapping("/{id}")
+    fun getUserById(@PathVariable id: Long): ResponseEntity<UserDTO> {
+        return try {
+            val user = userService.getUserById(id)
+            if (user != null) {
+                ResponseEntity.ok(UserMapper.toDTO(user))
+            } else {
+                throw ResourceNotFoundException("User", "id", id)
+            }
+        } catch (e: ResourceNotFoundException) {
+            ResponseEntity.notFound().build()
         }
     }
-    return results;
-}
 ```
+
+Und die dazugehörige getUserById-Methode im UserService, die die Methode aus dem Interface IUserService implementiert.
+
+```kotlin UserService.kt
+    override fun getUserById(id: Long): User? = userRepository.findById(id).orElse(null)
+```
+
+```kotlin IUserService.kt
+    fun getUserById(id: Long): User?
+```
+
+Das Frontend haben wir mit Vue.js und Tailwind ganz simpel implementiert.
+
+::ContentSlider{:autoplay="false" :autoplayDelay="4000" title="Eindrücke des WebTech-Projektes" :slides='[{"src": "/assets/img/blog/erfahrungen-dms-thm/webtech_notesystem_1.png", "alt": "Anzeige der Notizbücher", "caption": "Nach dem Login werden einem alle angelegten Notizbücher angezeigt"}, {"src": "/assets/img/blog/erfahrungen-dms-thm/webtech_notesystem_2.png", "alt": "Detailanzeige von Notizbüchern", "caption": "Klickt man auf ein Notizbuch aus Bild eins, werden einem alle Einträge dazu angezeigt"}, {"src": "/assets/img/blog/erfahrungen-dms-thm/webtech_notesystem_2.png", "alt": "Bearbeiten von Notizen", "caption": "Nachträgliches Bearbeiten eigener Notizen"}]'}
+::
+
+Insgesamt war das Projekt sehr simpel aufgebaut, dennoch waren die ersten Erfahrungen mit Kotlin und Spring sehr lehrreich!
+
+::TechStack{title="Webtechnologien-Abschlussprojekt" :technologies='["Java Spring", "H2 Database Engine", "Vue.js", "Vite", "TailwindCSS"]'}
+::
 
 ### Hackathon Teilnahme
 

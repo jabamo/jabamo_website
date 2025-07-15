@@ -9,6 +9,7 @@
             <div class="w-3 h-3 bg-green-500 rounded-full"></div>
           </div>
           <span v-if="language" class="text-gray-500 dark:text-gray-400 text-sm font-title">{{ language }}</span>
+          <span v-if="meta" class="text-gray-600 dark:text-gray-300 text-sm font-medium">{{ meta }}</span>
           <span v-if="filename" class="text-gray-600 dark:text-gray-300 text-sm font-medium">{{ filename }}</span>
         </div>
         <button
