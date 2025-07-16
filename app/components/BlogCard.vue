@@ -29,7 +29,11 @@
       </div>
 
       <h2 class="font-title text-xl font-bold mb-3 line-clamp-2 group-hover:text-accent-500 transition-colors">
+        <NuxtLink
+            :to="`/blog/${article.path.split('/').pop()}`"
+        >
         {{ article.title }}
+        </NuxtLink>
       </h2>
 
       <p class="font-content text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4 line-clamp-3">
