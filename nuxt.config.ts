@@ -6,44 +6,44 @@ export default defineNuxtConfig({
 
     // TailwindCSS config
     tailwindcss: {
-      config: {
-          theme: {
-              extend: {
-                  colors: {
-                      primary: {
-                          50: '#f8fafc',
-                          100: '#f1f5f9',
-                          500: '#64748b',
-                          900: '#0f172a',
-                      },
-                      secondary: {
-                          50: '#f9fafb',
-                          900: '#111827',
-                      },
-                      accent: {
-                          500: '#3b82f6',
-                          600: '#2563eb',
-                      }
-                  },
-                  fontFamily: {
-                      'title': ['Jetbrains Mono', 'monospace'],
-                      'content': ['Inter', 'sans-serif'],
-                  },
-                  typography: {
-                      DEFAULT: {
-                          css: {
-                              '--tw-prose-body': 'rgb(75 85 99)',
-                              '--tw-prose-headings': 'rgb(17 24 39)',
-                              '--tw-prose-links': 'rgb(59 130 246)',
-                              '--tw-prose-code': 'rgb(17 24 39)',
-                              '--tw-prose-pre-bg': 'rgb(31 41 55)',
-                          }
-                      }
-                  },
-                  cssPath: '~/assets/css/tailwind.css'
-              }
-          }
-      }
+        cssPath: '~/assets/css/tailwind.css',
+        config: {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            500: '#64748b',
+                            900: '#0f172a',
+                        },
+                        secondary: {
+                            50: '#f9fafb',
+                            900: '#111827',
+                        },
+                        accent: {
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                        }
+                    },
+                    fontFamily: {
+                        'title': ['Jetbrains Mono', 'monospace'],
+                        'content': ['Inter', 'sans-serif'],
+                    },
+                    typography: {
+                        DEFAULT: {
+                            css: {
+                                '--tw-prose-body': 'rgb(75 85 99)',
+                                '--tw-prose-headings': 'rgb(17 24 39)',
+                                '--tw-prose-links': 'rgb(59 130 246)',
+                                '--tw-prose-code': 'rgb(17 24 39)',
+                                '--tw-prose-pre-bg': 'rgb(31 41 55)',
+                            }
+                        }
+                    }
+                }
+            }
+        }
     },
 
     // color mode config
@@ -85,21 +85,24 @@ export default defineNuxtConfig({
                 lang: 'de',
             },
             meta: [
-                { charset: 'utf-8' },
-                { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+                {charset: 'utf-8'},
+                {name: 'viewport', content: 'width=device-width, initial-scale=1'},
 
                 // description
-                { name: 'description', content: 'Beschreibung hier rein' },
+                {name: 'description', content: 'Beschreibung hier rein'},
 
                 // seo tags
-                { name: 'robots', content: 'index, follow' },
-                { name: 'keywords', content: 'jona, david, bastian, informatik, fullstack, backend, java, spring, developer, student, thm, dms' },
+                {name: 'robots', content: 'index, follow'},
+                {
+                    name: 'keywords',
+                    content: 'jona, david, bastian, informatik, fullstack, backend, java, spring, developer, student, thm, dms'
+                },
             ],
             link: [
-                { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+                {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
             ],
         },
-        pageTransition: { name: 'page', mode: 'out-in' },
+        pageTransition: {name: 'page', mode: 'out-in'},
     },
 
     content: {
