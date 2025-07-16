@@ -284,36 +284,11 @@ Insgesamt war das Projekt sehr simpel aufgebaut, dennoch waren die ersten Erfahr
 ::TechStack{title="Webtechnologien-Abschlussprojekt" :technologies='["Java Spring", "H2 Database Engine", "Vue.js", "Vite", "TailwindCSS"]'}
 ::
 
-### Hackathon Teilnahme
+### Weitere Projekte
 
-::HighlightBox{title="48h Hackathon Challenge"}
-**Challenge**: Smart City Dashboard  
-**Unser Ansatz**: React Frontend + Express Backend  
-**Ergebnis**: 3. Platz 🥉
-
-48 Stunden intensives Programmieren mit viel **Kaffee** und wenig Schlaf!
-::
-
-::TechStack{title="Hackathon Tech-Stack" :technologies='["React", "Express.js", "Node.js", "MongoDB", "Chart.js", "Socket.io"]'}
-::
-
-Der Code für unsere **Real-time Updates** sah so aus:
-
-```javascript
-// WebSocket-Integration für Live-Updates
-const socket = io('http://localhost:3001');
-
-socket.on('sensorData', (data) => {
-    updateCharts(data);
-    updateMetrics(data);
-});
-
-function updateCharts(data) {
-    const chart = Chart.getChart('cityChart');
-    chart.data.datasets[0].data.push(data.temperature);
-    chart.update();
-}
-```
+Weitere Projekte werde ich im Laufe der Zeit noch vorstellen unter Projekte. Dort werde ich dann noch spezifischer auf die Architektur eingehen, welche Herausforderungen es gab,
+wie wir die Arbeit aufgeteilt haben bzw. nach Scrum gearbeitet haben. Ich bin auch immer offen für Vorschläge für cleaneren Code, also sollte einem mal was auffallen, gerne immer eine Mail
+raushauen! :)
 
 ## Learnings
 
