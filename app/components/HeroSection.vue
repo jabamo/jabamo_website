@@ -71,10 +71,8 @@ onMounted(() => {
 function typeText(fullText: string): void {
   if (!titleElement.value) return
 
-  // clear element initially
   titleElement.value.innerHTML = ''
 
-  // parse text to segments
   const segments: string[] = []
   let currentSegment = ''
   let inTag = false
@@ -102,7 +100,7 @@ function typeText(fullText: string): void {
         segments.push(currentSegment)
         currentSegment = ''
       }
-      segments.push(char)
+      segments.push(char ?? '')
     }
   }
 

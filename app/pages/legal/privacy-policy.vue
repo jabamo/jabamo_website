@@ -238,7 +238,7 @@
     <!-- Navigation zurück -->
     <div class="text-center mt-12">
       <NuxtLink 
-        to="/"
+        to="/public"
         class="inline-flex items-center px-6 py-3 text-accent-500 hover:text-accent-600 font-medium transition-colors"
       >
         <Icon name="tabler:arrow-left" class="mr-2" size="20" />

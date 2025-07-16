@@ -75,7 +75,6 @@
       </section>
     </div>
 
-    <!-- Navigation zurück -->
     <div class="text-center mt-12">
       <NuxtLink 
         to="/"

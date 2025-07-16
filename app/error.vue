@@ -10,7 +10,7 @@
           Die angeforderte Seite existiert nicht oder wurde verschoben.
         </p>
         <NuxtLink
-            to="/"
+            to="/public"
             class="inline-flex items-center px-6 py-3 bg-accent-500 hover:bg-accent-600 text-white font-medium rounded-lg transition-colors"
         >
           Zur Startseite
