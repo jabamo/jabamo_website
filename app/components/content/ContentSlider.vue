@@ -30,7 +30,7 @@
 
             <div
                 v-if="slide.caption"
-                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-gray-900/50 to-transparent pt-16 pb-4 px-4"
+                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-gray-900/50 to-transparent pt-16 pb-10 px-4"
             >
               <div class="flex items-center">
                 <Icon

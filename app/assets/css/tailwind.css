@@ -12,7 +12,7 @@
 :root {
     /* change swiper variables */
     --swiper-theme-color: #fff !important;
-    --swiper-navigation-size: 25px !important;
+    --swiper-navigation-size: 2.5rem !important;
 
     /* custom swiper pagination style */
     .swiper .swiper-pagination {
@@ -27,6 +27,45 @@
     .swiper .swiper-pagination-bullet-active {
         background-color: white;
         opacity: 1;
+    }
+
+    /* custom pagination styles */
+    .swiper-button-next,
+    .swiper-button-prev {
+        background: rgba(0, 0, 0, 0.6) !important;
+        border-radius: 50% !important;
+        width: 3rem !important;
+        height: 3rem !important;
+        margin-top: -2rem !important;
+        transition: all 0.3s ease !important;
+    }
+
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+        color: white !important;
+        font-size: 1.25rem !important;
+        font-weight: bold !important;
+    }
+
+    .swiper-button-prev::after {
+        margin-left: -0.2rem;
+    }
+
+    .swiper-button-next::after {
+        margin-left: 0.2rem;
+    }
+
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover {
+        background: rgba(0, 0, 0, 0.8) !important;
+    }
+
+    .swiper-button-next {
+        right: 1.2rem !important;
+    }
+
+    .swiper-button-prev {
+        left: 1.2rem !important;
     }
 
     /* hide pagination globally on small devices */
