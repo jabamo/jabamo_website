@@ -31,7 +31,7 @@
           ref="codeElement"
           :class="[
         $props.class,
-        '!mt-[1rem] !pl-[1rem] !pb-[1rem] !rounded-t-none !rounded-b-xl !border-t-0 overflow-x-scroll'
+        '!p-[1rem] !rounded-t-none !rounded-b-xl !border-t-0 overflow-x-scroll'
       ]"
       ><slot /></pre>
     </div>

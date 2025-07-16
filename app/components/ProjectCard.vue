@@ -44,7 +44,11 @@
           </span>
         </div>
         <h3 class="font-title text-2xl lg:text-3xl font-bold mb-3">
+          <NuxtLink
+              :to="`/projects/${project.path.split('/').pop()}`"
+          >
           {{ project.title }}
+          </NuxtLink>
         </h3>
         <p class="font-content text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
           {{ project.description }}

@@ -246,6 +246,10 @@ Dieses Projekt führte mich zwei neue Bereiche der Softwareentwicklung hinein:
 - Kotlin Spring als Backend mit MVC-Pattern
 - GraphQL statt Rest als Schnittstelle
 
+Ziel des Projektes war, eine Webapp für die Verwaltung von Notizen zu bauen. Wir hatten bestimmte Vorgaben, zum Beispiel
+die Verwendung von Kotlin und Spring für die Schnittstellen, sowie GraphQL statt Rest. Zusammen mit einem Kommilitonen, mit
+dem ich viele Module parallel besuche, haben wir dieses Projekt realisiert.
+
 Ein Ausschnitt zum Beispiel aus dem UserController, der ein User-Data Transfer Object annimmt.
 
 ```kotlin UserController.kt
@@ -274,7 +278,7 @@ Und die dazugehörige getUserById-Methode im UserService, die die Methode aus de
     fun getUserById(id: Long): User?
 ```
 
-Das Frontend haben wir mit Vue.js und Tailwind ganz simpel implementiert.
+Das Frontend verwendet Vue.js und zum Styling TailwindCSS v3.
 
 ::ContentSlider{:autoplay="false" :autoplayDelay="4000" title="Eindrücke des WebTech-Projektes" :slides='[{"src": "/assets/img/blog/erfahrungen-dms-thm/webtech_notesystem_1.png", "alt": "Anzeige der Notizbücher", "caption": "Nach dem Login werden einem alle angelegten Notizbücher angezeigt"}, {"src": "/assets/img/blog/erfahrungen-dms-thm/webtech_notesystem_2.png", "alt": "Detailanzeige von Notizbüchern", "caption": "Klickt man auf ein Notizbuch aus Bild eins, werden einem alle Einträge dazu angezeigt"}, {"src": "/assets/img/blog/erfahrungen-dms-thm/webtech_notesystem_2.png", "alt": "Bearbeiten von Notizen", "caption": "Nachträgliches Bearbeiten eigener Notizen"}]'}
 ::
@@ -286,9 +290,36 @@ Insgesamt war das Projekt sehr simpel aufgebaut, dennoch waren die ersten Erfahr
 
 ### Weitere Projekte
 
-Weitere Projekte werde ich im Laufe der Zeit noch vorstellen unter Projekte. Dort werde ich dann noch spezifischer auf die Architektur eingehen, welche Herausforderungen es gab,
+Weitere Projekte werde ich im Laufe der Zeit noch vorstellen unter dem Punkt Projekte. Dort werde ich dann noch spezifischer auf die Architektur eingehen, welche Herausforderungen es gab,
 wie wir die Arbeit aufgeteilt haben bzw. nach Scrum gearbeitet haben. Ich bin auch immer offen für Vorschläge für cleaneren Code, also sollte einem mal was auffallen, gerne immer eine Mail
-raushauen! :)
+schreiben! :)
+
+## Herausforderungen
+
+### Zeitplanung
+
+Am Anfang des Studiums erhält man schnell den Eindruck, als stünde ein riesiger Berg voller Aufgaben vor einem, den man kaum bewältigen kann.
+Wichtig ist es, immer einen kühlen Kopf zu bewahren und sich einen Plan über alle Abgaben und Klausuren zu machen. Eine Faustformel dafür gibt es
+meiner Meinung nach nicht: Alle haben einen anderen Lerntyp. Die einen bevorzugen es, sich bereits Wochen vor den Klausuren intensiv damit auseinanderzusetzen und den Stoff zu lernen.
+Die anderen lernen lieber unter Druck zeitnahe vor den Klausuren.
+
+::TipBox{title="Meine Tipps für euch"}
+
+1. **Planung**: Erstellt Euch einen Kalender online oder handschriftlich, in dem ihr Eure Vorlesungszeiten, Praktika, Abgaben und Klausuren einträgt.
+2. **Ausgleich**: Neben dem ganzen Lernen ist es wichtig, für sich einen Ausgleich zu haben. Vergesst nicht, euch mit Freunden zu treffen, Sport zu machen, oder was euch sonst so Spaß macht ;)
+3. **Auch privat dazulernen**: Es ist sehr hilfreich, das Gelernte aus der Uni auch privat mal in einem für euch interessanten Projekt umzusetzen. So lernt ihr noch mehr dazu und habt gleichzeitig selbst was davon.
+::
+
+### Organisation & Kritikpunkte
+Mein einziger Kritikpunkt an dem Studiengang ist die teilweise **unübersichtliche Organisation**.
+In den ersten beiden Semestern ist der Verlauf (sofern man alle notwendigen Klausuren besteht) für alle Studierenden gleich. Sobald man dann aber in die Vertiefungsphase kommt, ist man selbst
+für seine Modulwahl verantwortlich und muss jederzeit darauf achten, die Module so zu wählen, dass man in den drei Modulpools die richtige Anzahl von Credit Points erreicht.
+In den Vertiefungsveranstaltungen erhält man Informationen zu den Modulpools und im Falle der IT-Informationsveranstaltung wurden uns, wie bereits oben erwähnt, verschiedene Tracks mit Modulen für unterschiedliche Richtungen in der Informatik, gezeigt.
+Leider gab es zu der Zeit Inkonsistenzen, die Folien waren teilweise nicht mehr aktuell und es war auch an einigen Stellen unklar, welche Module nun zum Beispiel auch Voraussetzung dafür sind, den Informatik-Master ohne Auflagen beginnen zu können.
+Mit der Umstellung zu DMS hat sich meines Erachtens nach einiges zum Guten verändert. Ich möchte euch aber dennoch ans Herz legen, sehr genau auch mit eurem Mentor zu besprechen, welche Module **optimal** sind und wie ihr am besten alle drei
+Modulpools optimal ausfüllt.
+
+Ein Kommilitone von mir hat extra dafür eine [Webapp](https://dms-thm.de) gebaut, auf der ihr eure Module eintragen könnt und seht, ob ihr alle Anforderungen erfüllt. Schaut gerne mal vorbei!
 
 ## Learnings
 
@@ -302,65 +333,18 @@ raushauen! :)
 ::SkillList{title="Persönliche Entwicklung" :skills='[{"name": "Problemlösekompetenz", "description": "Systematisches Herangehen an Probleme"}, {"name": "Teamwork", "description": "Effektive Zusammenarbeit in Projekten"}, {"name": "Selbstorganisation", "description": "Deadlines und Lernpensum managen"}, {"name": "Kommunikation", "description": "Technische Konzepte erklären"}]'}
 ::
 
-## Herausforderungen
+## Mein Ausblick
 
-### Zeitmanagement
+Für die nächsten Semester und die darauffolgende Zeit steht bei mir noch an:
 
-Das Studium neben anderen Verpflichtungen zu stemmen, war anfangs schwierig. Meine **Lösung**:
-
-1. **Wochenplanung**: Feste Lernzeiten definieren
-2. **Prioritäten setzen**: Wichtiges von Unwichtigem trennen
-3. **Pausen einhalten**: Burnout vermeiden
-
-Ein einfaches `Python`-Script half mir bei der Zeitplanung:
-
-```python
-import datetime
-
-def plan_week(subjects, hours_per_subject):
-    schedule = {}
-    current_day = datetime.date.today()
-    
-    for subject in subjects:
-        hours = hours_per_subject.get(subject, 2)
-        schedule[subject] = {
-            'hours': hours,
-            'deadline': current_day + datetime.timedelta(days=7)
-        }
-    
-    return schedule
-
-# Beispiel-Nutzung
-subjects = ['Mathe', 'Programmierung', 'Datenbanken']
-hours = {'Mathe': 4, 'Programmierung': 6, 'Datenbanken': 3}
-weekly_plan = plan_week(subjects, hours)
-```
-
-### Mathematik
-
-> Als jemand, der hauptsächlich praktisch lernt, war der theoretische Ansatz in Mathe zunächst herausfordernd.
-
-Besonders die **Beweise** in der diskreten Mathematik waren anfangs schwierig. Aber mit der Zeit entwickelte sich ein Verständnis für die logische Struktur.
-
-## Ausblick
-
-Die nächsten Semester stehen an:
-
-- **Webentwicklung**: `HTML`, `CSS`, `JavaScript` vertiefen
-- **Software Engineering**: Größere Projekte strukturiert angehen
-- **Praktikum**: Erste Berufserfahrung sammeln
+- **Integrationsprojekt 2**: Das zweite IP, welches dann nur noch bezogen auf die Vertiefung ist
+- **Praxisphase**: Mehrmonatiges Praktikum kurz vor der Bachelorthesis
+- **Informatik-Master**: Im Anschluss an mein Bachelorstudium möchte ich an der THM noch den M.Sc. in Informatik machen
 
 ## Fazit
 
-Die THM bietet eine exzellente Mischung aus **Theorie** und **Praxis**. Die Dozenten sind engagiert und die Ausstattung ist top.
-
-::TipBox{title="Meine Tipps für Studienanfänger"}
-- **Dranbleiben**: Gerade am Anfang nicht aufgeben
-- **Networken**: Kontakte zu Kommilitonen und Dozenten pflegen
-- **Praktisch lernen**: Eigene Projekte parallel zum Studium
-- **Hilfe suchen**: Bei Problemen frühzeitig Unterstützung holen
-  ::
-
-Das Studium ist herausfordernd, aber jede Anstrengung wert! 💪
+Der Studiengang DMS an der THM bietet allen Interessierten eine gute Mischung aus drei wichtigen Richtungen. Die Professoren und Dozenten sind sehr freundlich und geben sich
+viel Mühe, den Vorlesungsstoff ansprechend und verständlich beizubringen. Einzig und allein der Kritikpunkt hinsichtlich der Organisation bzw. Kommunikation besteht von meiner Seite aus.
+Dennoch würde ich mit meinem jetzigen Wissen den Studiengang jedem weiterempfehlen, mit den Tipps, die ich oben bereits erwähnt habe.
 
 > "Die beste Zeit, einen Baum zu pflanzen, war vor 20 Jahren. Die zweitbeste Zeit ist jetzt." - Chinesisches Sprichwort
