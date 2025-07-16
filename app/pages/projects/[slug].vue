@@ -183,12 +183,4 @@ useHead({
     { property: 'og:type', content: 'article' }
   ]
 })
-
-const formatDate = (dateString: string) => {
-  return new Date(dateString).toLocaleDateString('de-DE', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  })
-}
 </script>

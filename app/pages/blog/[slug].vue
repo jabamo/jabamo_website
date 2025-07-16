@@ -208,14 +208,6 @@ useHead({
   ]
 })
 
-const formatDate = (dateString: string) => {
-  return new Date(dateString).toLocaleDateString('de-DE', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  })
-}
-
 const fullUrl = computed(() => {
   if (process.client) {
     return window.location.href
