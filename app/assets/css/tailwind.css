@@ -74,4 +74,9 @@
             display: none;
         }
     }
+
+    /* clear floats for content elements */
+    .not-prose {
+        clear: both;
+    }
 }

@@ -1,5 +1,9 @@
 <template>
-  <div class="not-prose my-8">
+  <div :class="[
+    'not-prose',
+    floatClass,
+    marginClass
+  ]">
     <figure class="group">
       <div :class="[
         'relative overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm hover:shadow-md transition-all duration-300 mx-auto',
@@ -94,11 +98,13 @@ interface Props {
   caption?: string
   size?: 'small' | 'medium' | 'large' | 'full'
   loading?: 'eager' | 'lazy'
+  float?: 'left' | 'right' | 'none'
 }
 
 const props = withDefaults(defineProps<Props>(), {
   size: 'full',
-  loading: 'lazy'
+  loading: 'lazy',
+  float: 'none'
 })
 
 const lightboxOpen = ref(false)
@@ -106,7 +112,7 @@ const lightboxOpen = ref(false)
 const containerSizeClass = computed(() => {
   switch (props.size) {
     case 'small':
-      return 'max-w-sm'
+      return 'max-w-[15rem]'
     case 'medium':
       return 'max-w-2xl'
     case 'large':
@@ -114,6 +120,30 @@ const containerSizeClass = computed(() => {
     case 'full':
     default:
       return 'max-w-full'
+  }
+})
+
+const floatClass = computed(() => {
+  switch (props.float) {
+    case 'left':
+      return 'md:float-left'
+    case 'right':
+      return 'md:float-right'
+    case 'none':
+    default:
+      return ''
+  }
+})
+
+const marginClass = computed(() => {
+  switch (props.float) {
+    case 'left':
+      return 'my-8 md:mr-6 md:mb-4 md:mt-0'
+    case 'right':
+      return 'my-8 md:ml-6 md:mb-4 md:mt-0'
+    case 'none':
+    default:
+      return 'my-8'
   }
 })
 

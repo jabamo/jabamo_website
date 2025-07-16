@@ -211,7 +211,7 @@ Auch das Frontend von den anderen Teammitgliedern sah am Ende identisch zum Prot
 Im Gegensatz zu einem großen Onepager, also einer riesigen HTML-Datei, in der alle Sachen des Shops dynamisch mit TypeScript gerendet werden, haben wir uns für eine feature-basierte Struktur
 entschieden, und dementsprechend eine ordentliche Struktur der Seite (zumindest nach unserem damaligen Wissensstand) ;)
 
-::ProseImg{src="/assets/img/blog/erfahrungen-dms-thm/ordnerstruktur_frontend_ip1.png" alt="Ordnerstruktur des Frontends" caption="Die Ordnerstruktur des Frontends" size="small"}
+::ProseImg{src="/assets/img/blog/erfahrungen-dms-thm/ordnerstruktur_frontend_ip1.png" alt="Ordnerstruktur des Frontends" caption="Die Ordnerstruktur des Frontends" size="small" float="left"}
 ::
 
 Während des IT-Teils hatten wir zwei mündliche Abfragen, in denen wir unseren geschriebenen Code erklären mussten, damit auch klar wird, dass wir die Express.js bzw. TypeScript im Allgemeinen verstanden haben. Auch gab es zwischen den drei Sprints Sprint-Reviews, in denen
