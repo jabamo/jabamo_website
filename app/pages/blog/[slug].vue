@@ -1,8 +1,8 @@
 <template>
   <div v-if="article">
-    <article class="max-w-4xl mx-auto px-6 py-20">
+    <article class="max-w-4xl mx-auto px-6 py-16">
 
-      <nav class="flex justify-center mb-8">
+      <nav class="flex justify-center mb-6">
         <ol class="flex items-center space-x-2 text-sm font-content">
           <li>
             <NuxtLink to="/blog" class="text-accent-500 hover:text-accent-600">Blog</NuxtLink>

@@ -1,8 +1,8 @@
 <template>
   <div v-if="project">
-    <section class="max-w-4xl mx-auto px-6 pt-20 pb-0">
+    <section class="max-w-4xl mx-auto px-6 pt-16 pb-0">
       <div class="text-center mb-12">
-        <nav class="flex justify-center mb-8">
+        <nav class="flex justify-center mb-6">
           <ol class="flex items-center space-x-2 text-sm font-content">
             <li><NuxtLink to="/projects" class="text-accent-500 hover:text-accent-600">Projekte</NuxtLink></li>
             <li><Icon name="tabler:chevron-right" size="16" class="text-gray-400" /></li>

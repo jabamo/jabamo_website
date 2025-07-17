@@ -29,12 +29,12 @@ Diese Portfolio-Website wurde entwickelt, um meine Projekte und Fähigkeiten als
 - **Nuxt Content** für Content Management
 
 ### Features
-- ✅ Responsive Design für alle Geräte
-- ✅ Dark/Light Mode Toggle
-- ✅ SEO-optimiert durch Nuxt.js
-- ✅ Schnelle Ladezeiten
-- ✅ Dynamisches Content Management
-- ✅ Blog-System integriert
+- Responsive Design für alle Geräte
+- Dark/Light Mode Toggle
+- SEO-optimiert durch Nuxt.js
+- Schnelle Ladezeiten
+- Dynamisches Content Management
+- Blog-System integriert
 
 ## Herausforderungen & Lösungen
 
@@ -49,9 +49,3 @@ Diese Portfolio-Website wurde entwickelt, um meine Projekte und Fähigkeiten als
 Die Website erreicht excellent Page Speed Scores und bietet eine intuitive User Experience. Das Content Management System ermöglicht einfache Updates ohne Code-Änderungen.
 
 ## Screenshots
-
-![Homepage](https://via.placeholder.com/800x400/3b82f6/ffffff?text=Homepage)
-*Homepage mit Hero-Section und Experience Cards*
-
-![Projekte Übersicht](https://via.placeholder.com/800x400/3b82f6/ffffff?text=Projekte)
-*Projektübersicht mit alternierendem Layout*

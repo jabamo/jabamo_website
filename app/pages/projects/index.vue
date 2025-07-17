@@ -35,7 +35,7 @@
       </div>
     </section>
 
-    <section class="max-w-4xl mx-auto px-6 pb-20">
+    <section class="max-w-4xl mx-auto px-6 pb-0">
       <div v-if="filteredProjects.length === 0" class="text-center py-0">
         <Icon name="tabler:folder-open" size="64" class="text-gray-400 mx-auto mb-4" />
         <h3 class="font-title text-xl font-semibold text-gray-500 dark:text-gray-400 mb-2">
