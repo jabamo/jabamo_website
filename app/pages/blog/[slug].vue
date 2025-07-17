@@ -211,11 +211,10 @@ useHead({
 })
 
 const fullUrl = computed(() => {
-  if (process.client) {
-    return window.location.href
-  }
-  return `https://jonabastian.io${route.path}`
+  const requestURL = useRequestURL()
+  return requestURL.href
 })
+
 
 const copyToClipboard = async () => {
   try {
