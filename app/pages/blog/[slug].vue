@@ -131,10 +131,10 @@
       <div
           class="bg-gradient-to-r from-accent-500/10 to-accent-600/10 rounded-2xl p-8 text-center border border-accent-500/20">
         <h2 class="font-title text-2xl font-bold mb-4">
-          Hat dir der Artikel gefallen?
+          Hast du Fragen zu Artikeln oder interessante Einschübe?
         </h2>
         <p class="font-content text-gray-600 dark:text-gray-400 mb-6">
-          Abonniere meinen Newsletter und verpasse keine neuen Artikel über Webentwicklung und Technologie.
+          Melde dich gerne bei mir per Mail, ich versuche zeitnahe darauf zu antworten.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
           <input

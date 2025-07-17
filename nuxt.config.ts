@@ -99,7 +99,18 @@ export default defineNuxtConfig({
                 },
             ],
             link: [
-                {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
+                {
+                    rel: 'icon',
+                    type: 'image/x-icon',
+                    href: '/favicon_light.ico',
+                    media: '(prefers-color-scheme: light)', // set favicon depending on preferred color scheme of browser
+                },
+                {
+                    rel: 'icon',
+                    type: 'image/x-icon',
+                    href: '/favicon_dark.ico',
+                    media: '(prefers-color-scheme: dark)',
+                },
             ],
         },
         pageTransition: {name: 'page', mode: 'out-in'},

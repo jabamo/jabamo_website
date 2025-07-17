@@ -17,7 +17,7 @@ Das DMS-Studium an der **Technischen Hochschule Mittelhessen** war bisher eine s
 
 ## Warum THM?
 
-Die Wahl für die THM fiel mir von Anfang an sehr leicht:
+Die Wahl für die THM fiel mir von Anfang an leicht:
 
 - Da die THM eine Fachhochschule ist, ist sie sehr praxisorientiert
 - Moderne Ausstattung der Räume
@@ -26,34 +26,33 @@ Die Wahl für die THM fiel mir von Anfang an sehr leicht:
 
 ## Warum DMS?
 
-Für mich war die Kombination aus Informatik mit den beiden anderen Säulen BWL und Medien der ausschlaggebende Punkt für die Wahl von DMS als Studiengang.
+Für mich war die Kombination aus **Informatik** mit den beiden anderen Säulen **BWL** und **Medien** der ausschlaggebende Punkt für die Wahl von DMS als Studiengang.
 Einen guten Überblick über die Grundlagen der Betriebswirtschaftslehre zu haben, und gleichzeitig ein gutes Verständnis für Medien zu bekommen, also unter anderem auch die
 UX-freundliche Gestaltung von GUIs, spielten für mich eine wichtige Rolle. Als ich mich auf die Suche nach dem passenden Studiengang
-machte und auf DMS gestoßen bin, habe ich mich sehr gut identifizieren können, und so viel die Wahl auch relativ schnell und ich habe mich eingeschrieben.
+machte und auf DMS gestoßen bin, habe ich mich gut identifizieren können. So fiel die Wahl auch relativ schnell und ich habe mich eingeschrieben.
 
 ## Der Start
 
-Nach der Ersti-Woche, die für alle wenig Schlaf und viel Kennenlernen bedeutete, ging es direkt in die erste Vorlesungswoche hinein.
-Die ersten beiden Semestern des Studiengangs Social Media Systems (so hieß der Studiengang ursprünglich) werden auch Orientierungsphase genannt,
+Nach der Ersti-Woche, die für alle wenig Schlaf und viel Kennenlernen bedeutete, ging es direkt in die erste Vorlesungswoche über.
+Die ersten beiden Semestern des Studiengangs Social Media Systems (so hieß der Studiengang vor DMS ursprünglich) werden auch Orientierungsphase genannt,
 in dieser Phase begleiten einen jeweils drei Module durch die Semester:
 
 - **Webbasierte Programmierung 1+2**
 - **Digitale Medien + Kommunikation 1+2** (in SMS: Grundlagen und Anwendung Social Media 1+2)
 - **BWL1: Grundlagen und Unternehmenssoftware & BWL2: Grundlagen des Marketing** (in SMS: BWL und Informationssysteme 1+2)
 
-Das zweite Semester schließt dann mit dem Integrationsprojekt 1 (kurz: IP1) ab, in welchem die drei Säulen in einem interdisziplinären Projekt vereint werden,
-und man circa sechs Wochen Zeit hat und sich nur darauf fokussiert.
+Das zweite Semester schließt dann mit dem Integrationsprojekt 1 (kurz: IP1) ab, in welchem die drei Säulen in einem interdisziplinären Projekt vereint werden, man circa sechs Wochen Zeit hat und sich nur darauf fokussiert.
 
 ## Highlights der ersten beiden Semester
 
 ### Digitale Medien + Kommunikation 1+2
 
-In DMK 1 und 2 haben wir grundlegende Medien- und Kommunikationstheorien gelernt. Das erste Semester war dabei noch sehr theoretisch (aber keinesfalls langweilig!),
+In DMK 1 und 2 haben wir grundlegende Theorien und Definitionen gelernt. Das erste Semester war dabei noch sehr theoretisch (aber keinesfalls langweilig!),
 wohingegen das zweite Semester schon deutlich praxisbezogener war.
 
-Im ersten Semester haben wir überwiegend Definitionen, Kommunikationsmodelle und grundlegende Informationen rund um das Thema soziale Medien, Social Media (übrigens nicht gleichbedeutend ;)) & Co.
-Das zweite Semester war dann schon deutlich mehr angelehnt an die Entwicklung von Webseiten, beispielsweise haben wir Gestaltgesetze gelernt, die man dort und auch auf GUIs im Allgemeinen sehr gut anwenden kann und sollte.
-Im zweiten Semester haben wir auch gelernt, Wireframes zu gestalten, Low- und High-Fi-Prototypen zu erstellen und damit den Grundstein für die Entwicklung einer Webseite zu legen, welche eine gute User Experience und Usability vorweist.
+Konkret bestand das erste Semester überwiegend aus Begriffsdefinitionen, Kommunikationsmodellen und grundlegenden Informationen rund um das Thema soziale Medien, Social Media (übrigens nicht gleichbedeutend ;)) & Co.
+Das zweite Semester war dann schon deutlich mehr angelehnt an die Entwicklung von Webseiten, beispielsweise haben wir Gestaltgesetze gelernt, die man dort und auch auf GUIs im Allgemeinen anwenden kann und sollte.
+Hinzu kam auch, dass wir gelernt haben, Wireframes zu gestalten, Low- und High-Fi-Prototypen zu erstellen und damit den Grundstein für die Entwicklung einer Webseite zu legen, welche eine gute User Experience und Usability vorweist.
 
 Persönlich möchte ich noch gerne hinzufügen, dass mir beide Module sehr viel Spaß gemacht haben und ich auch die Vorlesungen sowohl von Herrn Prof. Dr. Gust und Herrn Prof. Dr. Qyll sehr gut verstehen konnte. Beide hatten einen sehr gut verständlichen Stil,
 ihre Vorlesungen zu halten. Man konnte jederzeit Nachfragen stellen und die Erklärungen haben immer gut gepasst. Auch auf persönlicher Ebene fand ich beide sehr sympathisch!
@@ -62,7 +61,7 @@ ihre Vorlesungen zu halten. Man konnte jederzeit Nachfragen stellen und die Erkl
 
 Wie sich beim Begriff BWL bereits denken kann, erwarten einen in BWL und Informationssysteme eins und zwei die Grundlagen der Betriebswirtschaftslehre, dazu gehören
 internes und externes Rechnungswesen, Unternehmensformen, aber auch in den Praktika der Umgang mit MS Excel und grundlegendes Verständnis für SAP.
-Natürlich sind in beiden Modulen teils sehr trockene Abschnitte dabei, dennoch fand ich es im Großen und Ganzen lehrreich, auch wenn einem wie mir bereits von Anfang an bewusst war, nicht in die Richtung BWL zu vertiefen.
+Natürlich sind in beiden Modulen teils trockene Abschnitte dabei, dennoch fand ich es im Großen und Ganzen lehrreich, auch wenn einem wie mir bereits von Anfang an bewusst war, nicht in die Richtung BWL zu vertiefen.
 Ich denke, es schadet dennoch nie, auch über den Tellerrand hinauszuschauen.
 
 ### Webbasierte Programmierung 1+2
@@ -91,8 +90,8 @@ Kurz darauf starteten wir in die Grundlagen von HTML und CSS. Das ging erstmal g
 
 Da wir aber natürlich nicht nur lernen sollen, einfache Webseiten ohne große Funktionalität zu schreiben, stiegen wir relativ zeitnahe in das Thema TypeScript ein.
 Neben den Grundlagen von TypeScript haben wir natürlich auch die Vorteile von TypeScript gegenüber JavaScript gelernt, allen voran natürlich die **statische Typisierung**,
-die Fehler im Code deutlich schneller erkennbar macht. Als erste große TypeScript-Hausübung sollten wir dann einen Usermanager schreiben, welcher die Daten jedoch nur im Local Storage des Browsers ablegen musste.
-Im zweiten Semester fingen wir mit dem **HTTP- und HTTPS-Protokoll** an und stiegen dann schnell ein in das Thema **RESTful APIs** ein. Zusätzlich lernten wir dann noch `Node.js` als Laufzeitumgebung und `Express.js` als Webframework und `MySQL` als Datenbankverwaltungssystem kennen,
+die Fehler im Code deutlich schneller erkennbar macht. Als erste große TypeScript-Hausübung sollten wir dann einen Usermanager schreiben, welcher die Daten vorerst nur im Local Storage des Browsers ablegen sollte.
+Im zweiten Semester fingen wir mit dem **HTTP- und HTTPS-Protokoll** an und stiegen dann schnell in das Thema **RESTful APIs** ein. Zusätzlich lernten wir dann noch `Node.js` als Laufzeitumgebung und `Express.js` als Webframework und `MySQL` als Datenbankverwaltungssystem kennen,
 womit wir dann unseren eigenen kleinen Server schreiben konnten. Auch das Schreiben von HTTP-Tests gehörte zum zweiten Semester, womit wir dann erstmalig die Konzepte des **Test-driven Development (TDD)** kennenlernten.
 
 Unsere Hausübung bestand aus mehreren kleinen Abgaben mit einer großen Abgabe am Ende, wobei am Ende dann die große Abgabe daraus bestand, den Usermanager insoweit umzubauen, dass er persistent über einen Express.js-Server alle Daten in einer SQL-Datenbank hinterlegt.
