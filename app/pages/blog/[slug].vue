@@ -109,7 +109,7 @@
               v-else-if="isCopied"
               class="flex items-center justify-center w-12 h-12 bg-gray-500 hover:bg-gray-600 text-white rounded-lg transition-colors"
               aria-label="Link wurde kopiert"
-              >
+          >
             <Icon name="tabler:checks" size="20"/>
           </span>
         </div>
@@ -118,7 +118,7 @@
 
     <section v-if="relatedArticles && relatedArticles.length > 0" class="max-w-4xl mx-auto px-6 py-16">
       <h2 class="font-title text-3xl font-bold text-center mb-12">Ähnliche Artikel</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
         <BlogCard
             v-for="relatedArticle in relatedArticles"
             :key="relatedArticle.path"
@@ -167,7 +167,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue';
+import {ref} from 'vue';
 
 const route = useRoute()
 const {data: article} = await useAsyncData(route.path, () => {
@@ -183,12 +183,16 @@ if (!article.value) {
   })
 }
 
-const { data: relatedArticles } = await useAsyncData('blog', () => {
-      return queryCollection('blog').path(route.path)
+const {data: relatedArticles} = await useAsyncData(`relatedArticles-${article.value?.id}`, () => {
+        return queryCollection('blog')
           .where('published', '=', true)
+          .andWhere(query => query.where('id', '<>', article.value?.id)) // make sure it's not the same article
           .orWhere(query => query.where('category', '=', article.value?.category).where('tags', 'IN', article.value?.tags))
           .limit(3)
           .all()
+    },
+    {
+      watch: [route],
     }
 )
 

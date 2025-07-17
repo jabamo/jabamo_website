@@ -94,7 +94,7 @@ useHead({
 })
 
 const route = useRoute()
-const { data: projects } = await useAsyncData(route.path, () => {
+const { data: projects } = await useAsyncData('projects', () => {
   return queryCollection('projects')
       .order('date', 'DESC')
       .order('featured', 'DESC')

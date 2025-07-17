@@ -290,7 +290,7 @@ Insgesamt war das Projekt sehr simpel aufgebaut, dennoch waren die ersten Erfahr
 
 ### Weitere Projekte
 
-Weitere Projekte werde ich im Laufe der Zeit noch vorstellen unter dem Punkt Projekte. Dort werde ich dann noch spezifischer auf die Architektur eingehen, welche Herausforderungen es gab,
+Weitere Projekte werde ich im Laufe der Zeit noch vorstellen unter dem Punkt [Projekte](/projects). Dort werde ich dann noch spezifischer auf die Architektur eingehen, welche Herausforderungen es gab,
 wie wir die Arbeit aufgeteilt haben bzw. nach Scrum gearbeitet haben. Ich bin auch immer offen für Vorschläge für cleaneren Code, also sollte einem mal was auffallen, gerne immer eine Mail
 schreiben! :)
 
