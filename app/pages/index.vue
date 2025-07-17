@@ -8,9 +8,9 @@
 
 <script lang="ts" setup>
 useHead({
-  title: 'Jona-David Bastian - Fullstack Developer',
+  title: 'Jona-David Bastian - Student & Developer',
   meta: [
-    { name: 'description', content: 'Fullstack Developer & Student mit Fokus auf Java Spring Boot und Vue.js. Portfolio mit Projekten und Blog.' }
+    { name: 'description', content: 'Student & angehender Developer mit Fokus auf Backend-Entwicklung. Portfolio mit Projekten und Blog.' }
   ]
 })
 </script>

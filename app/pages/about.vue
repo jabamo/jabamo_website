@@ -93,7 +93,7 @@
 useHead({
   title: 'Über mich - Jona-David Bastian',
   meta: [
-    { name: 'description', content: 'Erfahre mehr über meinen Werdegang als Fullstack Developer und Informatik-Student. Von den ersten Programmierschritten bis heute.' }
+    { name: 'description', content: 'Erfahre mehr über meinen Werdegang als Student und angehender Developer. Von den ersten Programmierschritten bis heute.' }
   ]
 })
 

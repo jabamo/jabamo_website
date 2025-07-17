@@ -151,7 +151,7 @@ useHead({
   meta: [
     {
       name: 'description',
-      content: 'Meine Gedanken und Erfahrungen zu Webentwicklung, Studium und Technologie. Tutorials, Tipps und persönliche Einblicke.'
+      content: 'Meine Gedanken und Erfahrungen zu Development, Studium und neuesten Technologien. Tutorials, Tipps und persönliche Einblicke.'
     }
   ]
 })

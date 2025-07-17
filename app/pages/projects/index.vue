@@ -89,7 +89,7 @@
 useHead({
   title: 'Projekte - Jona-David Bastian',
   meta: [
-    { name: 'description', content: 'Entdecke meine Projekte aus Studium und Praxis. Von Backend-APIs mit Spring Boot bis hin zu modernen Frontend-Anwendungen mit Vue.js.' }
+    { name: 'description', content: 'Entdecke meine Projekte aus Studium und Praxis. Von Backend bis Frontend - Express, Spring, Nuxt.js und mehr.' }
   ]
 })
 
