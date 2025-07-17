@@ -20,14 +20,16 @@
   </div>
 </template>
 <style>
+/* page transitions - see nuxt.config.ts for config */
 .page-enter-active,
 .page-leave-active {
-  transition: all 0.4s;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .page-enter-from,
 .page-leave-to {
   opacity: 0;
-  filter: blur(1rem);
+  transform: translateY(20px) scale(0.95);
+  filter: blur(5px);
 }
 </style>
