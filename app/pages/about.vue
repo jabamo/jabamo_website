@@ -14,7 +14,7 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-        <div class="text-center p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
+        <div class="text-center p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105">
           <Icon name="tabler:code" size="32" class="text-accent-500 mx-auto mb-4" />
           <h3 class="font-title font-semibold text-lg mb-2">Backend-Fokus</h3>
           <p class="font-content text-gray-600 dark:text-gray-400 text-sm">
@@ -22,7 +22,7 @@
           </p>
         </div>
 
-        <div class="text-center p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
+        <div class="text-center p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105">
           <Icon name="tabler:school" size="32" class="text-accent-500 mx-auto mb-4" />
           <h3 class="font-title font-semibold text-lg mb-2">Student</h3>
           <p class="font-content text-gray-600 dark:text-gray-400 text-sm">
@@ -30,7 +30,7 @@
           </p>
         </div>
 
-        <div class="text-center p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
+        <div class="text-center p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105">
           <Icon name="tabler:rocket" size="32" class="text-accent-500 mx-auto mb-4" />
           <h3 class="font-title font-semibold text-lg mb-2">Ambitioniert</h3>
           <p class="font-content text-gray-600 dark:text-gray-400 text-sm">
@@ -52,7 +52,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div v-for="category in skillCategories" :key="category.name"
-             class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+             class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105">
           <div class="flex items-center mb-4">
             <Icon :name="category.icon" size="24" class="text-accent-500 mr-3" />
             <h3 class="font-title font-semibold text-lg">{{ category.name }}</h3>
@@ -79,7 +79,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <div v-for="interest in interests" :key="interest.name"
-             class="text-center p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-accent-500 transition-colors">
+             class="text-center p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105">
           <Icon :name="interest.icon" size="32" class="text-accent-500 mx-auto mb-3" />
           <h4 class="font-title font-semibold mb-2">{{ interest.name }}</h4>
           <p class="font-content text-sm text-gray-600 dark:text-gray-400">{{ interest.description }}</p>

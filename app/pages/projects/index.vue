@@ -24,7 +24,7 @@
         <button
             v-for="category in categories"
             :key="category"
-            @click="selectedCategory == category"
+            @click="selectedCategory = category"
             class="px-4 py-2 rounded-lg transition-colors font-medium"
             :class="selectedCategory === category ?
             'bg-accent-500 text-white' :
@@ -93,7 +93,6 @@ useHead({
   ]
 })
 
-const route = useRoute()
 const { data: projects } = await useAsyncData('projects', () => {
   return queryCollection('projects')
       .order('date', 'DESC')
@@ -101,7 +100,13 @@ const { data: projects } = await useAsyncData('projects', () => {
       .all();
 })
 
-const selectedCategory = ref(null)
+interface QueryParams {
+  selectedCategory: string | null
+  searchQuery: string
+  currentPage: number
+}
+
+const selectedCategory = ref<QueryParams['selectedCategory']>(null)
 
 const categories = computed(() => {
   const cats = projects.value?.map(p => p.category) || []

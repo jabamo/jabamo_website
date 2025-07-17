@@ -19,14 +19,14 @@
         <a v-if="project.demo"
            :href="project.demo"
            target="_blank"
-           class="px-4 py-2 bg-accent-500 text-white rounded-lg hover:bg-accent-600 transition-colors">
+           class="inline-flex items-center px-4 py-2 bg-accent-500 text-white rounded-lg hover:bg-accent-600 transition-colors">
           <Icon name="tabler:external-link" size="20" class="mr-2" />
           Demo
         </a>
         <a v-if="project.github"
            :href="project.github"
            target="_blank"
-           class="px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition-colors">
+           class="inline-flex items-center px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition-colors">
           <Icon name="tabler:brand-github" size="20" class="mr-2" />
           Code
         </a>

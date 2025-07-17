@@ -15,7 +15,7 @@
 
         <div class="flex flex-wrap gap-3">
           <button
-              @click="selectedCategory == null"
+              @click="selectedCategory = null"
               class="px-4 py-2 rounded-lg transition-colors font-medium"
               :class="selectedCategory === null ?
               'bg-accent-500 text-white' :
@@ -26,7 +26,7 @@
           <button
               v-for="category in categories"
               :key="category"
-              @click="selectedCategory == category"
+              @click="selectedCategory = category"
               class="px-4 py-2 rounded-lg transition-colors font-medium"
               :class="selectedCategory === category ?
               'bg-accent-500 text-white' :
@@ -159,13 +159,17 @@ useHead({
   ]
 })
 
-const route = useRoute()
-const { data: articles } = await useAsyncData(route.path, () => {
+const { data: articles } = await useAsyncData('blog', () => {
   return queryCollection('blog').all();
 })
 
+interface QueryParams {
+  selectedCategory: string | null
+  searchQuery: string
+  currentPage: number
+}
 
-const selectedCategory = ref(null)
+const selectedCategory = ref<QueryParams['selectedCategory']>(null)
 const searchQuery = ref('')
 const currentPage = ref(1)
 const articlesPerPage = 6

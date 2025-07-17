@@ -1,19 +1,19 @@
 ---
-title: "Portfolio Website"
+title: "Persönliche Website"
 description: "Eine moderne Portfolio-Website mit Nuxt.js, die Projekte und Blog-Artikel dynamisch über Nuxt Content verwaltet."
-image: "/assets/img/projects/portfolio.jpg"
+image: "/assets/img/projects/personal-website/portfolio.png"
 technologies: ["Vue.js", "Nuxt.js", "TypeScript", "Tailwind CSS", "Nuxt Content"]
-github: "https://github.com/jonadavidbastian/portfolio"
+github: "https://github.com/jabamo/jabamo_website"
 demo: "https://jonabastian.io"
 featured: true
-category: "Web Development"
-date: "2024-01-15"
+category: "Webentwicklung"
+date: "2025-07-15"
 status: "Live"
 duration: "2 Wochen"
 role: "Full-Stack Development"
 ---
 
-# Portfolio Website
+# Persönliche Website
 
 ## Projektübersicht
 
