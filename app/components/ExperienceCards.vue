@@ -8,7 +8,7 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="group bg-white dark:bg-gray-800 rounded-xl p-8 border border-gray-200 dark:border-gray-700 hover:border-accent-500 dark:hover:border-accent-500 transition-all duration-300 hover:shadow-xl">
+      <div class="group bg-white dark:bg-gray-800 rounded-xl p-8 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300 transform hover:scale-105">
         <div class="flex items-center mb-6">
           <div class="w-12 h-12 bg-accent-500/10 rounded-lg flex items-center justify-center mr-4">
             <Icon name="tabler:code" size="24" class="text-accent-500" />
@@ -31,7 +31,7 @@
         </div>
       </div>
 
-      <div class="group bg-white dark:bg-gray-800 rounded-xl p-8 border border-gray-200 dark:border-gray-700 hover:border-accent-500 dark:hover:border-accent-500 transition-all duration-300 hover:shadow-xl">
+      <div class="group bg-white dark:bg-gray-800 rounded-xl p-8 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300 transform hover:scale-105">
         <div class="flex items-center mb-6">
           <div class="w-12 h-12 bg-accent-500/10 rounded-lg flex items-center justify-center mr-4">
             <Icon name="tabler:server" size="24" class="text-accent-500" />
