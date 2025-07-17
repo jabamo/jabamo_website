@@ -121,26 +121,23 @@
       </div>
     </section>
 
-    <section class="max-w-4xl mx-auto px-6 py-16">
+    <section class="max-w-4xl mx-auto px-6 pb-16">
       <div
-          class="bg-gradient-to-r from-accent-500/10 to-accent-600/10 rounded-2xl p-8 md:p-12 text-center border border-accent-500/20">
-        <h2 class="font-title text-3xl font-bold mb-4">
-          Verpasse keine neuen Artikel
+          class="bg-gradient-to-r from-accent-500/10 to-accent-600/10 rounded-2xl p-8 text-center border border-accent-500/20">
+        <h2 class="font-title text-2xl font-bold mb-4">
+          Hast du Fragen oder Anregungen zu Artikeln?
         </h2>
-        <p class="font-content text-gray-600 dark:text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
-          Erhalte eine Benachrichtigung, wenn ich neue Artikel über Webentwicklung,
-          Studium und Technologie veröffentliche.
+        <p class="font-content text-gray-600 dark:text-gray-400 mb-6">
+          Melde dich gerne bei mir per Mail, ich versuche zeitnahe darauf zu antworten.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-          <input
-              type="email"
-              placeholder="deine@email.com"
-              class="flex-1 px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 bg-white dark:bg-gray-800 transition-colors"
-          />
-          <button
-              class="px-6 py-3 bg-accent-500 hover:bg-accent-600 text-white font-medium rounded-lg transition-colors">
-            Abonnieren
-          </button>
+          <a
+              href="mailto:jb@jonabastian.io"
+              class="inline-flex items-center justify-center gap-2 px-6 py-2 bg-accent-500 hover:bg-accent-600 text-white font-medium rounded-lg transition-colors"
+          >
+            <Icon name="tabler:mail" size="20" />
+            Mail schreiben
+          </a>
         </div>
       </div>
     </section>
