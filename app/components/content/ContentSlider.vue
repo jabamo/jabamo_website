@@ -1,4 +1,3 @@
-
 <template>
   <div class="not-prose my-8" v-if="validSlides.length > 0">
     <div :class="[
@@ -13,17 +12,18 @@
           :navigation="navigationConfig"
           :pagination="paginationConfig"
           @slideChange="onSlideChange"
-          class="w-full h-full"
+          :class="['w-full', swiperHeightClass]"
       >
         <SwiperSlide
             v-for="(slide, index) in validSlides"
             :key="index"
+            class="h-full"
         >
-          <div class="relative">
+          <div class="relative h-full">
             <img
                 :src="slide.src"
                 :alt="slide.alt || `Slide ${index + 1}`"
-                class="w-full h-auto object-cover"
+                class="w-full h-full object-cover"
                 :style="{ height: slideHeight }"
                 @click="openLightbox(index)"
             />
@@ -64,7 +64,7 @@
 
   <div v-else class="not-prose my-8">
     <div class="text-center p-8 bg-gray-100 dark:bg-gray-800 rounded-xl">
-      <Icon name="tabler:photo-off" class="mx-auto text-gray-400 mb-2" size="48" />
+      <Icon name="tabler:photo-off" class="mx-auto text-gray-400 mb-2" size="48"/>
       <p class="text-gray-500 dark:text-gray-400">Keine Bilder verfügbar</p>
     </div>
   </div>
@@ -89,7 +89,7 @@
               class="absolute top-4 right-4 z-10 bg-black bg-opacity-60 hover:bg-opacity-80 text-white w-10 h-10 rounded-full transition-colors flex items-center justify-center"
               aria-label="Schließen"
           >
-            <Icon name="tabler:x" size="24" />
+            <Icon name="tabler:x" size="24"/>
           </button>
 
           <button
@@ -98,7 +98,7 @@
               class="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-black bg-opacity-60 hover:bg-opacity-80 text-white w-12 h-12 rounded-full transition-colors flex items-center justify-center"
               aria-label="Vorheriges Bild"
           >
-            <Icon name="tabler:chevron-left" size="24" />
+            <Icon name="tabler:chevron-left" size="24"/>
           </button>
 
           <button
@@ -107,7 +107,7 @@
               class="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-black bg-opacity-60 hover:bg-opacity-80 text-white w-12 h-12 rounded-full transition-colors flex items-center justify-center"
               aria-label="Nächstes Bild"
           >
-            <Icon name="tabler:chevron-right" size="24" />
+            <Icon name="tabler:chevron-right" size="24"/>
           </button>
 
           <div class="relative">
@@ -170,9 +170,9 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, computed, onUnmounted } from 'vue'
-import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Navigation, Pagination, Autoplay } from 'swiper/modules'
+import {ref, computed, onUnmounted} from 'vue'
+import {Swiper, SwiperSlide} from 'swiper/vue'
+import {Navigation, Pagination, Autoplay} from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
@@ -227,6 +227,20 @@ const containerSizeClass = computed(() => {
   }
 })
 
+const swiperHeightClass = computed(() => {
+  switch (props.size) {
+    case 'small':
+      return 'h-48'
+    case 'medium':
+      return 'h-80'
+    case 'large':
+      return 'h-96'
+    case 'full':
+    default:
+      return 'h-auto'
+  }
+})
+
 const slideHeight = computed(() => {
   if (props.height === 'auto') return 'auto'
   return props.height
@@ -253,7 +267,7 @@ const paginationConfig = {
 }
 
 const currentLightboxSlide = computed(() => {
-  return validSlides.value[currentLightboxIndex.value] || { src: '', alt: '', caption: '' }
+  return validSlides.value[currentLightboxIndex.value] || {src: '', alt: '', caption: ''}
 })
 
 const openLightbox = (index: number) => {
