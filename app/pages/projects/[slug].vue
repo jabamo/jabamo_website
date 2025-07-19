@@ -62,13 +62,13 @@
     <section class="max-w-4xl mx-auto px-6 pb-12 pt-0">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
 
-        <div class="lg:col-span-2">
+        <div class="lg:col-span-2 order-2 lg:order-1">
           <div class="prose prose-lg dark:prose-invert max-w-none font-content">
             <ContentRenderer :value="project" />
           </div>
         </div>
 
-        <div class="space-y-8">
+        <aside class="space-y-8 lg:sticky top-[7rem] self-start order-1 lg:order-2">
 
           <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
             <h3 class="font-title font-semibold text-lg mb-4">Projektdetails</h3>
@@ -129,18 +129,7 @@
               </a>
             </div>
           </div>
-
-          <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
-            <h3 class="font-title font-semibold text-lg mb-4">Weitere Projekte</h3>
-            <NuxtLink
-                to="/projects"
-                class="inline-flex items-center text-accent-500 hover:text-accent-600 transition-colors font-content"
-            >
-              Alle Projekte ansehen
-              <Icon name="tabler:arrow-right" class="ml-2" size="16" />
-            </NuxtLink>
-          </div>
-        </div>
+        </aside>
       </div>
     </section>
   </div>
