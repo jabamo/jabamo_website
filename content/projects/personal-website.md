@@ -13,15 +13,15 @@ duration: "2 Wochen"
 role: "Entwickler"
 ---
 
-# Meine persönliche Website - Ein Deep Dive
+# Meine persönliche Website
 
 ::TipBox{title="Projekt-Highlights"}
-Diese Website, auf der du gerade liest, ist selbst ein Projekt! Ich habe sie entwickelt, um meine Fähigkeiten als Fullstack-Developer zu demonstrieren und gleichzeitig eine performante, moderne Webplattform zu schaffen.
+Die Website, auf der du gerade liest, ist selbst ein Projekt! Ich habe sie entwickelt, weil ich Nuxt kennenlernen wollte und meine Fähigkeiten immer gerne erweitere.
 ::
 
 ## Projektübersicht
 
-Als Student der Digitalen Mediensysteme an der THM wollte ich eine Website erstellen, die nicht nur meine Projekte und Fähigkeiten präsentiert, sondern auch als technisches Showcase dient. Die Herausforderung bestand darin, eine Website zu entwickeln, die sowohl optisch ansprechend als auch technisch fortschrittlich ist.
+Als DMS-Student an der THM wollte ich eine Website erstellen, die nicht nur meine Projekte und Fähigkeiten präsentiert, sondern auch als kleines Showcase dient. Die Herausforderung bestand darin, eine Website zu entwickeln, die sowohl optisch ansprechend als auch technisch fortschrittlich ist.
 
 ::ContentSlider{:autoplay="false" :autoplayDelay="4000" size="medium" title="Website-Impressionen" :slides='[{"src": "/assets/img/projects/personal-website/overview_1.png", "alt": "Startseite der Website", "caption": "Die Startseite mit Hero-Section und Projekt-Übersicht"}, {"src": "/assets/img/projects/personal-website/overview_2.png", "alt": "Projekt-Detailansicht", "caption": "Detailansicht eines Projekts mit ContentSlider"}, {"src": "/assets/img/projects/personal-website/navbar.png", "alt": "Navigation der Website", "caption": "Responsive Navigation mit Dark Mode Toggle"}, {"src": "/assets/img/projects/personal-website/portfolio.png", "alt": "Portfolio-Übersicht", "caption": "Portfolio-Seite mit Projekt-Cards und Filtern"}]'}
 ::
@@ -46,33 +46,6 @@ export default defineNuxtConfig({
         '@nuxtjs/sitemap',
         '@nuxtjs/tailwindcss'
     ],
-
-    // Tailwind CSS Konfiguration
-    tailwindcss: {
-        cssPath: '~/assets/css/tailwind.css',
-        config: {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: {
-                            50: '#f8fafc',
-                            100: '#f1f5f9',
-                            500: '#64748b',
-                            900: '#0f172a',
-                        },
-                        accent: {
-                            500: '#3b82f6',
-                            600: '#2563eb',
-                        }
-                    },
-                    fontFamily: {
-                        'title': ['Jetbrains Mono', 'monospace'],
-                        'content': ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    }
 })
 ```
 

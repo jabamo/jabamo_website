@@ -67,9 +67,9 @@ Ich denke, es schadet dennoch nie, auch über den Tellerrand hinauszuschauen.
 ### Webbasierte Programmierung 1+2
 
 Die für mich natürlich spannendsten Modul begannen zunächst einmal mit einer Einführung in die Geschichte des Internets, daraufhin lernten wir
-Zahlensysteme (binär, oktal, hexadezimal usw.), Huffman-Codierungen, Informationsgehalt, Logarithmen usw.
+**Zahlensysteme** (binär, oktal, hexadezimal usw.), **Huffman-Codierungen**, **Informationsgehalt**, **Logarithmen** usw.
 
-Kurz darauf starteten wir in die Grundlagen von HTML und CSS. Das ging erstmal ganz banal los mit dem grundlegenden Aufbau von HTML und CSS.
+Kurz darauf starteten wir in die Grundlagen von `HTML` und `CSS`. Das ging erstmal ganz banal los mit dem grundlegenden Aufbau.
 
 ```html
 <!DOCTYPE html>
@@ -89,7 +89,7 @@ Kurz darauf starteten wir in die Grundlagen von HTML und CSS. Das ging erstmal g
 ```
 
 Da wir aber natürlich nicht nur lernen sollen, einfache Webseiten ohne große Funktionalität zu schreiben, stiegen wir relativ zeitnahe in das Thema TypeScript ein.
-Neben den Grundlagen von TypeScript haben wir natürlich auch die Vorteile von TypeScript gegenüber JavaScript gelernt, allen voran natürlich die **statische Typisierung**,
+Neben den Grundlagen von `TypeScript` haben wir natürlich auch die Vorteile von TypeScript gegenüber JavaScript gelernt, allen voran natürlich die **statische Typisierung**,
 die Fehler im Code deutlich schneller erkennbar macht. Als erste große TypeScript-Hausübung sollten wir dann einen Usermanager schreiben, welcher die Daten vorerst nur im Local Storage des Browsers ablegen sollte.
 Im zweiten Semester fingen wir mit dem **HTTP- und HTTPS-Protokoll** an und stiegen dann schnell in das Thema **RESTful APIs** ein. Zusätzlich lernten wir dann noch `Node.js` als Laufzeitumgebung und `Express.js` als Webframework und `MySQL` als Datenbankverwaltungssystem kennen,
 womit wir dann unseren eigenen kleinen Server schreiben konnten. Auch das Schreiben von HTTP-Tests gehörte zum zweiten Semester, womit wir dann erstmalig die Konzepte des **Test-driven Development (TDD)** kennenlernten.
@@ -174,7 +174,7 @@ werden, welcher unter anderem die **Geschäftsidee**, **SWOT- und PESTEL-Analyse
 hielten wir dann noch einen Pitch mit abschließender Fragerunde, in der wir unseren Businessplan verteidigt haben.
 
 Weiter ging es dann direkt in den Medien-Teil des IP1, in dem wir das Gelernte aus den beiden Semestern sehr gut anwenden konnten.
-Unter anderem stand die Entwicklung von Anforderungen, User Stories und Story Mapping, und im weiteren Verlauf die Entwicklung von Wireframes, Prototypen und zum Schluss einem Moodboard im Vordergrund.
+Unter anderem stand die Entwicklung von **Anforderungen**, **User Stories** und **Story Mapping**, und im weiteren Verlauf die Entwicklung von Wireframes, Prototypen und zum Schluss einem Moodboard im Vordergrund.
 Es gab fast jeden Tag sehr gute Feedbackrunden, in denen wir eine gute und faire Rückmeldung über unser bisher Geleistetes erhalten haben. Am Ende stand also
 der Prototyp eines Online-Shops für unser Produkt, mit Profilbereichen und allem drumherum.
 
@@ -182,7 +182,7 @@ Nachdem dann bereits knapp drei Wochen vergangen sind, fing der für mich schön
 praktische Umsetzung der Prototypen aus dem Medien-Teil in eine echte Webseite ging. Zunächst einmal haben wir in YouTrack alle Anforderungen mit User Stories und Epics nochmals verschriftlicht und
 dann konkrete Tasks für unser Team abgeleitet. Die Vorgabe war, strikt nach Scrum zu arbeiten, und dafür standen uns drei Sprints mit je einigen Tagen Zeit zur Verfügung
 Zusammen mit meinem Kommilitonen Niklas habe ich den Backend-Teil übernommen, da mir das schon immer am meisten Spaß gemacht hat. Es gab für uns als Team bestimmte Vorgaben, was je Sprint umgesetzt werden musste (z.B. ein vollständiges CRUD usw.).
-Grundsätzlich durften wir uns die Architektur *nach Absprache* aussuchen, angesichts der begrenzten Zeit haben wir uns aber - auch durch die Erfahrung, die wir bereits gesammelt haben - wieder für ein Backend mit Express.js entschieden - die SQL-Datenbank wurde
+Grundsätzlich durften wir uns die Architektur *nach Absprache* aussuchen, angesichts der begrenzten Zeit haben wir uns aber - auch durch die Erfahrung, die wir bereits gesammelt haben - wieder für ein Backend mit `Express.js entschieden - die Datenbank wurde
 uns von der THM zur Verfügung gestellt. Wir konnten während des ersten Sprint schon unzählige CRUDs und Features implementieren, und haben in den anderen beiden Sprints dann noch weitere Gimmicks verbaut, inkl. der Einbindung einer Schnittstelle zur
 Prüfung von Bankdaten, oder einen Bildupload über Multer.
 
@@ -200,11 +200,7 @@ const storage = multer.diskStorage({
 
 Auch das Frontend von den anderen Teammitgliedern sah am Ende identisch zum Prototypen aus und entsprach unseren Erwartungen.
 
-::ProseImg{src="/assets/img/blog/erfahrungen-dms-thm/natures_shield_frontend.png" alt="Startseite unseres Projektes" caption="Die Startseite unseres Projektes" size="small"}
-::
-
-
-::ContentSlider{:autoplay="false" :autoplayDelay="4000" title="Eindrücke unseres IP1-Projektes" :slides='[{"src": "/assets/img/blog/erfahrungen-dms-thm/natures_shield_frontend.png", "alt": "Erstes Bild", "caption": "Das ist das erste Bild"}, {"src": "/assets/img/blog/erfahrungen-dms-thm/natures_shield_frontend.png", "alt": "Zweites Bild", "caption": "Das ist das zweite Bild"}, {"src": "/assets/img/blog/erfahrungen-dms-thm/natures_shield_frontend.png", "alt": "Drittes Bild", "caption": "Das ist das dritte Bild"}]'}
+::ContentSlider{:autoplay="false" :autoplayDelay="4000" title="Eindrücke unseres IP1-Projektes" :slides='[{"src": "/assets/img/blog/erfahrungen-dms-thm/natures_shield_frontend.png", "alt": "Startseite", "caption": "Die Startseite unseres Projektes mit Top-Produkten"}, {"src": "/assets/img/blog/erfahrungen-dms-thm/natures_shield_frontend_2.png", "alt": "Unique Selling Points", "caption": "Unsere USPs - auf der Startseite dargestellt"}, {"src": "/assets/img/blog/erfahrungen-dms-thm/natures_shield_frontend.png_9", "alt": "Produktdetailseite", "caption": "Die Produktdetailseite unseres Projektes"}, {"src": "/assets/img/blog/erfahrungen-dms-thm/natures_shield_frontend.png_3", "alt": "Produktbewertungen", "caption": "Produktbewertungen auf der Produktdetailseite"}, {"src": "/assets/img/blog/erfahrungen-dms-thm/natures_shield_frontend.png_4", "alt": "Warenkorb", "caption": "Der Warenkorb inkl. Anzeige, ab wann kostenloser Versand möglich ist"}, {"src": "/assets/img/blog/erfahrungen-dms-thm/natures_shield_frontend.png_5", "alt": "Bestellverwaltung", "caption": "Anzeige aufgegebener Bestellungen nach dem Einloggen"}, {"src": "/assets/img/blog/erfahrungen-dms-thm/natures_shield_frontend.png_6", "alt": "Artikelverwaltung", "caption": "Bearbeitung von Artikeln als Anbieter des Shops"}, {"src": "/assets/img/blog/erfahrungen-dms-thm/natures_shield_frontend.png_7", "alt": "Artikelverwaltung", "caption": "Bearbeitung von Artikelbeschreibungen als Anbieter, dargestellt als Akkordeon"}, {"src": "/assets/img/blog/erfahrungen-dms-thm/natures_shield_frontend.png_8", "alt": "Weitere Gimmicks", "caption": "Anzeige bis kostenloser Versand, IBAN-Prüfung bei der Bestellung, Bearbeitung von Bewertungen"}]'}
 ::
 
 Im Gegensatz zu einem großen Onepager, also einer riesigen HTML-Datei, in der alle Sachen des Shops dynamisch mit TypeScript gerendet werden, haben wir uns für eine feature-basierte Struktur
@@ -213,7 +209,7 @@ entschieden, und dementsprechend eine ordentliche Struktur der Seite (zumindest 
 ::ProseImg{src="/assets/img/blog/erfahrungen-dms-thm/ordnerstruktur_frontend_ip1.png" alt="Ordnerstruktur des Frontends" caption="Die Ordnerstruktur des Frontends" size="small" float="left"}
 ::
 
-Während des IT-Teils hatten wir zwei mündliche Abfragen, in denen wir unseren geschriebenen Code erklären mussten, damit auch klar wird, dass wir die Express.js bzw. TypeScript im Allgemeinen verstanden haben. Auch gab es zwischen den drei Sprints Sprint-Reviews, in denen
+Während des IT-Teils hatten wir zwei **mündliche Abfragen**, in denen wir unseren geschriebenen Code erklären mussten, damit auch klar wird, dass wir die Express.js bzw. TypeScript im Allgemeinen verstanden haben. Auch gab es nach den drei Sprints Sprint-Reviews, in denen
 wir mit dem Product Owner (also dem Auftraggeber) die umgesetzten User Stories nach Definition of Done durchgegangen sind und auch die Scrum-Planung überprüft wurde mitsamt Burndown-Chart, und wir dann eine Note dafür erhalten haben.
 Nachdem wir dann soweit mit allen drei Teilen durch waren und unser Endprodukt stand, war das IP1 kurz vor dem Abschluss, und es kam zur Abschlusspräsentation, bei der alle Professoren und Dozenten anwesend waren, die uns in den Wochen zuvor begleitet haben. Insgesamt waren wir
 mit dem Resultat mehr als zufrieden, die Wochen des IP1 vergingen sehr schnell und wir hatten eine sehr schöne Zeit zusammen als Team.
@@ -320,18 +316,6 @@ Modulpools optimal ausfüllt.
 
 Ein Kommilitone von mir hat extra dafür eine [Webapp](https://dms-thm.de) gebaut, auf der ihr eure Module eintragen könnt und seht, ob ihr alle Anforderungen erfüllt. Schaut gerne mal vorbei!
 
-## Learnings
-
-### Technisch
-
-::SkillList{title="Technische Fähigkeiten" :skills='[{"name": "Java Fundamentals", "description": "Solide Basis in OOP"}, {"name": "Algorithmen", "description": "Verständnis für Effizienz und Komplexität"}, {"name": "SQL", "description": "Datenbankdesign und -abfragen"}, {"name": "Git", "description": "Versionskontrolle im Team"}]'}
-::
-
-### Soft Skills
-
-::SkillList{title="Persönliche Entwicklung" :skills='[{"name": "Problemlösekompetenz", "description": "Systematisches Herangehen an Probleme"}, {"name": "Teamwork", "description": "Effektive Zusammenarbeit in Projekten"}, {"name": "Selbstorganisation", "description": "Deadlines und Lernpensum managen"}, {"name": "Kommunikation", "description": "Technische Konzepte erklären"}]'}
-::
-
 ## Mein Ausblick
 
 Für die nächsten Semester und die darauffolgende Zeit steht bei mir noch an:
@@ -344,6 +328,6 @@ Für die nächsten Semester und die darauffolgende Zeit steht bei mir noch an:
 
 Der Studiengang DMS an der THM bietet allen Interessierten eine gute Mischung aus drei wichtigen Richtungen. Die Professoren und Dozenten sind sehr freundlich und geben sich
 viel Mühe, den Vorlesungsstoff ansprechend und verständlich beizubringen. Einzig und allein der Kritikpunkt hinsichtlich der Organisation bzw. Kommunikation besteht von meiner Seite aus.
-Dennoch würde ich mit meinem jetzigen Wissen den Studiengang jedem weiterempfehlen, mit den Tipps, die ich oben bereits erwähnt habe.
+Dennoch würde ich mit meinem jetzigen Wissen den Studiengang jedem weiterempfehlen, mit den Tipps, die ich oben bereits erwähnt habe. Es macht alles in allem sehr viel Spaß, die Modulauswahl ist groß, und man kann sich individuell gut weiterentwickeln.
 
-> "Die beste Zeit, einen Baum zu pflanzen, war vor 20 Jahren. Die zweitbeste Zeit ist jetzt." - Chinesisches Sprichwort
+> „Man kann sich auf Dinge konzentrieren, die Hindernisse darstellen, oder man kann sich darauf konzentrieren, die Mauer zu überwinden oder das Problem neu zu definieren.“ – Tim Cook
