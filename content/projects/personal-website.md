@@ -85,9 +85,24 @@ app: {
 },
 ```
 
+Das zugehörige CSS dazu in der app.vue:
+```css
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  filter: blur(5px);
+}
+```
+
 ### Content Management mit Nuxt Content
 
-Einer der coolsten Aspekte der Website ist das headless **Content Management System** basierend auf Nuxt Content. Dafür habe ich eine Config erstellt, die sowohl Blog-Artikel als auch Projekte verwaltet:
+Einer der besten Aspekte der Website ist das headless **Content Management System** basierend auf Nuxt Content. Dafür habe ich eine Config erstellt, die sowohl Blog-Artikel als auch Projekte verwaltet:
 
 ```typescript
 import { defineCollection, defineContentConfig, z } from '@nuxt/content'
@@ -147,6 +162,40 @@ Ich habe ein **einheitliches Design** entwickelt, das auf TailwindCSS basiert. D
 - **Spacing**: Konsistente Abstände und Layouts
 - **Components**: Wiederverwendbare UI-Komponenten
 
+### Optimiertes Font-Rendering mit @nuxt/fonts
+
+Für das Font-Management verwende ich das **@nuxt/fonts** Modul, das mir erhebliche Performance-Vorteile bringt:
+
+**Warum ich @nuxt/fonts gewählt habe:**
+- **Lokale Font-Verwaltung**: Alle Schriftarten werden lokal gehostet, was sowohl die Performance verbessert als auch DSGVO-konform ist
+- **Automatische Optimierung**: Das Modul kümmert sich um die korrekte Einbindung der Font-Dateien in verschiedenen Formaten (WOFF2, WOFF)
+- **Intelligente Fallbacks**: Falls Schriftarten nicht geladen werden können, greift das System auf lokale System-Schriftarten zurück
+- **Build-Time Optimierung**: Font-Pfade werden zur Build-Zeit aufgelöst und optimiert
+
+```typescript
+// Automatische Konfiguration in nuxt.config.ts
+export default defineNuxtConfig({
+  modules: [
+    '@nuxt/fonts', 
+  ],
+})
+```
+
+In meiner `tailwind.config` definiere ich dann die Font-Familien:
+
+```typescript
+theme: {
+  extend: {
+    fontFamily: {
+      'title': ['JetBrains Mono', 'monospace'],
+      'content': ['Inter', 'sans-serif'],
+    }
+  }
+}
+```
+
+Das Ergebnis: **Bessere Core Web Vitals** durch optimiertes Font-Rendering und keine störenden Layout-Shifts beim Laden der Seite.
+
 ### Dark Mode Implementation
 
 Die Dark Mode-Funktionalität war mir besonders wichtig (wobei ich persönlich am liebsten den Dark-Mode nutze ;)). Nuxt liefert dafür ein eigenes Modul `@nuxtjs/color-mode`:
@@ -190,7 +239,7 @@ Diese Komponente styled automatisch `inline code` und passt sich an den Dark Mod
 
 Ich habe auch komplexere Komponenten entwickelt:
 
-- **ContentSlider**: Für Bildergalerien mit Autoplay und Navigation
+- **ContentSlider**: Für Bildergalerien mit Autoplay und Navigation (nutzt Swiper.js als Library)
 - **TipBox**: Für Hinweise und wichtige Informationen
 - **HighlightBox**: Für besondere Hervorhebungen
 - **ProseA**: Für schön gestylte Links mit Icons
@@ -208,16 +257,16 @@ Durch Nuxt.js' **Server-Side Rendering** erreiche ich:
 
 Nuxt.js splittet automatisch den Code in kleinere Chunks:
 - Jede Seite lädt nur den benötigten Code
-- Komponenten werden lazy geladen
+- Lazy Loading der Komponenten
 - Optimal für Performance
 
 ### Code-Qualität
 
 Ich nutze das `@nuxt/eslint` Modul für:
 - **Konsistenten Code-Stil**: Automatische Formatierung und Einheitlichkeit im gesamten Projekt
-- **Fehlerprävention**: Frühzeitiges Erkennen von TypeScript-Fehlern und potentiellen Bugs
+- **Fehlerprävention**: Frühzeitiges Erkennen von TypeScript-Fehlern und potenziellen Bugs
 - **Vue.js Best Practices**: Spezielle Regeln für Vue-Komponenten und Composition API
-- **Performance-Optimierung**: Warnungen bei nicht genutzten Variablen usw.
+- **Performance-Optimierung**: Warnungen bei nicht genutzten Variablen, `any`-Verwendungen usw.
 
 Die ESLint-Konfiguration läuft automatisch beim Entwickeln und vor jedem Commit, wodurch die Code-Qualität durchgehend gut bleibt. Besonders hilfreich sind die Vue-spezifischen Regeln, die dabei helfen, die Komponenten-Architektur sauber zu halten und häufige Fehlerquellen zu vermeiden.
 
@@ -247,7 +296,8 @@ withDefaults(defineProps<Props>(), {
 Dynamische Inhalte SEO-freundlich zu gestalten ist mir als DMS-Student, der bereits auch mit SEO einiges an Erfahrung gesammelt hat, sehr wichtig.
 ::
 
-**Lösung**: Ich habe für jede Seite individuelle Meta-Tags implementiert, die in Content-Inhalten dynamisch die Tags setzen:
+**Lösung**: Ich habe für jede Seite individuelle Meta-Tags implementiert, die in Content-Inhalten dynamisch die Tags setzen.
+Nuxt bietet dafür mit useHead eine sehr einfache Möglichkeit an:
 
 ```typescript
 useHead({
@@ -288,9 +338,7 @@ Die Website wird auf **Netcup** gehostet mit:
 
 ### Was ich anders machen würde
 
-- Mehr **Unit Tests** für Komponenten schreiben
-- **Accessibility** von Anfang an berücksichtigen
-- Mehr Doku lesen, um mir Fehler zu ersparen, die im Nachhinein auftreten ;)
+- Noch mehr die Dokumentation lesen, um mir Fehler zu ersparen, die mich Zeit gekostet haben ;)
 
 ## Zukunftspläne
 
@@ -310,12 +358,13 @@ Die Website wird auf **Netcup** gehostet mit:
 
 ## Fazit
 
-Die Entwicklung dieser Website war ein **spannender Lernprozess**, der mir gezeigt hat, wie modern Webentwicklung funktioniert. Von der Architektur über das Design bis hin zur Performance-Optimierung - jeder Aspekt war eine Herausforderung, die mich als Entwickler weitergebracht hat.
+Die Entwicklung dieser Website war ein **Lernprozess**, der mir gezeigt hat, wie viel Nuxt kann und wie viel Spaß es macht, mit diesem Framework zu arbeiten.
+Jeder Aspekt war für mich sehr interessant und ich habe eine ganze Menge über Nuxt und einige der Module gelernt!
 
-Das Projekt zeigt, dass man mit den richtigen Tools und Technologien **professionelle Webanwendungen** erstellen kann, die sowohl für Nutzer als auch für Entwickler eine Freude sind.
+Das Projekt zeigt meiner Meinung nach, dass man mit den richtigen Frameworks **professionelle Webanwendungen** erstellen kann, die sowohl für Nutzer als auch für Entwickler eine Freude sind. Für mich war es das zumindest! :)
 
 ::HighlightBox{title="Open Source"}
-Der gesamte Code dieser Website ist auf GitHub verfügbar! Schaue gerne vorbei und lass dich inspirieren oder trage bei.
+Der gesamte Code dieser Website ist übrigens auf GitHub verfügbar! Schaue gerne vorbei und lass dich inspirieren oder schlage mir Änderungen vor.
 ::
 
 **Technologien im Überblick:**
