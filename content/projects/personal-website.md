@@ -30,7 +30,9 @@ Als DMS-Student an der THM wollte ich eine Website erstellen, die nicht nur mein
 
 ### Das Fundament: Nuxt.js v4
 
-Ich habe mich für **Nuxt.js 4** als Framework entschieden, da es die perfekte Balance zwischen Entwicklerfreundlichkeit und Performance bietet. Die wichtigsten Konfigurationen in der `nuxt.config.ts`:
+Ich habe mich für **Nuxt.js 4** als Framework entschieden, da es die perfekte Balance zwischen Entwicklerfreundlichkeit und Performance bietet.
+
+Die wichtigsten Konfigurationen in der `nuxt.config.ts`, unter anderem die Module, die App-Config sowie die Konfiguration von TailwindCSS.
 
 ```typescript
 export default defineNuxtConfig({
@@ -49,9 +51,43 @@ export default defineNuxtConfig({
 })
 ```
 
+In der App-Config kann neben einer Standard-SEO-Config auch eingestellt werden, dass es Transitions zwischen dem Wechsel von Seiten gibt.
+```typescript
+app: {
+    head: {
+        title: 'Jona-David Bastian - Student & Developer',
+            htmlAttrs: {
+            lang: 'de',
+        },
+        meta: [
+            {charset: 'utf-8'},
+            {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+
+            // description
+            {name: 'description', content: 'Student & angehender Developer mit Fokus auf Backend-Entwicklung. Hier findest du mein Portfolio mit Projekten und Blog.'},
+
+            // seo tags
+            {name: 'robots', content: 'index, follow'},
+            {
+                name: 'keywords',
+                content: 'jona, david, bastian, informatik, fullstack, backend, java, spring, developer, student, thm, dms'
+            },
+        ],
+            link: [
+            {
+                rel: 'icon',
+                type: 'image/svg+xml',
+                href: '/favicon.svg',
+            },
+        ],
+    },
+    pageTransition: {name: 'page', mode: 'out-in'},
+},
+```
+
 ### Content Management mit Nuxt Content
 
-Das Herzstück der Website ist das **Content Management System** basierend auf Nuxt Content. Ich habe eine strukturierte Konfiguration erstellt, die sowohl Blog-Artikel als auch Projekte verwaltet:
+Einer der coolsten Aspekte der Website ist das headless **Content Management System** basierend auf Nuxt Content. Dafür habe ich eine Config erstellt, die sowohl Blog-Artikel als auch Projekte verwaltet:
 
 ```typescript
 import { defineCollection, defineContentConfig, z } from '@nuxt/content'
@@ -97,14 +133,14 @@ export default defineContentConfig({
 ```
 
 ::HighlightBox{title="Warum Zod Schema Validation?"}
-Durch die Zod-Schema-Validierung stelle ich sicher, dass alle Blog-Artikel und Projekte die erforderlichen Metadaten haben. Dies verhindert Runtime-Fehler und macht die Content-Erstellung konsistent.
+Durch die Zod-Schema-Validierung wird sichergestellt, dass alle Blog-Artikel und Projekte die erforderlichen Felder haben. Das verhindert vor allem Runtime-Fehler und macht die Content-Erstellung konsistent.
 ::
 
 ## Design-System und Styling
 
 ### Tailwind CSS als Foundation
 
-Ich habe ein **konsistentes Design-System** entwickelt, das auf Tailwind CSS basiert. Das System umfasst:
+Ich habe ein **einheitliches Design** entwickelt, das auf TailwindCSS basiert. Das System umfasst:
 
 - **Farbpalette**: Durchdachte Primary-, Secondary- und Accent-Farben
 - **Typography**: Jetbrains Mono für Headlines, Inter für Content
@@ -113,7 +149,7 @@ Ich habe ein **konsistentes Design-System** entwickelt, das auf Tailwind CSS bas
 
 ### Dark Mode Implementation
 
-Die Dark Mode-Funktionalität war mir besonders wichtig. Ich habe sie mit `@nuxtjs/color-mode` umgesetzt:
+Die Dark Mode-Funktionalität war mir besonders wichtig (wobei ich persönlich am liebsten den Dark-Mode nutze ;)). Nuxt liefert dafür ein eigenes Modul `@nuxtjs/color-mode`:
 
 ```typescript
 colorMode: {
@@ -128,33 +164,15 @@ colorMode: {
 }
 ```
 
-Das System erkennt automatisch die Präferenz des Benutzers und speichert sie lokal. In der `app.vue` habe ich sanfte Übergänge implementiert:
+Das System erkennt automatisch die Präferenz des Benutzers und speichert sie lokal. In der `app.vue` habe ich darüber hinaus dann auch Transitions zwischen den Farbmodi implementiert:
 
-```vue
-<template>
+```vue App.vue
   <div class="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
-    <Header/>
-    
-    <!-- Vertikale Trennlinien als Design-Element -->
-    <div class="fixed inset-0 pointer-events-none z-50">
-      <div class="max-w-5xl mx-auto h-full relative">
-        <div class="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gray-200 dark:via-gray-700 to-transparent"></div>
-        <div class="absolute right-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gray-200 dark:via-gray-700 to-transparent"></div>
-      </div>
-    </div>
-    
-    <main class="pt-10">
-      <NuxtPage/>
-    </main>
-    
-    <Footer/>
-  </div>
-</template>
 ```
 
 ## Custom Prose-Komponenten
 
-Ein besonderes Feature sind die **Custom Prose-Komponenten**, die ich für Nuxt Content entwickelt habe. Diese ermöglichen es mir, Markdown-Inhalte mit interaktiven Elementen zu erweitern:
+Ein weiteres besonderes Feature sind die **Custom Prose-Komponenten**, die ich für Nuxt Content geschrieben habe. Das Ganze ermöglicht es mir dann, Markdown-Inhalte mit interaktiven und zum Design passenden Elementen zu erweitern:
 
 ### Beispiel: Code-Komponente
 
@@ -182,9 +200,9 @@ Ich habe auch komplexere Komponenten entwickelt:
 ### Server-Side Rendering
 
 Durch Nuxt.js' **Server-Side Rendering** erreiche ich:
-- Schnelle First Contentful Paint (FCP)
+- Schnelle First Contentful Paint (FCP), also sehr schnelles Rendering des ersten DOM-Elements
 - Bessere SEO-Performance
-- Improved Core Web Vitals
+- Gute Core Web Vitals
 
 ### Code Splitting
 
@@ -193,22 +211,43 @@ Nuxt.js splittet automatisch den Code in kleinere Chunks:
 - Komponenten werden lazy geladen
 - Optimal für Performance
 
-### Bildoptimierung
+### Code-Qualität
 
-Ich nutze das `@nuxt/image` Modul für:
-- Automatische WebP-Konvertierung
-- Responsive Breakpoints
-- Lazy Loading von Bildern
+Ich nutze das `@nuxt/eslint` Modul für:
+- **Konsistenten Code-Stil**: Automatische Formatierung und Einheitlichkeit im gesamten Projekt
+- **Fehlerprävention**: Frühzeitiges Erkennen von TypeScript-Fehlern und potentiellen Bugs
+- **Vue.js Best Practices**: Spezielle Regeln für Vue-Komponenten und Composition API
+- **Performance-Optimierung**: Warnungen bei nicht genutzten Variablen usw.
+
+Die ESLint-Konfiguration läuft automatisch beim Entwickeln und vor jedem Commit, wodurch die Code-Qualität durchgehend gut bleibt. Besonders hilfreich sind die Vue-spezifischen Regeln, die dabei helfen, die Komponenten-Architektur sauber zu halten und häufige Fehlerquellen zu vermeiden.
+
+```typescript
+// Beispiel einer automatisch erkannten Verbesserung
+interface Props {
+    title: string
+    alt?: string
+}
+
+// Vorher: ungenutzte Variable
+const props = withDefaults(defineProps<Props>(), {
+    alt: 'Platzhalter'
+})
+
+// Nachher: const props wird in dem Fall nicht benötigt, da Vue das automatisch handlet
+withDefaults(defineProps<Props>(), {
+    alt: 'Platzhalter'
+})
+```
 
 ## Technische Herausforderungen
 
 ### 1. SEO-Optimierung
 
 ::TipBox{title="SEO Challenge"}
-Dynamische Inhalte SEO-freundlich zu gestalten war eine der größten Herausforderungen.
+Dynamische Inhalte SEO-freundlich zu gestalten ist mir als DMS-Student, der bereits auch mit SEO einiges an Erfahrung gesammelt hat, sehr wichtig.
 ::
 
-**Lösung**: Ich habe für jede Seite individuelle Meta-Tags implementiert:
+**Lösung**: Ich habe für jede Seite individuelle Meta-Tags implementiert, die in Content-Inhalten dynamisch die Tags setzen:
 
 ```typescript
 useHead({
@@ -229,30 +268,14 @@ useHead({
 
 **Lösung**: Zod-Schema-Validierung in der Content-Konfiguration, die zur Build-Zeit validiert wird.
 
-### 3. Performance bei vielen Bildern
-
-**Challenge**: Optimale Ladezeiten trotz vieler hochauflösender Bilder.
-
-**Lösung**: 
-- Moderne Bildformate (WebP, AVIF)
-- Responsive Images mit verschiedenen Breakpoints
-- Lazy Loading Implementation
-
 ## Deployment und DevOps
 
 ### Deployment-Strategie
 
 Die Website wird auf **Netcup** gehostet mit:
-- Automatisches Deployment über Git Hooks
+- Automatisches Deployment über Git CI/CD
 - SSL-Zertifikat von Let's Encrypt
 - Gzip-Kompression für bessere Performance
-
-### Monitoring
-
-Ich überwache die Website mit:
-- Google Analytics für Nutzerverhalten
-- Lighthouse für Performance-Metriken
-- Uptime-Monitoring
 
 ## Lessons Learned
 
@@ -265,9 +288,9 @@ Ich überwache die Website mit:
 
 ### Was ich anders machen würde
 
-- Früher an die **Bildoptimierung** denken
 - Mehr **Unit Tests** für Komponenten schreiben
 - **Accessibility** von Anfang an berücksichtigen
+- Mehr Doku lesen, um mir Fehler zu ersparen, die im Nachhinein auftreten ;)
 
 ## Zukunftspläne
 
@@ -297,10 +320,10 @@ Der gesamte Code dieser Website ist auf GitHub verfügbar! Schaue gerne vorbei u
 
 **Technologien im Überblick:**
 - Vue.js 3 + Composition API
-- Nuxt.js 3 + Server-Side Rendering
+- Nuxt.js 4 + Server-Side Rendering
 - TypeScript für Type Safety
 - Tailwind CSS für Styling
 - Nuxt Content für Content Management
 - Zod für Schema-Validierung
-- Nuxt Icon für Icons
+- Nuxt Icon für Icons (Tabler Icons)
 - Nuxt Fonts für Schriftarten

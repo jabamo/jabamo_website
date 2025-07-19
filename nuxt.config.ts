@@ -80,7 +80,7 @@ export default defineNuxtConfig({
 
     app: {
         head: {
-            title: 'Startseite',
+            title: 'Jona-David Bastian - Student & Developer',
             htmlAttrs: {
                 lang: 'de',
             },
@@ -89,7 +89,7 @@ export default defineNuxtConfig({
                 {name: 'viewport', content: 'width=device-width, initial-scale=1'},
 
                 // description
-                {name: 'description', content: 'Beschreibung hier rein'},
+                {name: 'description', content: 'Student & angehender Developer mit Fokus auf Backend-Entwicklung. Hier findest du mein Portfolio mit Projekten und Blog.'},
 
                 // seo tags
                 {name: 'robots', content: 'index, follow'},
