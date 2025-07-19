@@ -186,7 +186,7 @@ interface SlideData {
 }
 
 interface Props {
-  slides: SlideData[]
+  slides?: SlideData[]
   title?: string
   autoplay?: boolean
   autoplayDelay?: number
