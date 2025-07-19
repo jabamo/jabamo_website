@@ -17,7 +17,7 @@
 interface Props {
   title?: string
 }
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
   title: 'Tipp'
 })
 </script>

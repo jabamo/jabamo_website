@@ -39,7 +39,8 @@ interface Props {
 
 const props = withDefaults(defineProps<Props>(), {
   variant: 'default',
-  color: 'blue'
+  color: 'blue',
+  icon: ''
 })
 
 const isExternal = computed(() => {

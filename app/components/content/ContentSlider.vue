@@ -1,6 +1,7 @@
 <template>
-  <div class="not-prose my-8" v-if="validSlides.length > 0">
-    <div :class="[
+  <div v-if="validSlides.length > 0" class="not-prose my-8">
+    <div
+        :class="[
       'relative overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm mx-auto',
       containerSizeClass
     ]">
@@ -11,8 +12,8 @@
           :autoplay="autoplayConfig"
           :navigation="navigationConfig"
           :pagination="paginationConfig"
-          @slideChange="onSlideChange"
           :class="['w-full', swiperHeightClass]"
+          @slide-change="onSlideChange"
       >
         <SwiperSlide
             v-for="(slide, index) in validSlides"
@@ -26,7 +27,7 @@
                 class="w-full h-full object-cover"
                 :style="{ height: slideHeight }"
                 @click="openLightbox(index)"
-            />
+            >
 
             <div
                 v-if="slide.caption"
@@ -47,8 +48,8 @@
         </SwiperSlide>
       </Swiper>
 
-      <div v-if="!autoplay" class="swiper-button-prev"></div>
-      <div v-if="!autoplay" class="swiper-button-next"></div>
+      <div v-if="!autoplay" class="swiper-button-prev"/>
+      <div v-if="!autoplay" class="swiper-button-next"/>
 
       <div class="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm font-medium z-10">
         {{ currentSlideIndex }} / {{ validSlides.length }}
@@ -85,27 +86,27 @@
       >
         <div class="relative max-w-full max-h-full">
           <button
-              @click="closeLightbox"
               class="absolute top-4 right-4 z-10 bg-black bg-opacity-60 hover:bg-opacity-80 text-white w-10 h-10 rounded-full transition-colors flex items-center justify-center"
               aria-label="Schließen"
+              @click="closeLightbox"
           >
             <Icon name="tabler:x" size="24"/>
           </button>
 
           <button
               v-if="validSlides.length > 1"
-              @click.stop="previousLightboxSlide"
               class="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-black bg-opacity-60 hover:bg-opacity-80 text-white w-12 h-12 rounded-full transition-colors flex items-center justify-center"
               aria-label="Vorheriges Bild"
+              @click.stop="previousLightboxSlide"
           >
             <Icon name="tabler:chevron-left" size="24"/>
           </button>
 
           <button
               v-if="validSlides.length > 1"
-              @click.stop="nextLightboxSlide"
               class="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-black bg-opacity-60 hover:bg-opacity-80 text-white w-12 h-12 rounded-full transition-colors flex items-center justify-center"
               aria-label="Nächstes Bild"
+              @click.stop="nextLightboxSlide"
           >
             <Icon name="tabler:chevron-right" size="24"/>
           </button>
@@ -126,7 +127,7 @@
                   :alt="currentLightboxSlide.alt || 'Vollbild'"
                   class="max-w-full max-h-full object-contain"
                   @click.stop
-              />
+              >
             </Transition>
 
             <Transition
@@ -173,6 +174,7 @@
 import {ref, computed, onUnmounted} from 'vue'
 import {Swiper, SwiperSlide} from 'swiper/vue'
 import {Navigation, Pagination, Autoplay} from 'swiper/modules'
+import type {Swiper as SwiperType} from 'swiper'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
@@ -195,6 +197,7 @@ interface Props {
 
 const props = withDefaults(defineProps<Props>(), {
   slides: () => [],
+  title: '',
   autoplay: false,
   autoplayDelay: 3000,
   size: 'full',
@@ -297,7 +300,7 @@ const previousLightboxSlide = () => {
   }
 }
 
-const onSlideChange = (swiper: any) => {
+const onSlideChange = (swiper: SwiperType) => {
   currentSlideIndex.value = swiper.realIndex + 1
 }
 

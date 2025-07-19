@@ -9,19 +9,19 @@
 
     <div class="relative">
       <div
-          class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 bg-gray-200 dark:bg-gray-700 h-full"></div>
+          class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 bg-gray-200 dark:bg-gray-700 h-full"/>
       <div
           ref="progressLine"
           class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 bg-accent-500 transition-all duration-300 ease-out"
           :style="{ height: `${scrollProgress}%` }"
-      ></div>
+      />
 
-      <div class="md:hidden absolute left-6 w-1 bg-gray-200 dark:bg-gray-700 h-full"></div>
+      <div class="md:hidden absolute left-6 w-1 bg-gray-200 dark:bg-gray-700 h-full"/>
       <div
           ref="progressLineMobile"
           class="md:hidden absolute left-6 w-1 bg-accent-500 transition-all duration-300 ease-out"
           :style="{ height: `${scrollProgress}%` }"
-      ></div>
+      />
 
 
       <div class="space-y-16">
@@ -41,7 +41,7 @@
                   'bg-accent-500 rounded-full border-4 border-white dark:border-gray-900 shadow-lg transition-all duration-300 ease-out',
                   isPointActive(index) ? 'w-8 h-8' : 'w-6 h-6'
                 ]"
-            ></div>
+            />
           </div>
           <div class="md:hidden absolute left-[1.625rem] transform -translate-x-1/2 z-10">
             <div
@@ -49,7 +49,7 @@
                   'bg-accent-500 rounded-full border-4 border-white dark:border-gray-900 shadow-lg transition-all duration-300 ease-out',
                   isPointActive(index) ? 'w-6 h-6' : 'w-4 h-4'
                 ]"
-            ></div>
+            />
           </div>
 
 
@@ -105,7 +105,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import {ref, onMounted, onUnmounted} from 'vue'
 
 const progressLine = ref<HTMLElement | null>(null)
 const scrollProgress = ref(0)

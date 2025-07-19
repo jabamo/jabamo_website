@@ -1,5 +1,6 @@
 <template>
-  <article class="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 hover:border-accent-500 dark:hover:border-accent-500 transition-all duration-300 hover:shadow-xl">
+  <article
+      class="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 hover:border-accent-500 dark:hover:border-accent-500 transition-all duration-300 hover:shadow-xl">
 
     <div class="aspect-video overflow-hidden bg-gray-100 dark:bg-gray-700">
       <img
@@ -7,9 +8,9 @@
           :src="article.image"
           :alt="article.title"
           class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-      />
+      >
       <div v-else class="w-full h-full flex items-center justify-center">
-        <Icon name="tabler:article" size="48" class="text-gray-400" />
+        <Icon name="tabler:article" size="48" class="text-gray-400"/>
       </div>
     </div>
 
@@ -23,7 +24,7 @@
           {{ formatDate(article.date) }}
         </time>
         <span v-if="article.readTime" class="text-gray-500 dark:text-gray-400 font-content flex items-center">
-          <Icon name="tabler:clock" size="16" class="mr-1" />
+          <Icon name="tabler:clock" size="16" class="mr-1"/>
           {{ article.readTime }}
         </span>
       </div>
@@ -32,7 +33,7 @@
         <NuxtLink
             :to="`/blog/${article.path.split('/').pop()}`"
         >
-        {{ article.title }}
+          {{ article.title }}
         </NuxtLink>
       </h2>
 
@@ -58,7 +59,7 @@
 
       <div class="flex items-center justify-between">
         <div class="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
-          <Icon name="tabler:user" size="16" />
+          <Icon name="tabler:user" size="16"/>
           <span class="font-content">{{ article.author }}</span>
         </div>
 
@@ -67,7 +68,7 @@
             class="inline-flex items-center px-4 py-2 text-accent-500 hover:text-accent-600 font-medium text-sm transition-colors"
         >
           Lesen
-          <Icon name="tabler:arrow-right" class="ml-1" size="16" />
+          <Icon name="tabler:arrow-right" class="ml-1" size="16"/>
         </NuxtLink>
       </div>
     </div>

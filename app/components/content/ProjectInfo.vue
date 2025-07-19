@@ -48,7 +48,7 @@ interface Props {
   result?: string
 }
 
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
   technologies: () => [],
   team: '',
   duration: '',

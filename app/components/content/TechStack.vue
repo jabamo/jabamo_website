@@ -23,7 +23,8 @@ interface Props {
   title?: string
   technologies?: string[]
 }
-const props = withDefaults(defineProps<Props>(), {
+
+withDefaults(defineProps<Props>(), {
   title: '',
   technologies: () => []
 })

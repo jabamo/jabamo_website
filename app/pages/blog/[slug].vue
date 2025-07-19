@@ -20,8 +20,9 @@
               class="px-3 py-1 bg-accent-500/10 text-accent-600 dark:text-accent-400 text-sm rounded-full font-medium">
             {{ article.category }}
           </span>
-          <span v-if="article.featured"
-                class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-700 dark:text-yellow-300 text-sm rounded-full font-medium">
+          <span
+              v-if="article.featured"
+              class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-700 dark:text-yellow-300 text-sm rounded-full font-medium">
             Featured
           </span>
         </div>
@@ -51,21 +52,23 @@
         </div>
       </header>
 
-      <div v-if="article.image"
-           class="aspect-video rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 mb-12">
+      <div
+          v-if="article.image"
+          class="aspect-video rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 mb-12">
         <img
             :src="article.image"
             :alt="article.title"
             class="w-full h-full object-cover"
-        />
+        >
       </div>
 
       <div class="prose prose-lg dark:prose-invert max-w-none font-content">
         <ContentRenderer :value="article"/>
       </div>
 
-      <div v-if="article.tags && article.tags.length > 0"
-           class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+      <div
+          v-if="article.tags && article.tags.length > 0"
+          class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
         <h3 class="font-title font-semibold text-lg mb-4">Tags</h3>
         <div class="flex flex-wrap gap-2">
           <span
@@ -99,9 +102,9 @@
           </a>
           <button
               v-if="!isCopied"
-              @click="copyToClipboard"
               class="flex items-center justify-center w-12 h-12 bg-gray-500 hover:bg-gray-600 text-white rounded-lg transition-colors"
               aria-label="Link kopieren"
+              @click="copyToClipboard"
           >
             <Icon name="tabler:link" size="20"/>
           </button>
@@ -141,7 +144,7 @@
               href="mailto:jb@jonabastian.io"
               class="inline-flex items-center justify-center gap-2 px-6 py-2 bg-accent-500 hover:bg-accent-600 text-white font-medium rounded-lg transition-colors"
           >
-            <Icon name="tabler:mail" size="20" />
+            <Icon name="tabler:mail" size="20"/>
             Mail schreiben
           </a>
         </div>
@@ -182,7 +185,7 @@ if (!article.value) {
 }
 
 const {data: relatedArticles} = await useAsyncData(`relatedArticles-${article.value?.id}`, () => {
-        return queryCollection('blog')
+      return queryCollection('blog')
           .where('published', '=', true)
           .andWhere(query => query.where('id', '<>', article.value?.id)) // make sure it's not the same article
           .orWhere(query => query.where('category', '=', article.value?.category).where('tags', 'IN', article.value?.tags))

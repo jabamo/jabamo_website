@@ -10,10 +10,10 @@
                 src="/assets/img/profile.jpg"
                 alt="Jona-David Bastian"
                 class="w-full h-full object-cover rounded-full"
-            />
+            >
           </div>
-          <div class="absolute -top-4 -right-4 w-16 h-16 bg-accent-500/20 rounded-full animate-pulse"></div>
-          <div class="absolute -bottom-6 -left-6 w-12 h-12 bg-accent-600/30 rounded-full animate-pulse delay-700"></div>
+          <div class="absolute -top-4 -right-4 w-16 h-16 bg-accent-500/20 rounded-full animate-pulse"/>
+          <div class="absolute -bottom-6 -left-6 w-12 h-12 bg-accent-600/30 rounded-full animate-pulse delay-700"/>
         </div>
       </div>
 
@@ -56,7 +56,7 @@
   </section>
 </template>
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import {ref, onMounted} from 'vue'
 
 const titleElement = ref<HTMLElement | null>(null)
 const typewriterSpeed = 100

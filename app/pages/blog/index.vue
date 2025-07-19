@@ -15,36 +15,37 @@
 
         <div class="flex flex-wrap gap-3">
           <button
-              @click="selectedCategory = null"
               class="px-4 py-2 rounded-lg transition-colors font-medium"
               :class="selectedCategory === null ?
               'bg-accent-500 text-white' :
               'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'"
+              @click="selectedCategory = null"
           >
             Alle
           </button>
           <button
               v-for="category in categories"
               :key="category"
-              @click="selectedCategory = category"
               class="px-4 py-2 rounded-lg transition-colors font-medium"
               :class="selectedCategory === category ?
               'bg-accent-500 text-white' :
               'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'"
+              @click="selectedCategory = category"
           >
             {{ category }}
           </button>
         </div>
 
         <div class="relative">
-          <Icon name="tabler:search" size="20"
-                class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"/>
+          <Icon
+              name="tabler:search" size="20"
+              class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"/>
           <input
               v-model="searchQuery"
               type="text"
               placeholder="Artikel suchen..."
               class="pl-10 pr-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-colors"
-          />
+          >
         </div>
       </div>
     </section>
@@ -91,9 +92,9 @@
       <div v-if="totalPages > 1" class="flex justify-center mt-12">
         <nav class="flex items-center space-x-2">
           <button
-              @click="currentPage--"
               :disabled="currentPage === 1"
               class="px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              @click="currentPage--"
           >
             <Icon name="tabler:chevron-left" size="20"/>
           </button>
@@ -101,19 +102,19 @@
           <span
               v-for="page in visiblePages"
               :key="page"
-              @click="currentPage = page"
               class="px-3 py-2 rounded-lg cursor-pointer transition-colors"
               :class="page === currentPage ?
               'bg-accent-500 text-white' :
               'border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800'"
+              @click="currentPage = page"
           >
             {{ page }}
           </span>
 
           <button
-              @click="currentPage++"
               :disabled="currentPage === totalPages"
               class="px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              @click="currentPage++"
           >
             <Icon name="tabler:chevron-right" size="20"/>
           </button>
@@ -135,7 +136,7 @@
               href="mailto:jb@jonabastian.io"
               class="inline-flex items-center justify-center gap-2 px-6 py-2 bg-accent-500 hover:bg-accent-600 text-white font-medium rounded-lg transition-colors"
           >
-            <Icon name="tabler:mail" size="20" />
+            <Icon name="tabler:mail" size="20"/>
             Mail schreiben
           </a>
         </div>
@@ -156,7 +157,7 @@ useHead({
   ]
 })
 
-const { data: articles } = await useAsyncData('blog', () => {
+const {data: articles} = await useAsyncData('blog', () => {
   return queryCollection('blog').all();
 })
 

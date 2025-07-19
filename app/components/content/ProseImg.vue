@@ -1,11 +1,13 @@
 <template>
-  <div :class="[
+  <div
+      :class="[
     'not-prose',
     floatClass,
     marginClass
   ]">
     <figure class="group">
-      <div :class="[
+      <div
+          :class="[
         'relative overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm hover:shadow-md transition-all duration-300 mx-auto',
         containerSizeClass
       ]">
@@ -15,7 +17,7 @@
             class="w-full h-auto transition-transform duration-300 group-hover:scale-105"
             :loading="loading"
             @click="openLightbox"
-        />
+        >
 
         <div
             v-if="caption || alt"
@@ -52,11 +54,11 @@
       >
         <div class="relative max-w-full max-h-full">
           <button
-              @click="closeLightbox"
               class="absolute top-4 right-4 z-10 bg-black bg-opacity-60 hover:bg-opacity-80 text-white w-10 h-10 rounded-full transition-colors flex items-center justify-center"
               aria-label="Schließen"
+              @click="closeLightbox"
           >
-            <Icon name="tabler:x" size="24" />
+            <Icon name="tabler:x" size="24"/>
           </button>
 
           <div class="relative">
@@ -65,7 +67,7 @@
                 :alt="alt"
                 class="max-w-full max-h-full object-contain"
                 @click.stop
-            />
+            >
 
             <div
                 v-if="caption || alt"
@@ -90,7 +92,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, computed, onUnmounted } from 'vue'
+import {ref, computed, onUnmounted} from 'vue'
 
 interface Props {
   src: string
@@ -104,7 +106,8 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   size: 'full',
   loading: 'lazy',
-  float: 'none'
+  float: 'none',
+  caption: ''
 })
 
 const lightboxOpen = ref(false)

@@ -8,10 +8,11 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="group bg-white dark:bg-gray-800 rounded-xl p-8 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+      <div
+          class="group bg-white dark:bg-gray-800 rounded-xl p-8 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300 transform hover:scale-105">
         <div class="flex items-center mb-6">
           <div class="w-12 h-12 bg-accent-500/10 rounded-lg flex items-center justify-center mr-4">
-            <Icon name="tabler:code" size="24" class="text-accent-500" />
+            <Icon name="tabler:code" size="24" class="text-accent-500"/>
           </div>
           <h3 class="font-title text-xl font-semibold">Frontend-Development</h3>
         </div>
@@ -23,18 +24,20 @@
 
         <div class="space-y-3">
           <div class="flex flex-wrap gap-2">
-            <span v-for="tech in frontendTechs" :key="tech"
-                  class="px-3 py-1 bg-accent-500/10 text-accent-600 dark:text-accent-400 text-sm rounded-full font-medium">
+            <span
+                v-for="tech in frontendTechs" :key="tech"
+                class="px-3 py-1 bg-accent-500/10 text-accent-600 dark:text-accent-400 text-sm rounded-full font-medium">
               {{ tech }}
             </span>
           </div>
         </div>
       </div>
 
-      <div class="group bg-white dark:bg-gray-800 rounded-xl p-8 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+      <div
+          class="group bg-white dark:bg-gray-800 rounded-xl p-8 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300 transform hover:scale-105">
         <div class="flex items-center mb-6">
           <div class="w-12 h-12 bg-accent-500/10 rounded-lg flex items-center justify-center mr-4">
-            <Icon name="tabler:server" size="24" class="text-accent-500" />
+            <Icon name="tabler:server" size="24" class="text-accent-500"/>
           </div>
           <h3 class="font-title text-xl font-semibold">Backend-Development</h3>
         </div>
@@ -46,8 +49,9 @@
 
         <div class="space-y-3">
           <div class="flex flex-wrap gap-2">
-            <span v-for="tech in backendTechs" :key="tech"
-                  class="px-3 py-1 bg-accent-500/10 text-accent-600 dark:text-accent-400 text-sm rounded-full font-medium">
+            <span
+                v-for="tech in backendTechs" :key="tech"
+                class="px-3 py-1 bg-accent-500/10 text-accent-600 dark:text-accent-400 text-sm rounded-full font-medium">
               {{ tech }}
             </span>
           </div>

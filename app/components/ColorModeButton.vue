@@ -1,8 +1,8 @@
 <template>
   <button
-    @click="toggleColorMode"
-    class="flex p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-    :aria-label="colorMode.value === 'dark' ? 'Zum hellen Modus wechseln' : 'Zum dunklen Modus wechseln'"
+      class="flex p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+      :aria-label="colorMode.value === 'dark' ? 'Zum hellen Modus wechseln' : 'Zum dunklen Modus wechseln'"
+      @click="toggleColorMode"
   >
     <ClientOnly>
       <Icon
