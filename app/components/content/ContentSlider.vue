@@ -240,12 +240,15 @@ const swiperHeightClass = computed(() => {
       return 'h-96'
     case 'full':
     default:
-      return 'h-auto'
+      return 'h-96'
   }
 })
 
 const slideHeight = computed(() => {
-  if (props.height === 'auto') return 'auto'
+  if (props.height === 'auto') {
+    if (props.size === 'full') return '384px'
+    return 'auto'
+  }
   return props.height
 })
 
