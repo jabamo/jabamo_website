@@ -63,7 +63,7 @@
 
 <script lang="ts" setup>
 const frontendTechs = [
-  'Vue.js', 'React', 'Angular', 'Nuxt.js', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'Bootstrap 4', 'JavaScript', 'HTML/CSS'
+  'Vue.js', 'React', 'Angular', 'Nuxt.js', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'Bootstrap 4', 'HTML/CSS'
 ]
 
 const backendTechs = [
