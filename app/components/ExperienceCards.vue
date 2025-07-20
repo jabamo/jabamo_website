@@ -43,7 +43,7 @@
         </div>
 
         <p class="font-content text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-          Robuste REST-APIs in Monolith-Struktur mit Node.js und Express.
+          Robuste REST-APIs in Monolith-Backends mit Node.js und Express sowie Backends mit PHP und Symfony.
           Erste Erfahrungen mit Java+Spring sowie GraphQL-APIs.
         </p>
 
@@ -67,6 +67,6 @@ const frontendTechs = [
 ]
 
 const backendTechs = [
-  'Node.js', 'Express', 'Java', 'Spring', 'PostgreSQL', 'Docker', 'REST', 'GraphQL'
+  'Node.js', 'Express', 'Java', 'Kotlin', 'Spring', 'PostgreSQL', 'Docker', 'REST', 'GraphQL'
 ]
 </script>

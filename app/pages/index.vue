@@ -3,6 +3,7 @@
     <HeroSection />
     <SocialLinks />
     <ExperienceCards />
+    <RecentProjects />
   </div>
 </template>
 
