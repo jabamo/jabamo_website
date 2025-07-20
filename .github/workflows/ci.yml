@@ -28,16 +28,13 @@ jobs:
       run: npm run lint
       
     - name: Run Unit Tests
-      run: npm run test -- --run --reporter=verbose
+      run: npm run test:unit -- --run --reporter=verbose
       
     - name: Run Unit Tests with Coverage
       run: npm run test:coverage -- --run
       
     - name: Run E2E Tests
-      run: npm run test tests/e2e/ -- --run --reporter=verbose
-      
-    - name: Build project
-      run: npm run build
+      run: npm run test:e2e -- --run --reporter=verbose
       
     - name: Generate static site
       run: npm run generate
@@ -75,7 +72,7 @@ jobs:
     - name: Create backup of current site
       uses: appleboy/ssh-action@v1.0.3
       with:
-        host: ${{ secrets.REMOTE_HOST }}
+        host: ${{ secrets.DEPLOY_HOST }}
         username: ${{ secrets.REMOTE_HOST_USERNAME }}
         key: ${{ secrets.REMOTE_DEPLOY_SSH_KEY }}
         script: backup
@@ -83,7 +80,7 @@ jobs:
     - name: Deploy files to server
       uses: appleboy/scp-action@v0.1.7
       with:
-        host: ${{ secrets.REMOTE_HOST }}
+        host: ${{ secrets.DEPLOY_HOST }}
         username: ${{ secrets.REMOTE_HOST_USERNAME }}
         key: ${{ secrets.REMOTE_DEPLOY_SSH_KEY }}
         source: ".output/public/*"
@@ -93,7 +90,7 @@ jobs:
     - name: Set correct file permissions
       uses: appleboy/ssh-action@v1.0.3
       with:
-        host: ${{ secrets.REMOTE_HOST }}
+        host: ${{ secrets.DEPLOY_HOST }}
         username: ${{ secrets.REMOTE_HOST_USERNAME }}
         key: ${{ secrets.REMOTE_DEPLOY_SSH_KEY }}
         script: permissions
@@ -101,7 +98,7 @@ jobs:
     - name: Verify deployment success
       uses: appleboy/ssh-action@v1.0.3
       with:
-        host: ${{ secrets.REMOTE_HOST }}
+        host: ${{ secrets.DEPLOY_HOST }}
         username: ${{ secrets.REMOTE_HOST_USERNAME }}
         key: ${{ secrets.REMOTE_DEPLOY_SSH_KEY }}
         script: verify 
