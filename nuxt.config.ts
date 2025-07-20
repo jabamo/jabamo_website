@@ -2,6 +2,19 @@ export default defineNuxtConfig({
     compatibilityDate: '2025-05-15',
     devtools: {enabled: false},
 
+    site: {
+        url: 'https://jonabastian.io'
+    },
+
+    nitro: {
+        prerender: {
+            routes: ['/sitemap.xml'],
+            crawlLinks: true
+        }
+    },
+
+    ssr: true,
+    
     modules: ['@nuxt/content', '@nuxt/eslint', '@nuxt/test-utils/module', '@nuxt/fonts', '@nuxt/icon', '@nuxtjs/color-mode', '@nuxtjs/sitemap', '@nuxtjs/tailwindcss'],
 
     // TailwindCSS config

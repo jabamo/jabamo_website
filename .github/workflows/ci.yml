@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: CI/CD Pipeline
 
 on:
   push:
@@ -48,4 +48,60 @@ jobs:
       with:
         files: ./coverage/lcov.info
         fail_ci_if_error: false
-        token: ${{ secrets.CODECOV_TOKEN }} 
+        token: ${{ secrets.CODECOV_TOKEN }}
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    # Nur bei Push auf main deployen, nicht bei PRs
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20.x
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Generate static site
+      run: npm run generate
+      
+    - name: Create backup of current site
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.REMOTE_HOST }}
+        username: ${{ secrets.REMOTE_HOST_USERNAME }}
+        key: ${{ secrets.REMOTE_DEPLOY_SSH_KEY }}
+        script: backup
+        
+    - name: Deploy files to server
+      uses: appleboy/scp-action@v0.1.7
+      with:
+        host: ${{ secrets.REMOTE_HOST }}
+        username: ${{ secrets.REMOTE_HOST_USERNAME }}
+        key: ${{ secrets.REMOTE_DEPLOY_SSH_KEY }}
+        source: ".output/public/*"
+        target: "/var/www/jabamo_website/public/"
+        strip_components: 2
+        
+    - name: Set correct file permissions
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.REMOTE_HOST }}
+        username: ${{ secrets.REMOTE_HOST_USERNAME }}
+        key: ${{ secrets.REMOTE_DEPLOY_SSH_KEY }}
+        script: permissions
+        
+    - name: Verify deployment success
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.REMOTE_HOST }}
+        username: ${{ secrets.REMOTE_HOST_USERNAME }}
+        key: ${{ secrets.REMOTE_DEPLOY_SSH_KEY }}
+        script: verify 
