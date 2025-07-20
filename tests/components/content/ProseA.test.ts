@@ -10,8 +10,8 @@ describe('ProseA', () => {
 
     // when
     const wrapper = await mountSuspended(ProseA, {
-      attrs: { href },
-      slots: { default: content }
+      props: { href },
+      slots: { default: () => content }
     })
 
     // then
@@ -27,8 +27,8 @@ describe('ProseA', () => {
 
     // when
     const wrapper = await mountSuspended(ProseA, {
-      attrs: { href },
-      slots: { default: content }
+      props: { href },
+      slots: { default: () => content }
     })
 
     // then
@@ -44,8 +44,8 @@ describe('ProseA', () => {
 
     // when
     const wrapper = await mountSuspended(ProseA, {
-      attrs: { href },
-      slots: { default: content }
+      props: { href },
+      slots: { default: () => content }
     })
 
     // then
@@ -62,8 +62,8 @@ describe('ProseA', () => {
 
     // when
     const wrapper = await mountSuspended(ProseA, {
-      attrs: { href, variant },
-      slots: { default: content }
+      props: { href, variant },
+      slots: { default: () => content }
     })
 
     // then
@@ -79,8 +79,8 @@ describe('ProseA', () => {
 
     // when
     const wrapper = await mountSuspended(ProseA, {
-      attrs: { href, variant },
-      slots: { default: content }
+      props: { href, variant },
+      slots: { default: () => content }
     })
 
     // then
@@ -95,8 +95,8 @@ describe('ProseA', () => {
 
     // when
     const wrapper = await mountSuspended(ProseA, {
-      attrs: { href, icon },
-      slots: { default: content }
+      props: { href, icon },
+      slots: { default: () => content }
     })
 
     // then
@@ -111,8 +111,8 @@ describe('ProseA', () => {
 
     // when
     const wrapper = await mountSuspended(ProseA, {
-      attrs: { href, hideIcon },
-      slots: { default: content }
+      props: { href, hideIcon },
+      slots: { default: () => content }
     })
 
     // then
@@ -127,8 +127,8 @@ describe('ProseA', () => {
 
     // when
     const wrapper = await mountSuspended(ProseA, {
-      attrs: { href, color },
-      slots: { default: content }
+      props: { href, color },
+      slots: { default: () => content }
     })
 
     // then
@@ -143,8 +143,8 @@ describe('ProseA', () => {
 
     // when
     const wrapper = await mountSuspended(ProseA, {
-      attrs: { href },
-      slots: { default: content }
+      props: { href },
+      slots: { default: () => content }
     })
 
     // then

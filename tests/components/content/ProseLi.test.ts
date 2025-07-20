@@ -9,7 +9,7 @@ describe('ProseLi', () => {
 
     // when
     const wrapper = await mountSuspended(ProseLi, {
-      slots: { default: content }
+      slots: { default: () => content }
     })
 
     // then
@@ -23,7 +23,7 @@ describe('ProseLi', () => {
 
     // when
     const wrapper = await mountSuspended(ProseLi, {
-      slots: { default: content }
+      slots: { default: () => content }
     })
 
     // then
@@ -36,7 +36,7 @@ describe('ProseLi', () => {
 
     // when
     const wrapper = await mountSuspended(ProseLi, {
-      slots: { default: content }
+      slots: { default: () => content }
     })
 
     // then

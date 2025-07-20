@@ -10,7 +10,7 @@ describe('ProseImg', () => {
 
     // when
     const wrapper = await mountSuspended(ProseImg, {
-      attrs: { src, alt }
+      props: { src, alt }
     })
 
     // then
@@ -27,7 +27,7 @@ describe('ProseImg', () => {
 
     // when
     const wrapper = await mountSuspended(ProseImg, {
-      attrs: { src, alt, caption }
+      props: { src, alt, caption }
     })
 
     // then
@@ -42,7 +42,7 @@ describe('ProseImg', () => {
 
     // when
     const wrapper = await mountSuspended(ProseImg, {
-      attrs: { src, alt }
+      props: { src, alt }
     })
 
     // then
@@ -56,7 +56,7 @@ describe('ProseImg', () => {
 
     // when
     const wrapper = await mountSuspended(ProseImg, {
-      attrs: { src, alt }
+      props: { src, alt }
     })
 
     // then
@@ -70,7 +70,7 @@ describe('ProseImg', () => {
 
     // when
     const wrapper = await mountSuspended(ProseImg, {
-      attrs: { src, alt }
+      props: { src, alt }
     })
 
     // then
@@ -84,7 +84,7 @@ describe('ProseImg', () => {
 
     // when
     const wrapper = await mountSuspended(ProseImg, {
-      attrs: { src, alt }
+      props: { src, alt }
     })
 
     // then

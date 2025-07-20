@@ -45,6 +45,16 @@ describe('Homepage E2E', async () => {
         expect(html).toContain('LinkedIn')
     })
 
+    test('displays recent projects', async () => {
+        // given
+        // when
+        const html = await $fetch('/')
+
+        // then
+        expect(html).toContain('Neueste Projekte')
+        expect(html).toContain('Eine Auswahl meiner aktuellsten Arbeiten')
+    })
+
     test('displays footer with legal links', async () => {
         // given
         // when

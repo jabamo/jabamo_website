@@ -9,7 +9,7 @@ describe('TipBox', () => {
 
     // when
     const wrapper = await mountSuspended(TipBox, {
-      slots: { default: content }
+      slots: { default: () => content }
     })
 
     // then
@@ -26,7 +26,7 @@ describe('TipBox', () => {
     // when
     const wrapper = await mountSuspended(TipBox, {
       props: { title: customTitle },
-      slots: { default: content }
+      slots: { default: () => content }
     })
 
     // then
@@ -40,7 +40,7 @@ describe('TipBox', () => {
 
     // when
     const wrapper = await mountSuspended(TipBox, {
-      slots: { default: slotContent }
+      slots: { default: () => slotContent }
     })
 
     // then
@@ -51,7 +51,7 @@ describe('TipBox', () => {
     // given
     // when
     const wrapper = await mountSuspended(TipBox, {
-      slots: { default: 'Content' }
+      slots: { default: () => 'Content' }
     })
 
     // then

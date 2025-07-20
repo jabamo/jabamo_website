@@ -9,7 +9,7 @@ describe('ProsePre', () => {
 
     // when
     const wrapper = await mountSuspended(ProsePre, {
-      slots: { default: content }
+      slots: { default: () => content }
     })
 
     // then
@@ -23,7 +23,7 @@ describe('ProsePre', () => {
 
     // when
     const wrapper = await mountSuspended(ProsePre, {
-      slots: { default: content }
+      slots: { default: () => content }
     })
 
     // then
@@ -36,7 +36,7 @@ describe('ProsePre', () => {
 
     // when
     const wrapper = await mountSuspended(ProsePre, {
-      slots: { default: content }
+      slots: { default: () => content }
     })
 
     // then
@@ -49,7 +49,7 @@ describe('ProsePre', () => {
 
     // when
     const wrapper = await mountSuspended(ProsePre, {
-      slots: { default: content }
+      slots: { default: () => content }
     })
 
     // then

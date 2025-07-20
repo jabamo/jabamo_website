@@ -9,7 +9,7 @@ describe('ProseBlockquote', () => {
 
     // when
     const wrapper = await mountSuspended(ProseBlockquote, {
-      slots: { default: content }
+      slots: { default: () => content }
     })
 
     // then
@@ -23,7 +23,7 @@ describe('ProseBlockquote', () => {
 
     // when
     const wrapper = await mountSuspended(ProseBlockquote, {
-      slots: { default: content }
+      slots: { default: () => content }
     })
 
     // then
@@ -36,7 +36,7 @@ describe('ProseBlockquote', () => {
 
     // when
     const wrapper = await mountSuspended(ProseBlockquote, {
-      slots: { default: content }
+      slots: { default: () => content }
     })
 
     // then

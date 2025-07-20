@@ -11,7 +11,7 @@ describe('HighlightBox', () => {
     // when
     const wrapper = await mountSuspended(HighlightBox, {
       props: { title },
-      slots: { default: content }
+      slots: { default: () => content }
     })
 
     // then
@@ -28,7 +28,7 @@ describe('HighlightBox', () => {
     // when
     const wrapper = await mountSuspended(HighlightBox, {
       props: { title },
-      slots: { default: slotContent }
+      slots: { default: () => slotContent }
     })
 
     // then
@@ -42,7 +42,7 @@ describe('HighlightBox', () => {
     // when
     const wrapper = await mountSuspended(HighlightBox, {
       props: { title },
-      slots: { default: 'Content' }
+      slots: { default: () => 'Content' }
     })
 
     // then
