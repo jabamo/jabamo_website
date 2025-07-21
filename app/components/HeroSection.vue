@@ -114,10 +114,10 @@ function typeText(fullText: string): void {
   const interval = setInterval(() => {
     if (segmentIndex < segments.length) {
       displayedText += segments[segmentIndex]
-      titleElement.value!.innerHTML = displayedText + '<span class="caret absolute ml-[-1.25rem]">|</span>'
+      titleElement.value!.innerHTML = displayedText + '<span class="caret absolute ml-[-0.75rem] lg:ml-[-1.25rem]">|</span>'
       segmentIndex++
     } else {
-      titleElement.value!.innerHTML = displayedText + '<span class="caret absolute ml-[-1.25rem]">|</span>'
+      titleElement.value!.innerHTML = displayedText + '<span class="caret absolute ml-[-0.75rem] lg:ml-[-1.25rem]">|</span>'
       clearInterval(interval)
     }
   }, typewriterSpeed)
