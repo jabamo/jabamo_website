@@ -68,8 +68,9 @@
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-              href="mailto:jona@example.com"
+              :href="useEmail().emailLink.href"
               class="inline-flex items-center px-6 py-3 bg-accent-500 hover:bg-accent-600 text-white font-medium rounded-lg transition-colors"
+              @click="useEmail().emailLink.onClick"
           >
             <Icon name="tabler:mail" class="mr-2" size="20"/>
             Kontakt aufnehmen

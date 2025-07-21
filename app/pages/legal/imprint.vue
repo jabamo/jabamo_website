@@ -24,7 +24,24 @@
           </p>
           <p class="mb-4">
             Tel: +49 6476-9154914<br>
-            E-Mail: jb@jonabastian.io
+            E-Mail:
+            <svg
+              :width="useEmail().emailSvg.width"
+              :height="useEmail().emailSvg.height"
+              class="inline-block align-middle ml-1"
+          >
+            <text
+                v-for="(char, index) in useEmail().emailSvg.chars"
+                :key="index"
+                :x="useEmail().emailSvg.positions[index]"
+                y="15"
+                :font-size="useEmail().emailSvg.fontSize"
+                :font-family="useEmail().emailSvg.fontFamily"
+                :class="useEmail().emailSvg.className"
+            >
+              {{ char }}
+            </text>
+          </svg>
           </p>
         </div>
       </section>

@@ -44,9 +44,10 @@
             <Icon name="tabler:brand-linkedin" size="20" />
           </a>
           <a 
-            href="mailto:jb@jonabastian.io"
+            :href="useEmail().emailLink.href"
             class="text-gray-600 dark:text-gray-400 hover:text-accent-500 transition-colors"
             aria-label="E-Mail"
+            @click="useEmail().emailLink.onClick"
           >
             <Icon name="tabler:mail" size="20" />
           </a>

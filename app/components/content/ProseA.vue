@@ -8,7 +8,6 @@
       linkStyles
     ]"
   >
-    <!-- Icon -->
     <Icon
         v-if="showIcon"
         :name="iconName"
@@ -16,10 +15,8 @@
         size="16"
     />
 
-    <!-- Link Text -->
     <span class="leading-tight relative">
       <slot />
-      <!-- Underline Animation -->
       <span
           v-if="variant === 'underline'"
           class="absolute left-0 bottom-0 w-0 h-0.5 bg-current transition-all duration-300 group-hover:w-full"

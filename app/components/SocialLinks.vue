@@ -14,6 +14,7 @@
           :rel="link.external ? 'noopener noreferrer' : ''"
           class="group flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-accent-500 dark:hover:bg-accent-500 transition-all duration-300 transform hover:scale-110"
           :aria-label="link.name"
+          @click="link.onClick"
       >
         <Icon
             :name="link.icon"
@@ -31,25 +32,29 @@ const socialLinks = [
     name: 'GitHub',
     url: 'https://github.com/jabamo',
     icon: 'tabler:brand-github',
-    external: true
+    external: true,
+    onClick: () => {}
   },
   {
     name: 'LinkedIn',
     url: 'https://linkedin.com/in/jona-david-bastian-6664b3333/',
     icon: 'tabler:brand-linkedin',
-    external: true
+    external: true,
+    onClick: () => {}
   },
   {
     name: 'E-Mail',
-    url: 'mailto:jb@jonabastian.io',
+    url: useEmail().emailLink.href,
     icon: 'tabler:mail',
-    external: false
+    external: false,
+    onClick: useEmail().emailLink.onClick
   },
   {
     name: 'Discord',
     url: 'https://discord.com/users/_jabamo_',
     icon: 'tabler:brand-discord',
-    external: true
+    external: true,
+    onClick: () => {}
   }
 ]
 </script>

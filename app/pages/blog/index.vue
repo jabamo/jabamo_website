@@ -133,8 +133,9 @@
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
           <a
-              href="mailto:jb@jonabastian.io"
+              :href="useEmail().emailLink.href"
               class="inline-flex items-center justify-center gap-2 px-6 py-2 bg-accent-500 hover:bg-accent-600 text-white font-medium rounded-lg transition-colors"
+              @click="useEmail().emailLink.onClick"
           >
             <Icon name="tabler:mail" size="20"/>
             Mail schreiben
