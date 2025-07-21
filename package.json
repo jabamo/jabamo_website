@@ -11,10 +11,10 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "test": "vitest",
-    "test:unit": "vitest tests/components tests/pages tests/utils",
+    "test:unit": "vitest tests/components tests/pages tests/utils tests/composables",
     "test:e2e": "vitest tests/e2e",
     "test:watch": "vitest --watch",
-    "test:coverage": "vitest --coverage tests/components tests/pages tests/utils"
+    "test:coverage": "vitest --coverage tests/components tests/pages tests/utils tests/composables"
   },
   "dependencies": {
     "@nuxt/content": "^3.6.3",
