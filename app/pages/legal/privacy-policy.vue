@@ -2,12 +2,12 @@
   <div class="max-w-4xl mx-auto px-6 py-20">
     <div class="text-center mb-10">
       <h1 class="font-title text-4xl lg:text-5xl font-bold mb-6">
-        Datenschutzerklärung
+        Datenschutz
       </h1>
     </div>
 
     <div class="bg-white dark:bg-gray-800 rounded-xl p-8 md:p-12 border border-gray-200 dark:border-gray-700">
-      <h1 class="font-title text-3xl font-bold mb-8 text-gray-900 dark:text-white">Datenschutzerklärung</h1>
+      <h1 class="font-title text-3xl font-bold mb-8 text-gray-900 dark:text-white text-wrap hyphens-auto">Datenschutzerklärung</h1>
 
       <h2 class="font-title text-2xl font-semibold mb-6 text-gray-900 dark:text-white">1. Datenschutz auf einen
         Blick</h2>
