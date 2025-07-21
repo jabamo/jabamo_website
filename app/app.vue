@@ -19,6 +19,24 @@
     <AppFooter/>
   </div>
 </template>
+
+<script setup>
+const colorMode = useColorMode()
+
+useHead({
+  meta: [
+    {
+      name: 'theme-color',
+      content: () => colorMode.value === 'dark' ? '#111827' : '#ffffff'
+    },
+    {
+      name: 'apple-mobile-web-app-status-bar-style',
+      content: () => colorMode.value === 'dark' ? 'black-translucent' : 'default'
+    }
+  ]
+})
+</script>
+
 <style>
 /* page transitions - see nuxt.config.ts for config */
 .page-enter-active,

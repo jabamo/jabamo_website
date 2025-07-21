@@ -147,49 +147,40 @@ export default defineNuxtConfig({
                 {
                     property: 'og:image',
                     content: '/assets/img/og_image.png'
+                },
+
+                {
+                    name: 'apple-mobile-web-app-title',
+                    content: 'JB'
                 }
             ],
             link: [
                 {
                     rel: 'icon',
+                    type: 'image/png',
+                    sizes: '96x96',
+                    href: '/favicon/favicon-96x96.png'
+                },
+                {
+                    rel: 'icon',
+                    type: 'image/svg+xml',
+                    href: '/favicon/favicon.svg'
+                },
+                {
+                    rel: 'shortcut icon',
                     type: 'image/x-icon',
-                    href: '/favicon.ico',
-                },
-                {
-                    rel: 'icon',
-                    type: 'image/png',
-                    sizes: '32x32',
-                    href: '/favicon-32x32.png'
-                },
-                {
-                    rel: 'icon',
-                    type: 'image/png',
-                    sizes: '16x16',
-                    href: '/favicon-16x16.png'
+                    href: '/favicon/favicon.ico'
                 },
                 {
                     rel: 'apple-touch-icon',
                     sizes: '180x180',
-                    href: '/apple-touch-icon.png'
-                },
-                {
-                    rel: 'icon',
-                    type: 'image/png',
-                    sizes: '192x192',
-                    href: '/android-chrome-192x192.png'
-                },
-                {
-                    rel: 'icon',
-                    type: 'image/png',
-                    sizes: '512x512',
-                    href: '/android-chrome-512x512.png'
+                    href: '/favicon/apple-touch-icon.png'
                 },
                 {
                     rel: 'manifest',
                     href: '/site.webmanifest'
                 }
-            ],
-
+            ]
         },
         pageTransition: { name: 'page', mode: 'out-in' },
     },
