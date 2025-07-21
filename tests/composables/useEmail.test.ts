@@ -4,7 +4,6 @@ import { useEmail } from '../../app/composables/useEmail'
 describe('useEmail', () => {
   it('should return email link and SVG data', () => {
     // given
-    const expectedEmail = 'jb@jonabastian.io'
     
     // when
     const result = useEmail()
