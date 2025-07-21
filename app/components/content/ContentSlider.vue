@@ -20,11 +20,11 @@
             :key="index"
             class="h-full"
         >
-          <div class="relative h-full">
+          <div class="relative h-full flex items-center justify-center bg-gray-100 dark:bg-gray-900">
             <img
                 :src="slide.src"
                 :alt="slide.alt || `Slide ${index + 1}`"
-                class="w-full h-full object-cover"
+                :class="imageClass"
                 :style="{ height: slideHeight }"
                 @click="openLightbox(index)"
             >
@@ -306,6 +306,10 @@ const previousLightboxSlide = () => {
 const onSlideChange = (swiper: SwiperType) => {
   currentSlideIndex.value = swiper.realIndex + 1
 }
+
+const imageClass = computed(() => {
+  return 'w-full h-full object-contain md:object-cover cursor-pointer'
+})
 
 onUnmounted(() => {
   if (lightboxOpen.value) {
