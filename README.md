@@ -1,5 +1,20 @@
 # Persönliche Portfolio-Website
 
+[![CI/CD Pipeline](https://github.com/jabamo/jabamo_website/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/jabamo/jabamo_website/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/jabamo/jabamo_website/branch/main/graph/badge.svg)](https://codecov.io/gh/jabamo/jabamo_website)
+[![Website](https://img.shields.io/website?url=https%3A//jonabastian.io&logo=nuxtdotjs&logoColor=white)](https://jonabastian.io)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+[![Nuxt](https://img.shields.io/badge/Nuxt-4.0-00DC82?logo=nuxtdotjs&logoColor=white)](https://nuxt.com)
+[![Vue.js](https://img.shields.io/badge/Vue.js-3.5-4FC08D?logo=vuedotjs&logoColor=white)](https://vuejs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?logo=typescript&logoColor=white)](https://typescriptlang.org)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+
+[![GitHub issues](https://img.shields.io/github/issues/jabamo/jabamo_website)](https://github.com/jabamo/jabamo_website/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/jabamo/jabamo_website)](https://github.com/jabamo/jabamo_website/pulls)
+[![GitHub last commit](https://img.shields.io/github/last-commit/jabamo/jabamo_website)](https://github.com/jabamo/jabamo_website/commits/main)
+[![GitHub repo size](https://img.shields.io/github/repo-size/jabamo/jabamo_website)](https://github.com/jabamo/jabamo_website)
+
 Eine moderne, performante Portfolio-Website entwickelt mit Nuxt.js 4, die als Showcase für Projekte, Blog-Artikel und berufliche Erfahrungen dient. Die Website wurde als privates Projekt entwickelt, um meine Fähigkeiten als angehender Full-Stack Developer zu präsentieren und gleichzeitig moderne Webtechnologien zu erlernen.
 
 ## Überblick
