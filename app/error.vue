@@ -1,5 +1,5 @@
 <template>
-  <Header />
+  <AppHeader />
     <div class="min-h-screen flex items-center justify-center px-6">
       <div class="text-center">
         <h1 class="font-title text-6xl font-bold text-gray-900 dark:text-white mb-4">404</h1>
@@ -17,5 +17,5 @@
         </NuxtLink>
       </div>
     </div>
-  <Footer />
+  <AppFooter />
 </template>
