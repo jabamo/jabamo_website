@@ -34,7 +34,7 @@ machte und auf DMS gestoßen bin, habe ich mich gut identifizieren können. So f
 ## Der Start
 
 Nach der Ersti-Woche, die für alle wenig Schlaf und viel Kennenlernen bedeutete, ging es direkt in die erste Vorlesungswoche über.
-Die ersten beiden Semestern des Studiengangs Social Media Systems (so hieß der Studiengang vor DMS ursprünglich) werden auch Orientierungsphase genannt,
+Die ersten beiden Semester des Studiengangs Social Media Systems (so hieß der Studiengang vor DMS ursprünglich) werden auch Orientierungsphase genannt,
 in dieser Phase begleiten einen jeweils drei Module durch die Semester:
 
 - **Webbasierte Programmierung 1+2**

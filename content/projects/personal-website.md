@@ -344,17 +344,9 @@ Die Website wird auf **Netcup** gehostet mit:
 
 ### Geplante Features
 
-- **Newsletter-Integration** für Blog-Updates
-- **Kommentarsystem** für Blog-Artikel
-- **Search-Funktionalität** für Content
-- **Multi-Language Support** (Deutsch/Englisch)
-
-### Technische Verbesserungen
-
-- **Progressive Web App** Features
-- **Offline-Funktionalität**
-- **Service Worker** für bessere Performance
-- **Edge Functions** für dynamische Inhalte
+- **Micro-Backend** zum Verwalten der Seite
+- **CMS-Verwaltung** zum einfacheren Erstellen von Artikeln
+- Für weitere **Vorschläge** bin ich offen!
 
 ## Fazit
 
@@ -364,7 +356,7 @@ Jeder Aspekt war für mich sehr interessant und ich habe eine ganze Menge über 
 Das Projekt zeigt meiner Meinung nach, dass man mit den richtigen Frameworks **professionelle Webanwendungen** erstellen kann, die sowohl für Nutzer als auch für Entwickler eine Freude sind. Für mich war es das zumindest! :)
 
 ::HighlightBox{title="Open Source"}
-Der gesamte Code dieser Website ist übrigens auf GitHub verfügbar! Schaue gerne vorbei und lass dich inspirieren oder schlage mir Änderungen vor.
+Der gesamte Code dieser Website ist übrigens auf [Github](https://github.com/jabamo/jabamo_website) verfügbar! Schaue gerne vorbei und lass dich inspirieren oder schlage mir Änderungen vor.
 ::
 
 **Technologien im Überblick:**

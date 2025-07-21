@@ -67,6 +67,6 @@ const frontendTechs = [
 ]
 
 const backendTechs = [
-  'Node.js', 'Express', 'Java', 'Kotlin', 'Spring', 'PostgreSQL', 'Docker', 'REST', 'GraphQL'
+  'Node.js', 'Express', 'Java', 'Spring', 'PHP', 'Symfony', 'PostgreSQL', 'REST', 'GraphQL'
 ]
 </script>
