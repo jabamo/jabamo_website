@@ -146,7 +146,7 @@ export default defineNuxtConfig({
 
                 {
                     property: 'og:image',
-                    content: '/assets/img/logo_jb.png'
+                    content: '/assets/img/og_image.png'
                 }
             ],
             link: [
