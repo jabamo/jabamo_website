@@ -14,7 +14,7 @@ export default defineNuxtConfig({
     },
 
     ssr: true,
-    
+
     modules: ['@nuxt/content', '@nuxt/eslint', '@nuxt/test-utils/module', '@nuxt/fonts', '@nuxt/icon', '@nuxtjs/color-mode', '@nuxtjs/sitemap', '@nuxtjs/tailwindcss'],
 
     // TailwindCSS config
@@ -98,28 +98,66 @@ export default defineNuxtConfig({
                 lang: 'de',
             },
             meta: [
-                {charset: 'utf-8'},
-                {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+                {
+                    charset: 'utf-8'
+                },
+
+                {
+                    name: 'viewport',
+                    content: 'width=device-width, initial-scale=1'
+                },
 
                 // description
-                {name: 'description', content: 'Student & angehender Developer mit Fokus auf Backend-Entwicklung. Hier findest du mein Portfolio mit Projekten und Blog.'},
+                {
+                    name: 'description',
+                    content: 'Student & angehender Developer mit Fokus auf Backend-Entwicklung. Hier findest du mein Portfolio mit Projekten und Blog.'
+                },
 
                 // seo tags
-                {name: 'robots', content: 'index, follow'},
+                {
+                    name: 'robots',
+                    content: 'index, follow'
+                },
+
                 {
                     name: 'keywords',
                     content: 'jona, david, bastian, informatik, fullstack, backend, java, spring, developer, student, thm, dms'
                 },
+
+                {
+                    property: 'og:site_name',
+                    content: 'Jona-David Bastian - Student & Developer'
+                },
+
+                {
+                    property: 'og:title',
+                    content: 'Jona-David Bastian - Student & Developer'
+                },
+
+                {
+                    property: 'og:description',
+                    content: 'Student & angehender Developer mit Fokus auf Backend-Entwicklung. Hier findest du mein Portfolio mit Projekten und Blog.'
+                },
+
+                {
+                    property: 'og:type',
+                    content: 'website'
+                },
+
+                {
+                    property: 'og:image',
+                    content: '/assets/img/logo_jb.png'
+                }
             ],
             link: [
                 {
                     rel: 'icon',
-                    type: 'image/svg+xml',
-                    href: '/favicon.svg',
-                },
+                    type: 'image/x-icon',
+                    href: '/favicon.ico',
+                }
             ],
         },
-        pageTransition: {name: 'page', mode: 'out-in'},
+        pageTransition: { name: 'page', mode: 'out-in' },
     },
 
     content: {

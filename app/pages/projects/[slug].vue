@@ -184,6 +184,7 @@ useHead({
   title: `${project.value.title} - Jona-David Bastian`,
   meta: [
     {name: 'description', content: project.value.description},
+    {name: 'keywords', content: project.value.technologies?.join(', ')},
     {property: 'og:title', content: project.value.title},
     {property: 'og:description', content: project.value.description},
     {property: 'og:image', content: project.value.image},
