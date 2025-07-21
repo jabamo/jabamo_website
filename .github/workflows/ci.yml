@@ -28,13 +28,13 @@ jobs:
       run: npm run lint
       
     - name: Run Unit Tests
-      run: npm run test:unit -- --run --reporter=verbose
+      run: npm run test:unit -- --run --reporter=verbose --reporter=junit --outputFile=unit-test-results.xml
       
     - name: Run Unit Tests with Coverage
       run: npm run test:coverage -- --run
       
     - name: Run E2E Tests
-      run: npm run test:e2e -- --run --reporter=verbose
+      run: npm run test:e2e -- --run --reporter=verbose --reporter=junit --outputFile=e2e-test-results.xml
       
     - name: Generate static site
       run: npm run generate
@@ -46,6 +46,13 @@ jobs:
         files: ./coverage/lcov.info
         fail_ci_if_error: false
         token: ${{ secrets.CODECOV_TOKEN }}
+
+    - name: Upload test results to Codecov
+      if: ${{ !cancelled() }}
+      uses: codecov/test-results-action@v1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        files: unit-test-results.xml,e2e-test-results.xml
 
   deploy:
     needs: test
