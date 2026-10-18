@@ -13,7 +13,8 @@ export default defineVitestConfig({
             provider: 'v8',
             reporter: ['text', 'json', 'html', 'lcov'],
             reportsDirectory: './coverage'
-        }
+        },
+        fileParallelism: false
     },
     server: {
         watch: {
