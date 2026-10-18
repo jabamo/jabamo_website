@@ -1,4 +1,4 @@
-import { describe, it, expect, vi } from 'vitest'
+import { describe, it, expect } from 'vitest'
 import {mockNuxtImport, mountSuspended} from '@nuxt/test-utils/runtime'
 import ColorModeButton from '../../app/components/ColorModeButton.vue'
 import {ref} from "vue";

@@ -1,7 +1,6 @@
 import { describe, it, expect, vi } from 'vitest'
-import { mountSuspended } from '@nuxt/test-utils/runtime'
 import ProjectsIndex from '../../../app/pages/projects/index.vue'
-import {mockNuxtImport} from "@nuxt/test-utils/runtime";
+import { mockNuxtImport, mountSuspended } from "@nuxt/test-utils/runtime";
 import { mockProject } from '../../fixtures/mockData'
 import {ref} from "vue";
 
