@@ -1,0 +1,22 @@
+services:
+  app:
+    image: ${IMAGE_APP:-ghcr.io/jabamo/jabamo_website:latest}
+    container_name: ${COMPOSE_PROJECT_NAME}_app
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=${NODE_ENV}
+      - HOST=${HOST}
+      - PORT=${PORT}
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME}.rule=Host(`jonabastian.io`) || Host(`www.jonabastian.io`)"
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME}.entrypoints=websecure"
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME}.tls=true"
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME}.tls.certresolver=letsencrypt"
+      - "traefik.http.services.${COMPOSE_PROJECT_NAME}.loadbalancer.server.port=${PORT}"
+
+networks:
+  proxy:
+    external: true
