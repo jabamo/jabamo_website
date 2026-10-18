@@ -1,15 +1,18 @@
 import { describe, it, expect, vi } from 'vitest'
-import { mountSuspended } from '@nuxt/test-utils/runtime'
+import {mockNuxtImport, mountSuspended} from '@nuxt/test-utils/runtime'
 import ColorModeButton from '../../app/components/ColorModeButton.vue'
+import {ref} from "vue";
 
 const mockColorMode = {
   value: 'light',
   preference: 'light'
 }
 
-vi.mock('#app', () => ({
-  useColorMode: () => mockColorMode
-}))
+mockNuxtImport('useColorMode', () => {
+  return () => ({
+    data: ref([mockColorMode])
+  })
+})
 
 describe('ColorModeButton', () => {
   it('renders button with correct attributes', async () => {

@@ -1,14 +1,14 @@
 import { describe, it, expect, vi } from 'vitest'
-import { mountSuspended } from '@nuxt/test-utils/runtime'
+import {mockNuxtImport, mountSuspended} from '@nuxt/test-utils/runtime'
 import BlogIndex from '../../../app/pages/blog/index.vue'
-import { mockBlogArticle } from '../../fixtures/mockData'
+import {mockBlogArticle} from '../../fixtures/mockData'
+import {ref} from "vue";
 
-// Mock the Nuxt composables
-vi.mock('#app', () => ({
-  useAsyncData: vi.fn(() => ({
-    data: [mockBlogArticle]
-  }))
-}))
+mockNuxtImport('useAsyncData', () => {
+  return () => ({
+    data: ref([mockBlogArticle])
+  })
+})
 
 vi.mock('@nuxt/content', () => ({
   queryCollection: vi.fn(() => ({

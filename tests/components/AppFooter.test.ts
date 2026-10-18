@@ -18,7 +18,7 @@ describe('AppFooter', () => {
     const wrapper = await mountSuspended(AppFooter)
 
     // then
-    expect(wrapper.text()).toContain('2025')
+    expect(wrapper.text()).toContain(new Date().getFullYear())
     expect(wrapper.text()).toContain('Jona')
   })
 

@@ -25,7 +25,7 @@ describe('SEO E2E', async () => {
             const html = await $fetch(page) as string
             const titleMatch = html.match(/<title[^>]*>([^<]+)<\/title>/)
             if (titleMatch) {
-                titles.push(titleMatch[1])
+                titles.push(titleMatch[0])
             }
         }
 

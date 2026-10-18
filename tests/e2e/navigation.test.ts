@@ -36,7 +36,7 @@ describe('Navigation E2E', async () => {
         // when & then
         for (const page of allPages) {
             const html = await $fetch(page) as string
-            expect(html).toContain('2025')
+            expect(html).toContain(new Date().getFullYear())
             expect(html).toContain('Jona')
         }
     })

@@ -13,6 +13,10 @@ export default defineNuxtConfig({
         }
     },
 
+    sitemap: {
+        zeroRuntime: true
+    },
+
     ssr: true,
 
     modules: ['@nuxt/content', '@nuxt/eslint', '@nuxt/test-utils/module', '@nuxt/fonts', '@nuxt/icon', '@nuxtjs/color-mode', '@nuxtjs/sitemap', '@nuxtjs/tailwindcss'],
@@ -63,7 +67,6 @@ export default defineNuxtConfig({
     colorMode: {
         preference: 'system',
         fallback: 'light',
-        hid: 'nuxt-color-mode-script',
         globalName: '__NUXT_COLOR_MODE__',
         componentName: 'ColorScheme',
         classPrefix: '',
@@ -197,6 +200,12 @@ export default defineNuxtConfig({
                     langs: ['java', 'kotlin', 'sql', 'javascript', 'typescript', 'python', 'bash', 'json', 'yaml']
                 }
             }
+        }
+    },
+
+    postcss: {
+        plugins: {
+            'tailwindcss/nesting': false
         }
     }
 })
