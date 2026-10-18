@@ -1,4 +1,4 @@
-import {describe, it, expect} from 'vitest'
+import {describe, it, expect, beforeEach, afterEach, vi} from 'vitest'
 import {formatDate, formatDateRelative, formatDateShort} from '../../app/utils/formatDate'
 
 describe('formatDate', () => {
@@ -72,6 +72,14 @@ describe('formatDateShort', () => {
 })
 
 describe('formatDateRelative', () => {
+    beforeEach(() => {
+        vi.useFakeTimers()
+    })
+
+    afterEach(() => {
+        vi.useRealTimers()
+    })
+
     it('returns "vor einem Tag" for yesterday', () => {
         // given
         const yesterday = new Date()
